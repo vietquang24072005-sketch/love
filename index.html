@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>AESTHETIC DREAM ✨</title>
+  <title>PORSCHE 911 & GARDEN OF LIGHT ✨</title>
   
-  <meta property="og:title" content="A Little Dream For You 🌸✨">
-  <meta property="og:description" content="Khám phá 10 chuyển động ánh sáng pastel dịu dàng, lãng mạn và tinh tế.">
+  <meta property="og:title" content="Điều Kỳ Diệu Dành Riêng Cho Bạn 🌸🏎️💖">
+  <meta property="og:description" content="Chạm để mở bản hòa ca thị giác 3D: Porsche 911, Vườn hoa bạt ngàn và Ánh mắt trái tim thần thoại.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80">
   <meta property="og:type" content="website">
 
@@ -23,19 +23,19 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background-color: #060208;
-      font-family: -apple-system, BlinkMacSystemFont, "Didot", "Playfair Display", "Cinzel", serif;
+      background-color: #050107;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
       cursor: none;
     }
 
-    /* Ambient Silk Glow */
+    /* Ambient Silk Nebula */
     .ambient-glow {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 50% 50%, rgba(255, 175, 195, 0.13) 0%, rgba(230, 205, 255, 0.05) 50%, rgba(6, 2, 8, 0.98) 85%);
+      background: radial-gradient(circle at 50% 45%, rgba(255, 140, 175, 0.16) 0%, rgba(210, 160, 255, 0.08) 50%, rgba(5, 1, 7, 0.98) 85%);
       z-index: 0;
       pointer-events: none;
     }
@@ -59,19 +59,19 @@
       pointer-events: none;
     }
 
-    /* Minimalist Elegant Cursor */
+    /* Luxury Minimalist Cursor */
     #cursor-follower {
       position: fixed;
       top: 0;
       left: 0;
-      width: 28px;
-      height: 28px;
-      margin-left: -14px;
-      margin-top: -14px;
+      width: 32px;
+      height: 32px;
+      margin-left: -16px;
+      margin-top: -16px;
       border-radius: 50%;
-      border: 1px solid rgba(255, 195, 210, 0.7);
-      background: radial-gradient(circle, rgba(255, 195, 210, 0.25) 0%, rgba(235, 210, 255, 0.04) 70%, transparent 100%);
-      box-shadow: 0 0 18px rgba(255, 160, 185, 0.5), 0 0 35px rgba(230, 200, 255, 0.25);
+      border: 1px solid rgba(255, 185, 205, 0.75);
+      background: radial-gradient(circle, rgba(255, 185, 205, 0.3) 0%, rgba(220, 180, 255, 0.05) 70%, transparent 100%);
+      box-shadow: 0 0 20px rgba(255, 140, 175, 0.6), 0 0 40px rgba(210, 160, 255, 0.3);
       pointer-events: none;
       z-index: 99;
       transform: translate3d(-100px, -100px, 0);
@@ -81,19 +81,19 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 4px;
-      height: 4px;
-      margin-left: -2px;
-      margin-top: -2px;
+      width: 5px;
+      height: 5px;
+      margin-left: -2.5px;
+      margin-top: -2.5px;
       border-radius: 50%;
       background: #ffffff;
-      box-shadow: 0 0 10px #ffb3c6, 0 0 18px #fff;
+      box-shadow: 0 0 12px #ffb3c6, 0 0 20px #fff;
       pointer-events: none;
       z-index: 100;
       transform: translate3d(-100px, -100px, 0);
     }
 
-    /* Aesthetic Minimalist Start Overlay */
+    /* Start Overlay (Tap to Start & Play Music) */
     #start-screen {
       position: absolute;
       top: 0;
@@ -105,9 +105,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: radial-gradient(circle at center, rgba(20, 6, 24, 0.9) 0%, rgba(6, 2, 8, 0.98) 78%);
+      background: radial-gradient(circle at center, rgba(24, 7, 28, 0.92) 0%, rgba(5, 1, 7, 0.98) 80%);
       backdrop-filter: blur(24px);
-      transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.4s;
+      transition: opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.3s;
       cursor: pointer;
     }
     #start-screen.hidden {
@@ -116,53 +116,53 @@
       pointer-events: none;
     }
 
-    .shimmer-center {
+    .start-circle {
       position: relative;
-      width: 100px;
-      height: 100px;
+      width: 110px;
+      height: 110px;
       display: flex;
       justify-content: center;
       align-items: center;
       margin-bottom: 24px;
     }
 
-    .shimmer-halo {
+    .ripple-ring {
       position: absolute;
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      border: 1px solid rgba(255, 195, 210, 0.5);
-      box-shadow: 0 0 25px rgba(255, 175, 195, 0.35);
-      animation: gentleRipple 3.6s infinite ease-out;
+      border: 1px solid rgba(255, 185, 205, 0.55);
+      box-shadow: 0 0 30px rgba(255, 140, 175, 0.35);
+      animation: softRipple 3.5s infinite ease-out;
     }
-    .shimmer-halo:nth-child(2) {
-      animation-delay: 1.8s;
-      border-color: rgba(230, 205, 255, 0.4);
-    }
-
-    @keyframes gentleRipple {
-      0% { transform: scale(0.7); opacity: 0.8; }
-      100% { transform: scale(2.4); opacity: 0; }
+    .ripple-ring:nth-child(2) {
+      animation-delay: 1.7s;
+      border-color: rgba(210, 160, 255, 0.45);
     }
 
-    .pearl-icon {
-      font-size: 32px;
-      animation: breatheIcon 3s infinite ease-in-out;
-      filter: drop-shadow(0 0 20px rgba(255, 185, 205, 0.9));
+    @keyframes softRipple {
+      0% { transform: scale(0.65); opacity: 0.85; }
+      100% { transform: scale(2.5); opacity: 0; }
     }
 
-    @keyframes breatheIcon {
+    .start-icon {
+      font-size: 38px;
+      animation: pulseIcon 2.8s infinite ease-in-out;
+      filter: drop-shadow(0 0 25px rgba(255, 140, 175, 0.95));
+    }
+
+    @keyframes pulseIcon {
       0%, 100% { transform: scale(1); opacity: 0.85; }
-      50% { transform: scale(1.15); opacity: 1; }
+      50% { transform: scale(1.16); opacity: 1; }
     }
 
-    .start-title {
-      color: rgba(255, 240, 245, 0.9);
-      font-size: 0.95rem;
-      letter-spacing: 7px;
+    .start-prompt {
+      color: rgba(255, 240, 245, 0.92);
+      font-size: 0.92rem;
+      letter-spacing: 8px;
       text-transform: uppercase;
       font-weight: 300;
-      text-shadow: 0 0 15px rgba(255, 185, 205, 0.7);
+      text-shadow: 0 0 16px rgba(255, 185, 205, 0.8);
     }
   </style>
 
@@ -170,27 +170,66 @@
 </head>
 <body>
 
+  <!-- Audio Element (User's MP3 file) -->
+  <audio id="bg-audio" src="music.mp3" loop preload="auto" playsinline></audio>
+
   <div class="ambient-glow"></div>
 
-  <!-- Minimalist Custom Cursor -->
+  <!-- Custom Cursor -->
   <div id="cursor-follower"></div>
   <div id="cursor-dot"></div>
 
-  <!-- Canvases (Zero Clutter, Zero Text) -->
+  <!-- Canvases -->
   <canvas id="webgl-canvas"></canvas>
   <canvas id="overlay-canvas"></canvas>
 
   <!-- Clean Start Screen -->
   <div id="start-screen">
-    <div class="shimmer-center">
-      <div class="shimmer-halo"></div>
-      <div class="shimmer-halo"></div>
-      <div class="pearl-icon">✧</div>
+    <div class="start-circle">
+      <div class="ripple-ring"></div>
+      <div class="ripple-ring"></div>
+      <div class="start-icon">🌸</div>
     </div>
-    <div class="start-title">CHẠM ĐỂ MỞ</div>
+    <div class="start-prompt">CHẠM ĐỂ MỞ</div>
   </div>
 
   <script>
+    /* =====================================================================
+       AUDIO ENGINE WITH MUSIC BEAT VISUALIZER
+       ===================================================================== */
+    const audioElement = document.getElementById('bg-audio');
+    let audioCtx = null;
+    let analyser = null;
+    let freqData = null;
+    let beatEnergy = 0;
+
+    function initAudio() {
+      if (audioCtx) {
+        audioElement.play().catch(e => console.log(e));
+        return;
+      }
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      audioCtx = new AudioContext();
+
+      analyser = audioCtx.createAnalyser();
+      analyser.fftSize = 256;
+      freqData = new Uint8Array(analyser.frequencyBinCount);
+
+      const source = audioCtx.createMediaElementSource(audioElement);
+      source.connect(analyser);
+      analyser.connect(audioCtx.destination);
+
+      audioElement.play().catch(e => console.log("Audio play error:", e));
+    }
+
+    function updateBeat() {
+      if (!analyser || !freqData) return;
+      analyser.getByteFrequencyData(freqData);
+      // Low bass frequencies (Kick / Sub)
+      const lowFreqAvg = (freqData[1] + freqData[2] + freqData[3] + freqData[4]) / 4;
+      beatEnergy = lowFreqAvg / 255; // 0.0 to 1.0
+    }
+
     /* =====================================================================
        SILKY MOUSE TRACKING
        ===================================================================== */
@@ -214,7 +253,6 @@
       mouse.targetX = (clientX / window.innerWidth) * 2 - 1;
       mouse.targetY = -(clientY / window.innerHeight) * 2 + 1;
 
-      // Spawn soft fairy stardust
       if (Math.random() > 0.3) {
         spawnFairySpark(clientX, clientY);
       }
@@ -226,63 +264,9 @@
     }, { passive: true });
 
     /* =====================================================================
-       ETHEREAL MUSIC BOX & AMBIENT HARP
+       THREE.JS: 8,000 HIGH DEFINITION CRYSTAL STARDUST PARTICLES
        ===================================================================== */
-    class AmbientAudio {
-      constructor() {
-        this.ctx = null;
-        this.isPlaying = false;
-        // French impressionist warm chords (Debussy/Ravel aesthetic)
-        this.notes = [261.63, 329.63, 392.00, 493.88, 587.33, 659.25, 783.99, 987.77];
-        this.step = 0;
-      }
-
-      init() {
-        if (this.ctx) return;
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        this.ctx = new AudioContext();
-        this.isPlaying = true;
-        this.loop();
-      }
-
-      playBell(freq, time) {
-        if (!this.ctx) return;
-        const osc = this.ctx.createOscillator();
-        const gain = this.ctx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(freq, time);
-
-        gain.gain.setValueAtTime(0.0001, time);
-        gain.gain.exponentialRampToValueAtTime(0.038, time + 0.06);
-        gain.gain.exponentialRampToValueAtTime(0.0001, time + 3.8);
-
-        osc.connect(gain);
-        gain.connect(this.ctx.destination);
-        osc.start(time);
-        osc.stop(time + 3.8);
-      }
-
-      loop() {
-        if (!this.isPlaying) return;
-        const now = this.ctx.currentTime;
-        const pattern = [0, 2, 4, 3, 5, 4, 6, 7];
-        const note = this.notes[pattern[this.step % pattern.length]];
-        
-        this.playBell(note, now);
-        if (this.step % 4 === 0) {
-          this.playBell(note * 0.5, now, 4.5); // Warm bass foundation
-        }
-
-        this.step++;
-        setTimeout(() => this.loop(), 680);
-      }
-    }
-    const audio = new AmbientAudio();
-
-    /* =====================================================================
-       THREE.JS: 7,200 HIGH-DEFINITION STARDUST PARTICLES (ZERO LAG)
-       ===================================================================== */
-    const PARTICLE_COUNT = 7200;
+    const PARTICLE_COUNT = 8000;
     const canvas3D = document.getElementById('webgl-canvas');
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas3D,
@@ -294,22 +278,21 @@
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(58, window.innerWidth / window.innerHeight, 0.1, 2000);
-    camera.position.z = 280;
+    const camera = new THREE.PerspectiveCamera(58, window.innerWidth / window.innerHeight, 0.1, 2500);
+    camera.position.z = 295;
 
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(PARTICLE_COUNT * 3);
     const colors = new Float32Array(PARTICLE_COUNT * 3);
 
     for (let i = 0; i < PARTICLE_COUNT * 3; i++) {
-      positions[i] = (Math.random() - 0.5) * 350;
+      positions[i] = (Math.random() - 0.5) * 400;
       colors[i] = 1.0;
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-    // Refined Soft Starlight Texture
     function createStarlightTexture() {
       const c = document.createElement('canvas');
       c.width = 64;
@@ -317,9 +300,9 @@
       const ctx = c.getContext('2d');
       const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
       grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
-      grad.addColorStop(0.2, 'rgba(255, 200, 218, 0.95)');
-      grad.addColorStop(0.5, 'rgba(235, 210, 255, 0.4)');
-      grad.addColorStop(0.8, 'rgba(255, 175, 195, 0.1)');
+      grad.addColorStop(0.25, 'rgba(255, 185, 210, 0.95)');
+      grad.addColorStop(0.55, 'rgba(230, 190, 255, 0.35)');
+      grad.addColorStop(0.85, 'rgba(255, 140, 175, 0.1)');
       grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, 64, 64);
@@ -327,7 +310,7 @@
     }
 
     const material = new THREE.PointsMaterial({
-      size: 6.2,
+      size: 6.4,
       map: createStarlightTexture(),
       vertexColors: true,
       transparent: true,
@@ -339,11 +322,10 @@
     scene.add(particleSystem);
 
     /* =====================================================================
-       10 ELEGANT, DREAMY SHAPES (CURATED FOR WOMEN / HIGH AESTHETIC TASTE)
+       MATHEMATICAL MASTERPIECES: PORSCHE 911, VƯỜN HOA, MẮT ĐỒNG TỬ TRÁI TIM
        ===================================================================== */
     const shapes = [];
 
-    // Helper to push precomputed shape
     function addShape(fn) {
       const arr = new Float32Array(PARTICLE_COUNT * 3);
       for (let i = 0; i < PARTICLE_COUNT; i++) {
@@ -356,137 +338,177 @@
       shapes.push(arr);
     }
 
-    // 1. Crystal Volumetric Heart (Trái Tim Pha Lê Trong Suốt)
-    addShape((i, f) => {
-      const t = Math.PI * 2 * f;
-      const r = Math.pow(Math.random(), 0.55);
-      const u = (Math.random() - 0.5) * Math.PI;
-      const x = 16 * Math.pow(Math.sin(t), 3) * 8.4 * r;
-      const y = (13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t)) * 8.4 * r;
-      const z = u * 15 * (1.1 - Math.abs(x) / 32);
-      return [x, y, z];
-    });
-
-    // 2. Blooming French Peony / Rose (Đóa Hoa Mẫu Đơn Pháp Nở Xòe)
-    addShape((i, f) => {
-      const theta = i * 2.39996; // Golden spiral
-      const radius = Math.sqrt(f) * 175;
-      const petalWave = Math.sin(theta * 5) * 16;
-      const z = Math.pow(f, 1.25) * 85 - 40 + petalWave;
-      const r = radius + petalWave * 0.45;
-      return [r * Math.cos(theta), r * Math.sin(theta), z];
-    });
-
-    // 3. Ethereal Butterfly Wings (Cánh Bướm Dạ Quang Đập Nhẹ)
-    addShape((i, f) => {
-      const t = f * Math.PI * 2;
-      // Elegant butterfly curve
-      const r = (Math.exp(Math.cos(t)) - 2 * Math.cos(4 * t) - Math.pow(Math.sin(t / 12), 5)) * 44;
-      const x = r * Math.sin(t) * 0.95;
-      const y = r * Math.cos(t) * 0.95;
-      const z = Math.abs(x) * 0.35 + (Math.random() - 0.5) * 12; // Gentle V wing depth
-      return [x, y, z];
-    });
-
-    // 4. Lily of the Valley Bells (Đóa Hoa Linh Lan / Chuông Tiên Rủ Nhẹ)
+    /* 1. MẮT TO ĐỒNG TỬ TRÁI TIM (GIANT EYE WITH HEART PUPIL) */
     addShape((i, f) => {
       if (f < 0.28) {
-        // Arching delicate stem
-        const t = (f / 0.28) * Math.PI * 0.9;
-        const x = Math.cos(t) * 140 - 50;
-        const y = Math.sin(t) * 130 - 30;
+        // Glowing Heart-Shaped Pupil in the center
+        const t = Math.PI * 2 * (f / 0.28);
+        const r = Math.pow(Math.random(), 0.55) * 1.8;
+        const x = 16 * Math.pow(Math.sin(t), 3) * r * 2.2;
+        const y = (13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t)) * r * 2.2;
         const z = (Math.random() - 0.5) * 8;
         return [x, y, z];
+      } else if (f < 0.72) {
+        // Iris radiating sunburst fibers with concave 3D eyeball lens
+        const t = Math.random() * Math.PI * 2;
+        const radius = 32 + Math.random() * 54;
+        const x = Math.cos(t) * radius;
+        const y = Math.sin(t) * radius;
+        const z = -Math.cos((radius / 86) * (Math.PI / 2)) * 26 + (Math.random() - 0.5) * 8;
+        return [x, y, z];
       } else {
-        // Hanging fairy bell blossoms
-        const bellId = i % 5;
-        const bellT = 0.3 + (bellId / 5) * 0.6;
-        const bx = Math.cos(bellT * Math.PI * 0.9) * 140 - 50;
-        const by = Math.sin(bellT * Math.PI * 0.9) * 130 - 30 - 18;
-        const theta = Math.random() * Math.PI * 2;
-        const br = Math.random() * 22;
-        return [bx + Math.cos(theta) * br, by - Math.random() * 28, Math.sin(theta) * br];
+        // Eyelids contour & Long curled starry eyelashes
+        const width = 190;
+        const x = (Math.random() - 0.5) * width * 2;
+        const sign = Math.random() > 0.5 ? 1 : -1;
+        const yBase = sign * 78 * Math.cos((x / (width * 2)) * Math.PI);
+        const isLash = Math.random() > 0.35;
+        const lashLength = isLash ? sign * (Math.random() * 26 + 10) : 0;
+        const y = yBase + lashLength;
+        const z = (Math.random() - 0.5) * 25;
+        return [x, y, z];
       }
     });
 
-    // 5. Princess Star Tiara / Crown (Vương Miện Ánh Sáng Công Chúa)
+    /* 2. SIÊU XE PORSCHE 911 (ICONIC 3D PORSCHE 911 COUPE) */
     addShape((i, f) => {
-      const theta = (f - 0.5) * Math.PI * 1.35;
+      // 4 Wheels
+      if (f < 0.18) {
+        const wheelIdx = Math.floor(f / 0.045);
+        const wx = (wheelIdx < 2) ? 95 : -92; // Front or Rear axle
+        const wz = (wheelIdx % 2 === 0) ? 60 : -60; // Left or Right wheel
+        const theta = Math.random() * Math.PI * 2;
+        const wr = Math.random() * 24;
+        return [wx + Math.cos(theta) * wr, -35 + Math.sin(theta) * wr, wz + (Math.random() - 0.5) * 12];
+      } else if (f < 0.75) {
+        // Iconic 911 Aerodynamic Curved Body & Flyline Roof
+        const x = (Math.random() - 0.5) * 310; // X length: -155 to +155
+        const normX = x / 155; // -1 to +1
+
+        // Roofline height function
+        let y = -30;
+        let halfWidth = 55;
+
+        if (normX > 0.5) {
+          // Front hood down to bumper
+          y = -15 - (normX - 0.5) * 35;
+          halfWidth = 50 - (normX - 0.5) * 20;
+        } else if (normX > -0.1) {
+          // Windshield rising to roof peak
+          y = 38 - Math.pow(normX - 0.1, 2) * 50;
+          halfWidth = 46;
+        } else {
+          // Iconic 911 sloping teardrop fastback rear to ducktail spoiler
+          y = 38 + (normX + 0.1) * 45;
+          halfWidth = 62; // Muscular wide rear haunches
+        }
+
+        // Add 911 Oval Headlights accent
+        if (normX > 0.65 && Math.random() > 0.8) {
+          y += 12;
+        }
+
+        const z = (Math.random() - 0.5) * 2 * halfWidth;
+        y += (Math.random() - 0.5) * 8;
+        return [x, y, z];
+      } else {
+        // Neon Underglow & Chassis Silhouette
+        const x = (Math.random() - 0.5) * 290;
+        const z = (Math.random() - 0.5) * 110;
+        return [x, -42 + (Math.random() - 0.5) * 4, z];
+      }
+    });
+
+    /* 3. VƯỜN HOA THIÊN ĐƯỜNG (LUSH 3D BLOOMING FLOWER GARDEN) */
+    addShape((i, f) => {
+      // 12 Distinct Blooming Flower Stems with Lotus/Rose Petals on an Undulating Bed
+      const flowerIdx = i % 14;
+      const angle = (flowerIdx / 14) * Math.PI * 2;
+      const gardenR = 40 + (flowerIdx % 3) * 55;
+      const stemBaseX = Math.cos(angle) * gardenR;
+      const stemBaseZ = Math.sin(angle) * gardenR * 0.7;
+
+      if (f < 0.35) {
+        // Gentle rolling flowerbed ground
+        const gx = (Math.random() - 0.5) * 340;
+        const gz = (Math.random() - 0.5) * 240;
+        const gy = Math.sin(gx * 0.015) * 16 + Math.cos(gz * 0.02) * 14 - 65;
+        return [gx, gy, gz];
+      } else if (f < 0.65) {
+        // Curving flower stems rising up
+        const stemProgress = Math.random();
+        const sx = stemBaseX + Math.sin(stemProgress * Math.PI) * 15;
+        const sy = -65 + stemProgress * 85;
+        const sz = stemBaseZ + (Math.random() - 0.5) * 6;
+        return [sx, sy, sz];
+      } else {
+        // Blooming Petal Cups on top of the stems
+        const petT = Math.random() * Math.PI * 2;
+        const petR = Math.random() * 26;
+        const petalY = -65 + 85 + Math.pow(petR / 26, 1.3) * 16;
+        return [stemBaseX + Math.cos(petT) * petR, petalY, stemBaseZ + Math.sin(petT) * petR];
+      }
+    });
+
+    /* 4. TRÁI TIM KIM CƯƠNG VÔ CỰC (RADIANT VOLUMETRIC CRYSTAL HEART) */
+    addShape((i, f) => {
+      if (f < 0.8) {
+        const t = Math.PI * 2 * (f / 0.8);
+        const r = Math.pow(Math.random(), 0.55);
+        const u = (Math.random() - 0.5) * Math.PI;
+        const x = 16 * Math.pow(Math.sin(t), 3) * 8.6 * r;
+        const y = (13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t)) * 8.6 * r;
+        const z = u * 16 * (1.1 - Math.abs(x) / 32);
+        return [x, y, z];
+      } else {
+        // Orbiting halo of starlight
+        const theta = Math.random() * Math.PI * 2;
+        const ringR = 160 + (Math.random() - 0.5) * 18;
+        return [Math.cos(theta) * ringR, Math.sin(theta) * ringR * 0.4, Math.sin(theta) * ringR * 0.8];
+      }
+    });
+
+    /* 5. CÁNH BƯỚM DẠ QUANG ĐẬP CÁNH (LUMINOUS BUTTERFLY) */
+    addShape((i, f) => {
+      const t = f * Math.PI * 2;
+      const r = (Math.exp(Math.cos(t)) - 2 * Math.cos(4 * t) - Math.pow(Math.sin(t / 12), 5)) * 46;
+      const x = r * Math.sin(t) * 0.96;
+      const y = r * Math.cos(t) * 0.96;
+      const z = Math.abs(x) * 0.38 + (Math.random() - 0.5) * 10;
+      return [x, y, z];
+    });
+
+    /* 6. VƯƠNG MIỆN CÔNG CHÚA & MƯA SAO (PRINCESS TIARA) */
+    addShape((i, f) => {
+      const theta = (f - 0.5) * Math.PI * 1.4;
       const baseR = 155;
       const x = Math.sin(theta) * baseR;
       const z = Math.cos(theta) * baseR * 0.45;
-      // 5 Peaks of Princess Crown
-      const peak = Math.pow(Math.abs(Math.cos(theta * 2.5)), 2) * 65;
-      const y = peak + (Math.random() - 0.5) * 14 - 30;
-      return [x, y, z];
-    });
-
-    // 6. Twin Swans forming Heart Kiss (Đôi Thiên Nga Khắc Hình Trái Tim)
-    addShape((i, f) => {
-      const side = (i % 2 === 0) ? 1 : -1;
-      const t = (i / PARTICLE_COUNT) * Math.PI;
-      // Graceful neck curve forming heart contour
-      const x = side * (Math.sin(t) * 65 + Math.pow(Math.sin(t), 2) * 55);
-      const y = Math.cos(t) * 95 - 10;
-      const z = (Math.random() - 0.5) * 35;
-      return [x, y, z];
-    });
-
-    // 7. Silk Infinity Ribbon (Dải Ruy Băng Vô Cực Của Tình Yêu)
-    addShape((i, f) => {
-      const t = f * Math.PI * 2;
-      const scale = 175;
-      const denom = 1 + Math.sin(t) * Math.sin(t);
-      const x = (scale * Math.cos(t)) / denom;
-      const y = (scale * Math.sin(t) * Math.cos(t)) / denom;
-      const z = Math.sin(t * 2) * 45 + (Math.random() - 0.5) * 12;
-      return [x, y, z];
-    });
-
-    // 8. Celestial Floral Wreath (Vòng Nguyệt Quế Tinh Vân)
-    addShape((i, f) => {
-      const theta = f * Math.PI * 2;
-      const r = 135 + Math.sin(theta * 10) * 18 + (Math.random() - 0.5) * 15;
-      const x = Math.cos(theta) * r;
-      const y = Math.sin(theta) * r;
-      const z = Math.cos(theta * 6) * 28 + (Math.random() - 0.5) * 10;
-      return [x, y, z];
-    });
-
-    // 9. Moonlit Sakura Lotus (Đóa Sen Ánh Trăng 8 Cánh)
-    addShape((i, f) => {
-      const theta = f * Math.PI * 2;
-      const petalR = (Math.pow(Math.abs(Math.sin(theta * 4)), 0.6) * 165 + 20) * Math.sqrt(Math.random());
-      const z = -Math.cos((petalR / 185) * (Math.PI / 2)) * 52 + (Math.random() - 0.5) * 12;
-      return [petalR * Math.cos(theta), petalR * Math.sin(theta), z];
-    });
-
-    // 10. Fairy Stardust Vortex (Vòng Xoáy Bụi Tiên Ước Nguyện)
-    addShape((i, f) => {
-      const theta = Math.sqrt(f) * Math.PI * 14;
-      const r = f * 195 + 10;
-      const x = Math.cos(theta) * r;
-      const y = Math.sin(theta) * r;
-      const z = (f - 0.5) * 150 + Math.sin(r * 0.05) * 20;
+      const peak = Math.pow(Math.abs(Math.cos(theta * 2.5)), 2) * 72;
+      const y = peak + (Math.random() - 0.5) * 14 - 32;
       return [x, y, z];
     });
 
     /* =====================================================================
-       HARMONIOUS HIGH-AESTHETIC PALETTES
+       AESTHETIC PASTEL PALETTES
        ===================================================================== */
-    const LUXURY_PALETTES = [
-      // Rose Quartz & Pearl
-      { primary: [1.0, 0.74, 0.80], secondary: [1.0, 0.92, 0.95], accent: [0.93, 0.82, 1.0] },
-      // French Peony & Soft Champagne
-      { primary: [1.0, 0.65, 0.74], secondary: [1.0, 0.88, 0.82], accent: [1.0, 0.96, 0.92] },
-      // Fairy Mauve & Lavender Mist
+    const PALETTES = [
+      // 0: Rose Quartz & Diamond (Mắt Trái Tim)
+      { primary: [1.0, 0.72, 0.82], secondary: [1.0, 0.92, 0.96], accent: [0.95, 0.80, 1.0] },
+      // 1: Cyberpunk Pastel Neon (Porsche 911)
+      { primary: [1.0, 0.58, 0.78], secondary: [0.72, 0.92, 1.0], accent: [1.0, 0.94, 0.75] },
+      // 2: Spring Floral Blossom (Vườn Hoa)
+      { primary: [1.0, 0.68, 0.78], secondary: [0.82, 0.96, 0.88], accent: [1.0, 0.88, 0.94] },
+      // 3: Champagne Rose (Trái Tim Pha Lê)
+      { primary: [1.0, 0.74, 0.80], secondary: [1.0, 0.92, 0.78], accent: [0.94, 0.85, 1.0] },
+      // 4: Ethereal Mauve (Cánh Bướm)
       { primary: [0.92, 0.76, 1.0], secondary: [0.82, 0.92, 1.0], accent: [1.0, 0.82, 0.90] },
-      // Starlight Gold & Pink Diamond
-      { primary: [1.0, 0.78, 0.85], secondary: [1.0, 0.92, 0.78], accent: [0.88, 0.96, 0.98] }
+      // 5: Princess Gold & Blush (Vương Miện)
+      { primary: [1.0, 0.82, 0.88], secondary: [1.0, 0.95, 0.82], accent: [0.92, 0.82, 1.0] }
     ];
 
     /* =====================================================================
-       2D CANVAS: DELICATE FAIRY DUST (TINY GLOWING SPARKS ONLY)
+       2D CANVAS: DELICATE FLOATING STARDUST & SAKURA
        ===================================================================== */
     const overlayCanvas = document.getElementById('overlay-canvas');
     const ctx2D = overlayCanvas.getContext('2d');
@@ -507,15 +529,15 @@
         x: x + (Math.random() - 0.5) * 14,
         y: y + (Math.random() - 0.5) * 14,
         vx: (Math.random() - 0.5) * 0.8,
-        vy: -Math.random() * 1.1 - 0.3,
+        vy: -Math.random() * 1.2 - 0.3,
         size: Math.random() * 2.5 + 1.2,
-        alpha: 0.9,
-        char: Math.random() > 0.65 ? '✧' : null
+        alpha: 0.95,
+        char: Math.random() > 0.6 ? '✧' : (Math.random() > 0.5 ? '🌸' : null)
       });
-      if (fairySparks.length > 50) fairySparks.shift();
+      if (fairySparks.length > 55) fairySparks.shift();
     }
 
-    function renderFairySparks() {
+    function render2D() {
       ctx2D.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
 
       for (let i = fairySparks.length - 1; i >= 0; i--) {
@@ -532,8 +554,8 @@
         ctx2D.save();
         ctx2D.globalAlpha = s.alpha;
         if (s.char) {
-          ctx2D.fillStyle = '#ffccd5';
           ctx2D.font = '12px serif';
+          ctx2D.fillStyle = '#ffccd5';
           ctx2D.fillText(s.char, s.x, s.y);
         } else {
           ctx2D.beginPath();
@@ -548,13 +570,16 @@
     }
 
     /* =====================================================================
-       ANIMATION LOOP: 10 CONTINUOUS SLOW-MORPHING SHAPES
+       MAIN ANIMATION LOOP: CONTINUOUS SEAMLESS SLOW MORPHING + AUDIO BEAT
        ===================================================================== */
-    const TRANSITION_DURATION = 5.8; // 5.8 seconds per continuous, smooth transformation
+    const TRANSITION_DURATION = 6.4; // 6.4s per continuous, graceful scene
     const startTime = performance.now();
 
     function animate(now) {
       requestAnimationFrame(animate);
+
+      // Update Real-time Audio Frequency Beat
+      updateBeat();
 
       // Smooth Cursor Movement
       mouse.screenX += (mouse.targetScreenX - mouse.screenX) * 0.085;
@@ -565,37 +590,43 @@
       cursorFollower.style.transform = `translate3d(${mouse.screenX}px, ${mouse.screenY}px, 0)`;
       cursorDot.style.transform = `translate3d(${mouse.targetScreenX}px, ${mouse.targetScreenY}px, 0)`;
 
-      // Continuous Morph Calculation across 10 shapes
+      // Continuous Morph Calculation
       const elapsed = (now - startTime) * 0.001;
       const cyclePos = (elapsed / TRANSITION_DURATION) % shapes.length;
       const idxA = Math.floor(cyclePos);
       const idxB = (idxA + 1) % shapes.length;
       let blend = cyclePos - idxA;
-      // Hermite Smoothstep for seamless, slow, fluid morphing
+      // Hermite smoothstep for slow, silky morph
       blend = blend * blend * (3 - 2 * blend);
 
       const shapeA = shapes[idxA];
       const shapeB = shapes[idxB];
-
-      // Palette interpolation
-      const palIdxA = Math.floor(cyclePos * 0.5) % LUXURY_PALETTES.length;
-      const pal = LUXURY_PALETTES[palIdxA];
+      const pal = PALETTES[idxA % PALETTES.length];
 
       const pos = geometry.attributes.position.array;
       const col = geometry.attributes.color.array;
 
+      // Eye / Pupil Gaze tracking or Porsche Angle
       const mouseWorldX = mouse.x * 140;
       const mouseWorldY = mouse.y * 105;
 
       for (let i = 0; i < PARTICLE_COUNT; i++) {
         const i3 = i * 3;
 
-        // Smooth shape morphing
         let tx = shapeA[i3] * (1 - blend) + shapeB[i3] * blend;
         let ty = shapeA[i3 + 1] * (1 - blend) + shapeB[i3 + 1] * blend;
         let tz = shapeA[i3 + 2] * (1 - blend) + shapeB[i3 + 2] * blend;
 
-        // Soft mouse attraction
+        // When in Eye Shape (idxA === 0 or idxB === 0), pupil follows mouse!
+        if (idxA === 0 || idxB === 0) {
+          const eyeInfluence = (idxA === 0) ? (1 - blend) : blend;
+          if (i < PARTICLE_COUNT * 0.28) { // Heart Pupil
+            tx += mouse.x * 22 * eyeInfluence;
+            ty += mouse.y * 18 * eyeInfluence;
+          }
+        }
+
+        // Fluid mouse attraction
         const dx = mouseWorldX - pos[i3];
         const dy = mouseWorldY - pos[i3 + 1];
         const distSq = dx * dx + dy * dy;
@@ -606,12 +637,12 @@
           ty += (dy / 115) * force;
         }
 
-        // Viscous, elegant slow glide
+        // Viscous slow interpolation
         pos[i3] += (tx - pos[i3]) * 0.065;
         pos[i3 + 1] += (ty - pos[i3 + 1]) * 0.065;
         pos[i3 + 2] += (tz - pos[i3 + 2]) * 0.065;
 
-        // Soft color breathing
+        // Color breathing with audio pulse
         const f = i % 3;
         const c = (f === 0) ? pal.primary : (f === 1 ? pal.secondary : pal.accent);
         col[i3] += (c[0] - col[i3]) * 0.025;
@@ -622,26 +653,28 @@
       geometry.attributes.position.needsUpdate = true;
       geometry.attributes.color.needsUpdate = true;
 
-      // Gentle 3D Parallax Tilt
-      const breathing = 1.0 + Math.sin(now * 0.0015) * 0.045;
+      // 3D Parallax + Music Beat Pulse
+      const audioPulse = beatEnergy * 0.09;
+      const breathing = 1.0 + Math.sin(now * 0.0015) * 0.04 + audioPulse;
+
       particleSystem.rotation.y += 0.002;
       particleSystem.rotation.y += (mouse.x * 0.28 - particleSystem.rotation.y) * 0.035;
       particleSystem.rotation.x += (-mouse.y * 0.20 - particleSystem.rotation.x) * 0.035;
       particleSystem.scale.set(breathing, breathing, breathing);
 
       renderer.render(scene, camera);
-      renderFairySparks();
+      render2D();
     }
 
     animate(performance.now());
 
     /* =====================================================================
-       INTERACTION
+       INTERACTION & START
        ===================================================================== */
     const startScreen = document.getElementById('start-screen');
 
     function startExperience() {
-      audio.init();
+      initAudio();
       startScreen.classList.add('hidden');
     }
 
