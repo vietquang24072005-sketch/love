@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>PASTEL NEON LOVE ✨ Hiện Đại & Bùng Nổ</title>
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Món Quà Ngọt Ngào Dành Riêng Cho Bạn 🌸💖">
+  <meta property="og:description" content="Chạm để mở thế giới Neon Hồng Pastel lung linh, bùng nổ chuyển động và cảm xúc!">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --pastel-pink-glow: #ff85b3;
+      --pastel-rose: #ffaec0;
+      --pastel-lilac: #d8b4fe;
+      --pastel-mint: #a5f3fc;
+      --pastel-white: #fff5f8;
+      --bg-dark: #08030b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: var(--bg-dark);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    }
+
+    /* Background Ambient Pastel Glow */
+    .ambient-glow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 40%, rgba(255, 133, 179, 0.15) 0%, rgba(216, 180, 254, 0.08) 45%, rgba(8, 3, 11, 0.98) 85%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    #webgl-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    #overlay-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Start / Touch Screen with Modern Glassmorphism */
+    #start-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at center, rgba(28, 9, 32, 0.88) 0%, rgba(8, 3, 11, 0.98) 80%);
+      backdrop-filter: blur(20px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.85s;
+      cursor: pointer;
+    }
+    #start-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .heart-pulse-box {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .pulsing-ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 133, 179, 0.7);
+      box-shadow: 0 0 20px rgba(255, 133, 179, 0.4);
+      animation: modernRipple 2.2s infinite ease-out;
+    }
+    .pulsing-ring:nth-child(2) {
+      animation-delay: 0.7s;
+      border-color: rgba(216, 180, 254, 0.6);
+      box-shadow: 0 0 25px rgba(216, 180, 254, 0.3);
+    }
+    .pulsing-ring:nth-child(3) {
+      animation-delay: 1.4s;
+      border-color: rgba(165, 243, 252, 0.5);
+      box-shadow: 0 0 25px rgba(165, 243, 252, 0.3);
+    }
+
+    @keyframes modernRipple {
+      0% {
+        transform: scale(0.65);
+        opacity: 0.9;
+      }
+      100% {
+        transform: scale(2.4);
+        opacity: 0;
+      }
+    }
+
+    .pulse-btn {
+      font-size: 58px;
+      animation: softHeartbeat 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+      filter: drop-shadow(0 0 30px #ff85b3) drop-shadow(0 0 60px rgba(255, 174, 192, 0.7));
+    }
+
+    @keyframes softHeartbeat {
+      0% { transform: scale(1); }
+      14% { transform: scale(1.32); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.32); }
+      70% { transform: scale(1); }
+    }
+
+    .start-prompt {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      text-align: center;
+      text-shadow: 0 0 15px rgba(255, 133, 179, 0.9), 0 0 35px rgba(216, 180, 254, 0.7);
+      animation: pastelGlow 2.5s infinite alternate;
+      padding: 0 20px;
+    }
+    .start-subprompt {
+      color: rgba(255, 240, 248, 0.75);
+      font-size: 0.88rem;
+      letter-spacing: 2px;
+      margin-top: 12px;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    @keyframes pastelGlow {
+      from { 
+        text-shadow: 0 0 12px #ff85b3, 0 0 25px rgba(255, 174, 192, 0.8);
+      }
+      to { 
+        text-shadow: 0 0 20px #ffaec0, 0 0 45px #d8b4fe, 0 0 60px #a5f3fc; 
+      }
+    }
+
+    /* Minimalist Modern Glass HUD */
+    #hud {
+      position: absolute;
+      top: 22px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 28px;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .phase-badge {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #ff85b3;
+      letter-spacing: 2.5px;
+      background: rgba(255, 133, 179, 0.08);
+      border: 1px solid rgba(255, 133, 179, 0.35);
+      padding: 8px 18px;
+      border-radius: 30px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 4px 20px rgba(255, 133, 179, 0.15);
+      text-shadow: 0 0 10px rgba(255, 133, 179, 0.8);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .bpm-counter {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #d8b4fe;
+      letter-spacing: 2px;
+      text-shadow: 0 0 12px rgba(216, 180, 254, 0.7);
+    }
+
+    /* Pastel Flash Effect */
+    #flash {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #ffb6c1;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 8;
+      transition: opacity 0.22s ease-out;
+    }
+
+    /* Typography burst: Modern, Soft & High Impact */
+    .word-burst {
+      position: absolute;
+      pointer-events: none;
+      font-weight: 900;
+      font-size: clamp(2rem, 7.5vw, 4.2rem);
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      text-shadow: 0 0 25px currentColor, 0 0 60px currentColor;
+      transform: translate(-50%, -50%);
+      z-index: 4;
+      white-space: nowrap;
+      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+    }
+  </style>
+
+  <!-- High Performance Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+  <div class="ambient-glow"></div>
+
+  <!-- WebGL 3D Canvas -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- 2D Canvas for Optical Eyes & Glimmers -->
+  <canvas id="overlay-canvas"></canvas>
+
+  <!-- Pastel flash overlay for drops -->
+  <div id="flash"></div>
+
+  <!-- HUD -->
+  <div id="hud">
+    <div class="phase-badge" id="phase-badge">PASTEL NEON LOVE</div>
+    <div class="bpm-counter" id="bpm-counter">PULSE: 154 BPM</div>
+  </div>
+
+  <!-- Start Screen -->
+  <div id="start-screen">
+    <div class="heart-pulse-box">
+      <div class="pulsing-ring"></div>
+      <div class="pulsing-ring"></div>
+      <div class="pulsing-ring"></div>
+      <div class="pulse-btn">🌸</div>
+    </div>
+    <div class="start-prompt">CHẠM ĐỂ MỞ TRÁI TIM</div>
+    <div class="start-subprompt">Bật âm lượng để tận hưởng bản hòa ca Pastel lung linh</div>
+  </div>
+
+  <script>
+    /* =====================================================================
+       LUSH AUDIO SYNTHESIZER (Dreamy Synth Arp + Warm Heartbeat Kick)
+       ===================================================================== */
+    class AudioEngine {
+      constructor() {
+        this.ctx = null;
+        this.isPlaying = false;
+        this.bpm = 154;
+        this.beatInterval = 60 / this.bpm;
+        this.step = 0;
+      }
+
+      init() {
+        if (this.ctx) return;
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        this.ctx = new AudioContext();
+        this.isPlaying = true;
+        this.startBeatLoop();
+      }
+
+      playKick(time) {
+        if (!this.ctx) return;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        // Warm, deep, rounded kick drum
+        osc.frequency.setValueAtTime(125, time);
+        osc.frequency.exponentialRampToValueAtTime(36, time + 0.16);
+
+        gain.gain.setValueAtTime(0.9, time);
+        gain.gain.exponentialRampToValueAtTime(0.001, time + 0.28);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start(time);
+        osc.stop(time + 0.28);
+      }
+
+      playDreamChord(time, noteFreq, duration = 0.45) {
+        if (!this.ctx) return;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(noteFreq, time);
+
+        gain.gain.setValueAtTime(0.16, time);
+        gain.gain.exponentialRampToValueAtTime(0.001, time + duration);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start(time);
+        osc.stop(time + duration);
+      }
+
+      playShimmerWhoosh(time) {
+        if (!this.ctx) return;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(320, time);
+        osc.frequency.exponentialRampToValueAtTime(1100, time + 0.4);
+
+        gain.gain.setValueAtTime(0.18, time);
+        gain.gain.exponentialRampToValueAtTime(0.001, time + 0.45);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start(time);
+        osc.stop(time + 0.45);
+      }
+
+      startBeatLoop() {
+        // Romantic Major 9th Arpeggios (Dream-pop / Future Pastel vibes)
+        const notes = [261.63, 329.63, 392.00, 493.88, 587.33, 659.25, 783.99, 987.77];
+        const scheduleAhead = 0.12;
+        let nextBeatTime = this.ctx.currentTime + 0.05;
+
+        const loop = () => {
+          if (!this.isPlaying) return;
+
+          while (nextBeatTime < this.ctx.currentTime + scheduleAhead) {
+            // Heartbeat kick
+            if (this.step % 2 === 0) {
+              this.playKick(nextBeatTime);
+              triggerHeartbeatAnimation();
+            }
+
+            // Melodic Dream Chords
+            const note = notes[this.step % notes.length];
+            this.playDreamChord(nextBeatTime, note, 0.35);
+
+            if (this.step % 4 === 2) {
+              this.playDreamChord(nextBeatTime, note * 1.33, 0.5);
+            }
+
+            this.step++;
+            nextBeatTime += (this.beatInterval / 2);
+          }
+          requestAnimationFrame(loop);
+        };
+        loop();
+      }
+    }
+
+    const audio = new AudioEngine();
+
+    /* =====================================================================
+       THREE.JS ENGINE: 18,000 LUMINOUS PASTEL PARTICLES
+       ===================================================================== */
+    const PARTICLE_COUNT = 18000;
+    const canvas3D = document.getElementById('webgl-canvas');
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas3D, antialias: true, alpha: true, powerPreference: "high-performance" });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x08030b, 0.0016);
+
+    const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 2000);
+    camera.position.z = 280;
+
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(PARTICLE_COUNT * 3);
+    const targetPositions = new Float32Array(PARTICLE_COUNT * 3);
+    const colors = new Float32Array(PARTICLE_COUNT * 3);
+    const sizes = new Float32Array(PARTICLE_COUNT);
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const i3 = i * 3;
+      positions[i3] = (Math.random() - 0.5) * 800;
+      positions[i3 + 1] = (Math.random() - 0.5) * 800;
+      positions[i3 + 2] = (Math.random() - 0.5) * 800;
+
+      targetPositions[i3] = positions[i3];
+      targetPositions[i3 + 1] = positions[i3 + 1];
+      targetPositions[i3 + 2] = positions[i3 + 2];
+
+      colors[i3] = 1.0;
+      colors[i3 + 1] = 0.52;
+      colors[i3 + 2] = 0.70;
+
+      sizes[i] = Math.random() * 2.8 + 1.2;
+    }
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+
+    // Multi-layer Soft Pastel Bokeh Particle Texture
+    function createPastelTexture() {
+      const c = document.createElement('canvas');
+      c.width = 64;
+      c.height = 64;
+      const ctx = c.getContext('2d');
+      const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+      grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
+      grad.addColorStop(0.25, 'rgba(255, 174, 192, 0.95)');
+      grad.addColorStop(0.55, 'rgba(216, 180, 254, 0.45)');
+      grad.addColorStop(0.85, 'rgba(255, 133, 179, 0.15)');
+      grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 64, 64);
+      return new THREE.CanvasTexture(c);
+    }
+
+    const material = new THREE.PointsMaterial({
+      size: 5.2,
+      map: createPastelTexture(),
+      vertexColors: true,
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+
+    const particleSystem = new THREE.Points(geometry, material);
+    scene.add(particleSystem);
+
+    /* =====================================================================
+       MATHEMATICAL TARGETS: NON-STOP CONTINUOUS MORPHING
+       ===================================================================== */
+    // 1. Volumetric 3D Heart (Taubin Solid Volume)
+    function generateHeartShape() {
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        const i3 = i * 3;
+        const t = Math.PI * 2 * Math.random();
+        const u = Math.PI * (Math.random() - 0.5);
+        const r = Math.cbrt(Math.random());
+
+        const x = 16 * Math.pow(Math.sin(t), 3);
+        const y = 13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t);
+        const z = u * 16;
+
+        const scale = 7.6 * r;
+        targetPositions[i3] = x * scale;
+        targetPositions[i3 + 1] = y * scale;
+        targetPositions[i3 + 2] = z * scale * (1.15 - Math.abs(x) / 32);
+      }
+    }
+
+    // 2. Hypnotic Cosmic Eye with Heart Pupil
+    function generateEyeShape() {
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        const i3 = i * 3;
+        const ratio = i / PARTICLE_COUNT;
+
+        if (ratio < 0.26) {
+          // Heart Pupil
+          const t = Math.PI * 2 * Math.random();
+          const r = Math.sqrt(Math.random()) * 24;
+          targetPositions[i3] = (16 * Math.pow(Math.sin(t), 3)) * (r / 20);
+          targetPositions[i3 + 1] = (13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t)) * (r / 20);
+          targetPositions[i3 + 2] = (Math.random() - 0.5) * 12;
+        } else if (ratio < 0.72) {
+          // Pastel Iris
+          const angle = Math.random() * Math.PI * 2;
+          const radius = 28 + Math.random() * 58;
+          targetPositions[i3] = Math.cos(angle) * radius;
+          targetPositions[i3 + 1] = Math.sin(angle) * radius;
+          targetPositions[i3 + 2] = (Math.random() - 0.5) * 22;
+        } else {
+          // Eyelids & Lashes
+          const width = 190;
+          const height = 80;
+          const x = (Math.random() - 0.5) * width * 2;
+          const sign = Math.random() > 0.5 ? 1 : -1;
+          const y = sign * height * Math.cos((x / (width * 2)) * Math.PI) + (Math.random() - 0.5) * 16;
+          targetPositions[i3] = x;
+          targetPositions[i3 + 1] = y;
+          targetPositions[i3 + 2] = (Math.random() - 0.5) * 45;
+        }
+      }
+    }
+
+    // 3. Hyperspace Pastel Love Tunnel
+    function generateTunnelShape() {
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        const i3 = i * 3;
+        const t = Math.random() * Math.PI * 2;
+        const z = (Math.random() - 0.5) * 1300;
+        const radius = 65 + Math.sin(z * 0.018) * 25 + Math.random() * 18;
+
+        targetPositions[i3] = Math.cos(t) * radius;
+        targetPositions[i3 + 1] = Math.sin(t) * radius;
+        targetPositions[i3 + 2] = z;
+      }
+    }
+
+    // 4. Sacred Pastel Mandala (12-Fold Blossom)
+    function generateMandalaShape() {
+      const arms = 12;
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        const i3 = i * 3;
+        const armIndex = i % arms;
+        const baseAngle = (armIndex / arms) * Math.PI * 2;
+        const dist = Math.random() * 160;
+        const spiralAngle = baseAngle + dist * 0.032;
+
+        const offsetX = Math.sin(dist * 0.09) * 28;
+        targetPositions[i3] = Math.cos(spiralAngle) * dist + offsetX;
+        targetPositions[i3 + 1] = Math.sin(spiralAngle) * dist;
+        targetPositions[i3 + 2] = Math.cos(dist * 0.07) * 40;
+      }
+    }
+
+    // 5. Pastel Supernova Explosion
+    function generateSupernovaShape() {
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        const i3 = i * 3;
+        const theta = Math.random() * Math.PI * 2;
+        const phi = Math.acos((Math.random() * 2) - 1);
+        const speed = Math.pow(Math.random(), 2) * 360 + 50;
+
+        targetPositions[i3] = speed * Math.sin(phi) * Math.cos(theta);
+        targetPositions[i3 + 1] = speed * Math.sin(phi) * Math.sin(theta);
+        targetPositions[i3 + 2] = speed * Math.cos(phi);
+      }
+    }
+
+    /* =====================================================================
+       SOPHISTICATED MODERN NEON PASTEL PALETTES
+       ===================================================================== */
+    const PASTEL_PALETTES = [
+      // 0: Soft Bubblegum & Ethereal Lilac
+      { primary: [1.0, 0.52, 0.70], secondary: [0.85, 0.71, 1.0], accent: [1.0, 0.94, 0.97] },
+      // 1: Rose Quartz & Aurora Mint Glow
+      { primary: [1.0, 0.68, 0.75], secondary: [0.65, 0.95, 0.99], accent: [0.98, 0.81, 0.91] },
+      // 2: Pastel Peachy Blossom & Lavender Mist
+      { primary: [1.0, 0.60, 0.68], secondary: [0.90, 0.68, 0.98], accent: [1.0, 0.88, 0.75] },
+      // 3: Champagne Pearl & Baby Pink Neon
+      { primary: [1.0, 0.55, 0.78], secondary: [1.0, 0.96, 0.78], accent: [0.82, 0.96, 0.87] }
+    ];
+
+    let currentPaletteIndex = 0;
+    function updateColors(paletteIndex) {
+      const pal = PASTEL_PALETTES[paletteIndex % PASTEL_PALETTES.length];
+      const colorAttr = geometry.attributes.color;
+
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        const i3 = i * 3;
+        const factor = (i % 3);
+        let c = pal.primary;
+        if (factor === 1) c = pal.secondary;
+        if (factor === 2) c = pal.accent;
+
+        colorAttr.array[i3] = c[0] + (Math.random() - 0.5) * 0.08;
+        colorAttr.array[i3 + 1] = c[1] + (Math.random() - 0.5) * 0.08;
+        colorAttr.array[i3 + 2] = c[2] + (Math.random() - 0.5) * 0.08;
+      }
+      colorAttr.needsUpdate = true;
+    }
+
+    /* =====================================================================
+       CONTINUOUS SCENE CONTROLLER (Morphs every 3.5s)
+       ===================================================================== */
+    const PHASES = [
+      { name: "ÁNH MẮT ĐẮM SAY", fn: generateEyeShape, camZ: 210, rotSpeed: 0.016, word: "ÁNH NHÌN TÌNH YÊU 🌸" },
+      { name: "TRÁI TIM HỒNG PASTEL", fn: generateHeartShape, camZ: 250, rotSpeed: 0.026, word: "TRÁI TIM ĐẬP RỘN RÀNG 💕" },
+      { name: "ĐƯỜNG HẦM MỘNG MƠ", fn: generateTunnelShape, camZ: 95, rotSpeed: 0.046, word: "LẠC VÀO TÌNH YÊU ✨" },
+      { name: "VŨ ĐIỆU HOA ĐỐI XỨNG", fn: generateMandalaShape, camZ: 280, rotSpeed: 0.032, word: "NGỌT NGÀO VÔ TẬN 💫" },
+      { name: "BÙNG NỔ CẢM XÚC", fn: generateSupernovaShape, camZ: 330, rotSpeed: 0.052, word: "YÊU BẠN VÔ HẠN 💖" }
+    ];
+
+    let currentPhaseIndex = 0;
+    const phaseBadge = document.getElementById('phase-badge');
+    const flashEl = document.getElementById('flash');
+
+    function flashBang(color = "#ffaec0") {
+      flashEl.style.background = color;
+      flashEl.style.opacity = '0.75';
+      setTimeout(() => {
+        flashEl.style.opacity = '0';
+      }, 200);
+    }
+
+    function createWordBurst(text, color) {
+      const el = document.createElement('div');
+      el.className = 'word-burst';
+      el.innerText = text;
+      el.style.color = color;
+      el.style.left = (window.innerWidth / 2) + 'px';
+      el.style.top = (window.innerHeight / 2) + 'px';
+      document.body.appendChild(el);
+
+      gsap.fromTo(el, 
+        { scale: 0.3, opacity: 1, rotation: (Math.random() - 0.5) * 16 },
+        { 
+          scale: 2.1, 
+          opacity: 0, 
+          duration: 1.5, 
+          ease: "power2.out",
+          onComplete: () => el.remove() 
+        }
+      );
+    }
+
+    function transitionToNextPhase() {
+      currentPhaseIndex = (currentPhaseIndex + 1) % PHASES.length;
+      currentPaletteIndex = (currentPaletteIndex + 1) % PASTEL_PALETTES.length;
+      const phase = PHASES[currentPhaseIndex];
+
+      phase.fn();
+      updateColors(currentPaletteIndex);
+
+      flashBang(currentPhaseIndex % 2 === 0 ? '#ff85b3' : '#d8b4fe');
+      audio.playShimmerWhoosh(audio.ctx ? audio.ctx.currentTime : 0);
+
+      phaseBadge.innerText = phase.name;
+      const pal = PASTEL_PALETTES[currentPaletteIndex];
+      const rgbColor = `rgb(${Math.round(pal.primary[0]*255)}, ${Math.round(pal.primary[1]*255)}, ${Math.round(pal.primary[2]*255)})`;
+      phaseBadge.style.color = rgbColor;
+      phaseBadge.style.borderColor = `rgba(${Math.round(pal.primary[0]*255)}, ${Math.round(pal.primary[1]*255)}, ${Math.round(pal.primary[2]*255)}, 0.45)`;
+      createWordBurst(phase.word, rgbColor);
+
+      gsap.to(camera.position, {
+        z: phase.camZ,
+        duration: 2.2,
+        ease: "expo.out"
+      });
+    }
+
+    let heartScale = 1.0;
+    function triggerHeartbeatAnimation() {
+      heartScale = 1.34;
+      gsap.to({ val: 1.34 }, {
+        val: 1.0,
+        duration: 0.36,
+        ease: "power2.out",
+        onUpdate: function() {
+          heartScale = this.targets()[0].val;
+        }
+      });
+    }
+
+    /* =====================================================================
+       2D OVERLAY: MODERN PASTEL VECTOR EYES & GLOWING LASHES
+       ===================================================================== */
+    const overlayCanvas = document.getElementById('overlay-canvas');
+    const ctx2D = overlayCanvas.getContext('2d');
+
+    function resizeCanvas() {
+      overlayCanvas.width = window.innerWidth;
+      overlayCanvas.height = window.innerHeight;
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    let eyeBlinkProgress = 0;
+    let eyeBlinkTimer = 0;
+
+    function drawPastelEye(cx, cy, scale) {
+      ctx2D.save();
+      ctx2D.translate(cx, cy);
+      ctx2D.scale(scale, scale * (1 - eyeBlinkProgress * 0.92));
+
+      const pal = PASTEL_PALETTES[currentPaletteIndex];
+      const glowPink = `rgba(${Math.round(pal.primary[0]*255)}, ${Math.round(pal.primary[1]*255)}, ${Math.round(pal.primary[2]*255)}, 0.85)`;
+      const glowMint = `rgba(${Math.round(pal.secondary[0]*255)}, ${Math.round(pal.secondary[1]*255)}, ${Math.round(pal.secondary[2]*255)}, 0.7)`;
+
+      // Elegant Almond Contour
+      ctx2D.beginPath();
+      ctx2D.moveTo(-105, 0);
+      ctx2D.quadraticCurveTo(0, -68, 105, 0);
+      ctx2D.quadraticCurveTo(0, 68, -105, 0);
+      ctx2D.closePath();
+
+      ctx2D.strokeStyle = glowPink;
+      ctx2D.lineWidth = 3.5;
+      ctx2D.shadowColor = glowPink;
+      ctx2D.shadowBlur = 30;
+      ctx2D.stroke();
+
+      // Soft Iris Ring
+      ctx2D.beginPath();
+      ctx2D.arc(0, 0, 38, 0, Math.PI * 2);
+      ctx2D.fillStyle = glowMint;
+      ctx2D.shadowColor = glowMint;
+      ctx2D.shadowBlur = 20;
+      ctx2D.fill();
+      ctx2D.stroke();
+
+      // Pastel Heart Pupil
+      ctx2D.beginPath();
+      const hScale = 1.25 * heartScale;
+      ctx2D.moveTo(0, 10 * hScale);
+      ctx2D.bezierCurveTo(-15 * hScale, -8 * hScale, -30 * hScale, 15 * hScale, 0, 35 * hScale);
+      ctx2D.bezierCurveTo(30 * hScale, 15 * hScale, 15 * hScale, -8 * hScale, 0, 10 * hScale);
+      ctx2D.fillStyle = '#fff5f8';
+      ctx2D.shadowColor = '#fff';
+      ctx2D.shadowBlur = 25;
+      ctx2D.fill();
+
+      ctx2D.restore();
+    }
+
+    function render2DOverlays(time) {
+      ctx2D.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
+
+      eyeBlinkTimer += 0.04;
+      if (Math.sin(eyeBlinkTimer * 2) > 0.94) {
+        eyeBlinkProgress = Math.min(1, eyeBlinkProgress + 0.35);
+      } else {
+        eyeBlinkProgress = Math.max(0, eyeBlinkProgress - 0.25);
+      }
+
+      // Draw eyes during Phase 0 or Phase 3
+      if (currentPhaseIndex === 0 || currentPhaseIndex === 3) {
+        const midX = overlayCanvas.width / 2;
+        const midY = overlayCanvas.height / 2;
+        const eyeSpacing = Math.min(overlayCanvas.width * 0.22, 165);
+        const scale = Math.min(overlayCanvas.width / 820, 1.15) * (1 + (heartScale - 1) * 0.45);
+
+        drawPastelEye(midX - eyeSpacing, midY, scale);
+        drawPastelEye(midX + eyeSpacing, midY, scale);
+
+        // Soft laser bridge
+        ctx2D.beginPath();
+        ctx2D.moveTo(midX - eyeSpacing, midY);
+        ctx2D.lineTo(midX + eyeSpacing, midY);
+        ctx2D.strokeStyle = 'rgba(255, 240, 248, 0.45)';
+        ctx2D.lineWidth = 2 + (heartScale - 1) * 5;
+        ctx2D.shadowBlur = 18;
+        ctx2D.shadowColor = '#ff85b3';
+        ctx2D.stroke();
+      }
+    }
+
+    /* =====================================================================
+       ANIMATION LOOP (Continuous Fast Transformations)
+       ===================================================================== */
+    let lastTime = 0;
+    let phaseTimer = 0;
+    const PHASE_DURATION = 3.5;
+
+    function animate(now) {
+      requestAnimationFrame(animate);
+      const delta = (now - lastTime) * 0.001 || 0.016;
+      lastTime = now;
+
+      phaseTimer += delta;
+      if (phaseTimer >= PHASE_DURATION) {
+        phaseTimer = 0;
+        transitionToNextPhase();
+      }
+
+      // Smooth Morphing
+      const posAttr = geometry.attributes.position;
+      const posArr = posAttr.array;
+      const morphSpeed = 0.082 + (heartScale - 1) * 0.05;
+
+      for (let i = 0; i < PARTICLE_COUNT * 3; i++) {
+        posArr[i] += (targetPositions[i] - posArr[i]) * morphSpeed;
+      }
+      posAttr.needsUpdate = true;
+
+      // Rotation & Scale
+      const phase = PHASES[currentPhaseIndex];
+      particleSystem.rotation.y += phase.rotSpeed;
+      particleSystem.rotation.x = Math.sin(now * 0.001) * 0.14;
+      particleSystem.scale.set(heartScale, heartScale, heartScale);
+
+      renderer.render(scene, camera);
+      render2DOverlays(now * 0.001);
+    }
+
+    generateEyeShape();
+    updateColors(0);
+    animate(0);
+
+    /* =====================================================================
+       INTERACTIONS
+       ===================================================================== */
+    const startScreen = document.getElementById('start-screen');
+
+    function startExperience() {
+      audio.init();
+      startScreen.classList.add('hidden');
+      flashBang('#ff85b3');
+      transitionToNextPhase();
+    }
+
+    startScreen.addEventListener('click', startExperience);
+    startScreen.addEventListener('touchstart', startExperience);
+
+    window.addEventListener('pointerdown', (e) => {
+      if (!startScreen.classList.contains('hidden')) return;
+
+      audio.playKick(audio.ctx ? audio.ctx.currentTime : 0);
+      triggerHeartbeatAnimation();
+      flashBang('rgba(255, 174, 192, 0.45)');
+
+      particleSystem.rotation.y += 0.28;
+      createWordBurst("🌸 ĐẮM SAY ✨", "#ff85b3");
+    });
+  </script>
+</body>
+</html>
