@@ -3,22 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>VƯỜN HOA & TRÁI TIM PASTEL ✨ Siêu Mượt</title>
+  <title>AESTHETIC DREAM ✨</title>
   
-  <meta property="og:title" content="Vườn Hoa & Trái Tim Dành Riêng Cho Bạn 🌸💖">
-  <meta property="og:description" content="Chuyển động hoa và trái tim biến hình liên tục, êm dịu, tương tác theo con trỏ chuột.">
+  <meta property="og:title" content="A Little Dream For You 🌸✨">
+  <meta property="og:description" content="Khám phá 10 chuyển động ánh sáng pastel dịu dàng, lãng mạn và tinh tế.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80">
   <meta property="og:type" content="website">
 
   <style>
-    :root {
-      --pastel-cherry: #ffb7c5;
-      --pastel-rose: #ff85a1;
-      --pastel-blush: #fbcfe8;
-      --pastel-lilac: #e9d5ff;
-      --bg-dark: #08020a;
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -31,19 +23,19 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background-color: var(--bg-dark);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      background-color: #060208;
+      font-family: -apple-system, BlinkMacSystemFont, "Didot", "Playfair Display", "Cinzel", serif;
       cursor: none;
     }
 
-    /* Ambient Glow */
+    /* Ambient Silk Glow */
     .ambient-glow {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 50% 50%, rgba(255, 133, 161, 0.14) 0%, rgba(233, 213, 255, 0.06) 45%, rgba(8, 2, 10, 0.98) 85%);
+      background: radial-gradient(circle at 50% 50%, rgba(255, 175, 195, 0.13) 0%, rgba(230, 205, 255, 0.05) 50%, rgba(6, 2, 8, 0.98) 85%);
       z-index: 0;
       pointer-events: none;
     }
@@ -67,38 +59,41 @@
       pointer-events: none;
     }
 
-    /* Floating Flower Cursor */
+    /* Minimalist Elegant Cursor */
     #cursor-follower {
       position: fixed;
       top: 0;
       left: 0;
-      width: 36px;
-      height: 36px;
-      margin-left: -18px;
-      margin-top: -18px;
+      width: 28px;
+      height: 28px;
+      margin-left: -14px;
+      margin-top: -14px;
       border-radius: 50%;
-      border: 1.5px solid rgba(255, 183, 197, 0.85);
-      background: radial-gradient(circle, rgba(255, 183, 197, 0.35) 0%, rgba(233, 213, 255, 0.05) 70%, transparent 100%);
-      box-shadow: 0 0 20px rgba(255, 133, 161, 0.6), 0 0 40px rgba(233, 213, 255, 0.3);
+      border: 1px solid rgba(255, 195, 210, 0.7);
+      background: radial-gradient(circle, rgba(255, 195, 210, 0.25) 0%, rgba(235, 210, 255, 0.04) 70%, transparent 100%);
+      box-shadow: 0 0 18px rgba(255, 160, 185, 0.5), 0 0 35px rgba(230, 200, 255, 0.25);
       pointer-events: none;
       z-index: 99;
       transform: translate3d(-100px, -100px, 0);
     }
 
-    #cursor-icon {
+    #cursor-dot {
       position: fixed;
       top: 0;
       left: 0;
-      font-size: 14px;
-      margin-left: -7px;
-      margin-top: -8px;
+      width: 4px;
+      height: 4px;
+      margin-left: -2px;
+      margin-top: -2px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 10px #ffb3c6, 0 0 18px #fff;
       pointer-events: none;
       z-index: 100;
       transform: translate3d(-100px, -100px, 0);
-      filter: drop-shadow(0 0 8px #ff85a1);
     }
 
-    /* Start Screen */
+    /* Aesthetic Minimalist Start Overlay */
     #start-screen {
       position: absolute;
       top: 0;
@@ -110,9 +105,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: radial-gradient(circle at center, rgba(28, 8, 32, 0.9) 0%, rgba(8, 2, 10, 0.98) 78%);
-      backdrop-filter: blur(20px);
-      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.2s;
+      background: radial-gradient(circle at center, rgba(20, 6, 24, 0.9) 0%, rgba(6, 2, 8, 0.98) 78%);
+      backdrop-filter: blur(24px);
+      transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.4s;
       cursor: pointer;
     }
     #start-screen.hidden {
@@ -121,156 +116,83 @@
       pointer-events: none;
     }
 
-    .flower-box {
+    .shimmer-center {
       position: relative;
-      width: 130px;
-      height: 130px;
+      width: 100px;
+      height: 100px;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
-    .petal-ring {
+    .shimmer-halo {
       position: absolute;
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      border: 1.5px solid rgba(255, 183, 197, 0.6);
-      box-shadow: 0 0 25px rgba(255, 183, 197, 0.35);
-      animation: floralRipple 3.5s infinite ease-out;
+      border: 1px solid rgba(255, 195, 210, 0.5);
+      box-shadow: 0 0 25px rgba(255, 175, 195, 0.35);
+      animation: gentleRipple 3.6s infinite ease-out;
     }
-    .petal-ring:nth-child(2) {
-      animation-delay: 1.2s;
-      border-color: rgba(244, 114, 182, 0.45);
-    }
-    .petal-ring:nth-child(3) {
-      animation-delay: 2.4s;
-      border-color: rgba(233, 213, 255, 0.4);
+    .shimmer-halo:nth-child(2) {
+      animation-delay: 1.8s;
+      border-color: rgba(230, 205, 255, 0.4);
     }
 
-    @keyframes floralRipple {
-      0% { transform: scale(0.65); opacity: 0.9; }
+    @keyframes gentleRipple {
+      0% { transform: scale(0.7); opacity: 0.8; }
       100% { transform: scale(2.4); opacity: 0; }
     }
 
-    .bloom-center-icon {
-      font-size: 60px;
-      animation: gentleBloom 3.2s infinite ease-in-out;
-      filter: drop-shadow(0 0 30px rgba(255, 133, 161, 0.95));
+    .pearl-icon {
+      font-size: 32px;
+      animation: breatheIcon 3s infinite ease-in-out;
+      filter: drop-shadow(0 0 20px rgba(255, 185, 205, 0.9));
     }
 
-    @keyframes gentleBloom {
-      0%, 100% { transform: scale(1) rotate(0deg); }
-      50% { transform: scale(1.15) rotate(10deg); }
+    @keyframes breatheIcon {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.15); opacity: 1; }
     }
 
-    .start-prompt {
-      color: #fff;
-      font-size: 1.2rem;
-      font-weight: 500;
-      letter-spacing: 6px;
+    .start-title {
+      color: rgba(255, 240, 245, 0.9);
+      font-size: 0.95rem;
+      letter-spacing: 7px;
       text-transform: uppercase;
-      text-shadow: 0 0 16px rgba(255, 183, 197, 0.9), 0 0 35px rgba(233, 213, 255, 0.7);
-      padding: 0 20px;
-      text-align: center;
-    }
-    .start-subprompt {
-      color: rgba(255, 240, 246, 0.7);
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      margin-top: 14px;
-      text-align: center;
       font-weight: 300;
-    }
-
-    /* Minimalist HUD */
-    #hud {
-      position: absolute;
-      top: 24px;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 28px;
-      z-index: 5;
-      pointer-events: none;
-    }
-
-    .phase-badge {
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--pastel-cherry);
-      letter-spacing: 2.5px;
-      background: rgba(255, 183, 197, 0.08);
-      border: 1px solid rgba(255, 183, 197, 0.28);
-      padding: 8px 20px;
-      border-radius: 40px;
-      backdrop-filter: blur(14px);
-      box-shadow: 0 4px 20px rgba(255, 183, 197, 0.1);
-      transition: all 1s ease;
-    }
-
-    .hint-label {
-      font-size: 0.78rem;
-      color: rgba(255, 240, 246, 0.6);
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px rgba(233, 213, 255, 0.5);
-    }
-
-    /* Floating Words */
-    .word-burst {
-      position: absolute;
-      pointer-events: none;
-      font-weight: 600;
-      font-size: clamp(1.6rem, 4.5vw, 3rem);
-      letter-spacing: 8px;
-      text-transform: uppercase;
-      text-shadow: 0 0 25px currentColor, 0 0 50px currentColor;
-      transform: translate(-50%, -50%);
-      z-index: 4;
-      white-space: nowrap;
-      filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
+      text-shadow: 0 0 15px rgba(255, 185, 205, 0.7);
     }
   </style>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
 
   <div class="ambient-glow"></div>
 
-  <!-- Custom Cursor -->
+  <!-- Minimalist Custom Cursor -->
   <div id="cursor-follower"></div>
-  <div id="cursor-icon">🌸</div>
+  <div id="cursor-dot"></div>
 
-  <!-- Canvases -->
+  <!-- Canvases (Zero Clutter, Zero Text) -->
   <canvas id="webgl-canvas"></canvas>
   <canvas id="overlay-canvas"></canvas>
 
-  <!-- HUD -->
-  <div id="hud">
-    <div class="phase-badge" id="phase-badge">ĐÓA HOA HỒNG BIẾN HÌNH</div>
-    <div class="hint-label">🌸 Rê chuột dẫn lối cánh hoa</div>
-  </div>
-
-  <!-- Start Screen -->
+  <!-- Clean Start Screen -->
   <div id="start-screen">
-    <div class="flower-box">
-      <div class="petal-ring"></div>
-      <div class="petal-ring"></div>
-      <div class="petal-ring"></div>
-      <div class="bloom-center-icon">🌸</div>
+    <div class="shimmer-center">
+      <div class="shimmer-halo"></div>
+      <div class="shimmer-halo"></div>
+      <div class="pearl-icon">✧</div>
     </div>
-    <div class="start-prompt">CHẠM ĐỂ BẮT ĐẦU</div>
-    <div class="start-subprompt">Hoa & Trái tim biến hình liên tục, êm dịu, siêu mượt</div>
+    <div class="start-title">CHẠM ĐỂ MỞ</div>
   </div>
 
   <script>
     /* =====================================================================
-       OPTIMIZED MOUSE TRACKING
+       SILKY MOUSE TRACKING
        ===================================================================== */
     const mouse = {
       x: 0,
@@ -280,15 +202,11 @@
       screenX: window.innerWidth / 2,
       screenY: window.innerHeight / 2,
       targetScreenX: window.innerWidth / 2,
-      targetScreenY: window.innerHeight / 2,
-      vx: 0,
-      vy: 0,
-      lastScreenX: window.innerWidth / 2,
-      lastScreenY: window.innerHeight / 2
+      targetScreenY: window.innerHeight / 2
     };
 
     const cursorFollower = document.getElementById('cursor-follower');
-    const cursorIcon = document.getElementById('cursor-icon');
+    const cursorDot = document.getElementById('cursor-dot');
 
     function onPointerMove(clientX, clientY) {
       mouse.targetScreenX = clientX;
@@ -296,9 +214,9 @@
       mouse.targetX = (clientX / window.innerWidth) * 2 - 1;
       mouse.targetY = -(clientY / window.innerHeight) * 2 + 1;
 
-      // Spawn subtle blossom trail
-      if (Math.random() > 0.4) {
-        spawnMouseBlossom(clientX, clientY);
+      // Spawn soft fairy stardust
+      if (Math.random() > 0.3) {
+        spawnFairySpark(clientX, clientY);
       }
     }
 
@@ -308,19 +226,15 @@
     }, { passive: true });
 
     /* =====================================================================
-       AUDIO: RELAXING HARP & PAD ROMANCE
+       ETHEREAL MUSIC BOX & AMBIENT HARP
        ===================================================================== */
-    class RomanticAudio {
+    class AmbientAudio {
       constructor() {
         this.ctx = null;
         this.isPlaying = false;
-        this.chords = [
-          [174.61, 261.63, 329.63, 392.00], // Fmaj7
-          [196.00, 246.94, 293.66, 392.00], // G6
-          [164.81, 246.94, 329.63, 392.00], // Em7
-          [220.00, 261.63, 329.63, 440.00]  // Am7
-        ];
-        this.idx = 0;
+        // French impressionist warm chords (Debussy/Ravel aesthetic)
+        this.notes = [261.63, 329.63, 392.00, 493.88, 587.33, 659.25, 783.99, 987.77];
+        this.step = 0;
       }
 
       init() {
@@ -331,7 +245,7 @@
         this.loop();
       }
 
-      playPluck(freq, time) {
+      playBell(freq, time) {
         if (!this.ctx) return;
         const osc = this.ctx.createOscillator();
         const gain = this.ctx.createGain();
@@ -339,32 +253,36 @@
         osc.frequency.setValueAtTime(freq, time);
 
         gain.gain.setValueAtTime(0.0001, time);
-        gain.gain.exponentialRampToValueAtTime(0.045, time + 0.08);
-        gain.gain.exponentialRampToValueAtTime(0.0001, time + 3.2);
+        gain.gain.exponentialRampToValueAtTime(0.038, time + 0.06);
+        gain.gain.exponentialRampToValueAtTime(0.0001, time + 3.8);
 
         osc.connect(gain);
         gain.connect(this.ctx.destination);
         osc.start(time);
-        osc.stop(time + 3.2);
+        osc.stop(time + 3.8);
       }
 
       loop() {
         if (!this.isPlaying) return;
         const now = this.ctx.currentTime;
-        const chord = this.chords[this.idx];
-        chord.forEach((note, i) => {
-          this.playPluck(note, now + i * 0.25);
-        });
-        this.idx = (this.idx + 1) % this.chords.length;
-        setTimeout(() => this.loop(), 3600);
+        const pattern = [0, 2, 4, 3, 5, 4, 6, 7];
+        const note = this.notes[pattern[this.step % pattern.length]];
+        
+        this.playBell(note, now);
+        if (this.step % 4 === 0) {
+          this.playBell(note * 0.5, now, 4.5); // Warm bass foundation
+        }
+
+        this.step++;
+        setTimeout(() => this.loop(), 680);
       }
     }
-    const audio = new RomanticAudio();
+    const audio = new AmbientAudio();
 
     /* =====================================================================
-       THREE.JS: 7,500 PARTICLES (LOCKED 60-120 FPS ZERO LAG)
+       THREE.JS: 7,200 HIGH-DEFINITION STARDUST PARTICLES (ZERO LAG)
        ===================================================================== */
-    const PARTICLE_COUNT = 7500;
+    const PARTICLE_COUNT = 7200;
     const canvas3D = document.getElementById('webgl-canvas');
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas3D,
@@ -376,32 +294,32 @@
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
-    camera.position.z = 270;
+    const camera = new THREE.PerspectiveCamera(58, window.innerWidth / window.innerHeight, 0.1, 2000);
+    camera.position.z = 280;
 
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(PARTICLE_COUNT * 3);
     const colors = new Float32Array(PARTICLE_COUNT * 3);
 
-    // Initial positions
     for (let i = 0; i < PARTICLE_COUNT * 3; i++) {
-      positions[i] = (Math.random() - 0.5) * 400;
+      positions[i] = (Math.random() - 0.5) * 350;
       colors[i] = 1.0;
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-    // Particle Texture
-    function createGlowTexture() {
+    // Refined Soft Starlight Texture
+    function createStarlightTexture() {
       const c = document.createElement('canvas');
       c.width = 64;
       c.height = 64;
       const ctx = c.getContext('2d');
       const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
       grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
-      grad.addColorStop(0.25, 'rgba(255, 183, 197, 0.95)');
-      grad.addColorStop(0.6, 'rgba(244, 114, 182, 0.35)');
+      grad.addColorStop(0.2, 'rgba(255, 200, 218, 0.95)');
+      grad.addColorStop(0.5, 'rgba(235, 210, 255, 0.4)');
+      grad.addColorStop(0.8, 'rgba(255, 175, 195, 0.1)');
       grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, 64, 64);
@@ -409,8 +327,8 @@
     }
 
     const material = new THREE.PointsMaterial({
-      size: 6.8,
-      map: createGlowTexture(),
+      size: 6.2,
+      map: createStarlightTexture(),
       vertexColors: true,
       transparent: true,
       blending: THREE.AdditiveBlending,
@@ -421,109 +339,154 @@
     scene.add(particleSystem);
 
     /* =====================================================================
-       PRECOMPUTED 4 SHAPES (FLOWERS & HEARTS ONLY)
+       10 ELEGANT, DREAMY SHAPES (CURATED FOR WOMEN / HIGH AESTHETIC TASTE)
        ===================================================================== */
-    // Shape 0: 3D Volumetric Heart (Trái Tim Pha Lê)
-    const shapeHeart = new Float32Array(PARTICLE_COUNT * 3);
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      const i3 = i * 3;
-      const t = Math.PI * 2 * (i / PARTICLE_COUNT);
-      const r = Math.pow(Math.random(), 0.5);
+    const shapes = [];
+
+    // Helper to push precomputed shape
+    function addShape(fn) {
+      const arr = new Float32Array(PARTICLE_COUNT * 3);
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        const p = fn(i, i / PARTICLE_COUNT);
+        const i3 = i * 3;
+        arr[i3] = p[0];
+        arr[i3 + 1] = p[1];
+        arr[i3 + 2] = p[2];
+      }
+      shapes.push(arr);
+    }
+
+    // 1. Crystal Volumetric Heart (Trái Tim Pha Lê Trong Suốt)
+    addShape((i, f) => {
+      const t = Math.PI * 2 * f;
+      const r = Math.pow(Math.random(), 0.55);
       const u = (Math.random() - 0.5) * Math.PI;
+      const x = 16 * Math.pow(Math.sin(t), 3) * 8.4 * r;
+      const y = (13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t)) * 8.4 * r;
+      const z = u * 15 * (1.1 - Math.abs(x) / 32);
+      return [x, y, z];
+    });
 
-      const x = 16 * Math.pow(Math.sin(t), 3);
-      const y = 13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t);
-      const z = u * 15;
-
-      const scale = 8.2 * r;
-      shapeHeart[i3] = x * scale;
-      shapeHeart[i3 + 1] = y * scale;
-      shapeHeart[i3 + 2] = z * scale * (1.1 - Math.abs(x) / 32);
-    }
-
-    // Shape 1: 3D Blooming Rose (Đóa Hoa Hồng Nở Rộ)
-    const shapeRose = new Float32Array(PARTICLE_COUNT * 3);
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      const i3 = i * 3;
-      const fraction = i / PARTICLE_COUNT;
-      const theta = i * 2.39996; // Golden angle spiral
-      const radius = Math.sqrt(fraction) * 175;
+    // 2. Blooming French Peony / Rose (Đóa Hoa Mẫu Đơn Pháp Nở Xòe)
+    addShape((i, f) => {
+      const theta = i * 2.39996; // Golden spiral
+      const radius = Math.sqrt(f) * 175;
       const petalWave = Math.sin(theta * 5) * 16;
-      const z = Math.pow(fraction, 1.2) * 85 - 35 + petalWave;
+      const z = Math.pow(f, 1.25) * 85 - 40 + petalWave;
+      const r = radius + petalWave * 0.45;
+      return [r * Math.cos(theta), r * Math.sin(theta), z];
+    });
 
-      shapeRose[i3] = (radius + petalWave * 0.5) * Math.cos(theta);
-      shapeRose[i3 + 1] = (radius + petalWave * 0.5) * Math.sin(theta);
-      shapeRose[i3 + 2] = z;
-    }
+    // 3. Ethereal Butterfly Wings (Cánh Bướm Dạ Quang Đập Nhẹ)
+    addShape((i, f) => {
+      const t = f * Math.PI * 2;
+      // Elegant butterfly curve
+      const r = (Math.exp(Math.cos(t)) - 2 * Math.cos(4 * t) - Math.pow(Math.sin(t / 12), 5)) * 44;
+      const x = r * Math.sin(t) * 0.95;
+      const y = r * Math.cos(t) * 0.95;
+      const z = Math.abs(x) * 0.35 + (Math.random() - 0.5) * 12; // Gentle V wing depth
+      return [x, y, z];
+    });
 
-    // Shape 2: Swirling Petal Galaxy (Lốc Xoáy Cánh Hoa Vô Tận)
-    const shapeVortex = new Float32Array(PARTICLE_COUNT * 3);
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      const i3 = i * 3;
-      const arm = i % 4;
-      const dist = (i / PARTICLE_COUNT) * 210 + 15;
-      const angle = (arm / 4) * Math.PI * 2 + dist * 0.032;
-      const height = (Math.random() - 0.5) * 60;
+    // 4. Lily of the Valley Bells (Đóa Hoa Linh Lan / Chuông Tiên Rủ Nhẹ)
+    addShape((i, f) => {
+      if (f < 0.28) {
+        // Arching delicate stem
+        const t = (f / 0.28) * Math.PI * 0.9;
+        const x = Math.cos(t) * 140 - 50;
+        const y = Math.sin(t) * 130 - 30;
+        const z = (Math.random() - 0.5) * 8;
+        return [x, y, z];
+      } else {
+        // Hanging fairy bell blossoms
+        const bellId = i % 5;
+        const bellT = 0.3 + (bellId / 5) * 0.6;
+        const bx = Math.cos(bellT * Math.PI * 0.9) * 140 - 50;
+        const by = Math.sin(bellT * Math.PI * 0.9) * 130 - 30 - 18;
+        const theta = Math.random() * Math.PI * 2;
+        const br = Math.random() * 22;
+        return [bx + Math.cos(theta) * br, by - Math.random() * 28, Math.sin(theta) * br];
+      }
+    });
 
-      shapeVortex[i3] = Math.cos(angle) * dist;
-      shapeVortex[i3 + 1] = Math.sin(angle) * dist;
-      shapeVortex[i3 + 2] = height + Math.sin(dist * 0.04) * 24;
-    }
+    // 5. Princess Star Tiara / Crown (Vương Miện Ánh Sáng Công Chúa)
+    addShape((i, f) => {
+      const theta = (f - 0.5) * Math.PI * 1.35;
+      const baseR = 155;
+      const x = Math.sin(theta) * baseR;
+      const z = Math.cos(theta) * baseR * 0.45;
+      // 5 Peaks of Princess Crown
+      const peak = Math.pow(Math.abs(Math.cos(theta * 2.5)), 2) * 65;
+      const y = peak + (Math.random() - 0.5) * 14 - 30;
+      return [x, y, z];
+    });
 
-    // Shape 3: Blooming Lotus / Sakura 8-Petals (Đóa Hoa Sen / Hoa Đào 8 Cánh)
-    const shapeLotus = new Float32Array(PARTICLE_COUNT * 3);
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      const i3 = i * 3;
-      const theta = (i / PARTICLE_COUNT) * Math.PI * 2;
-      const rSpread = Math.random();
-      const petalR = (Math.pow(Math.abs(Math.sin(theta * 4)), 0.65) * 160 + 20) * rSpread;
-      const z = -Math.cos((petalR / 180) * (Math.PI / 2)) * 55 + (Math.random() - 0.5) * 12;
+    // 6. Twin Swans forming Heart Kiss (Đôi Thiên Nga Khắc Hình Trái Tim)
+    addShape((i, f) => {
+      const side = (i % 2 === 0) ? 1 : -1;
+      const t = (i / PARTICLE_COUNT) * Math.PI;
+      // Graceful neck curve forming heart contour
+      const x = side * (Math.sin(t) * 65 + Math.pow(Math.sin(t), 2) * 55);
+      const y = Math.cos(t) * 95 - 10;
+      const z = (Math.random() - 0.5) * 35;
+      return [x, y, z];
+    });
 
-      shapeLotus[i3] = petalR * Math.cos(theta);
-      shapeLotus[i3 + 1] = petalR * Math.sin(theta);
-      shapeLotus[i3 + 2] = z;
-    }
+    // 7. Silk Infinity Ribbon (Dải Ruy Băng Vô Cực Của Tình Yêu)
+    addShape((i, f) => {
+      const t = f * Math.PI * 2;
+      const scale = 175;
+      const denom = 1 + Math.sin(t) * Math.sin(t);
+      const x = (scale * Math.cos(t)) / denom;
+      const y = (scale * Math.sin(t) * Math.cos(t)) / denom;
+      const z = Math.sin(t * 2) * 45 + (Math.random() - 0.5) * 12;
+      return [x, y, z];
+    });
 
-    const SHAPES = [
-      { name: "TRÁI TIM HOA BIẾN HÌNH", data: shapeHeart, word: "TRÁI TIM ĐẮM SAY 💖" },
-      { name: "ĐÓA HOA HỒNG NỞ RỘ", data: shapeRose, word: "HOA HỒNG NGÁT HƯƠNG 🌸" },
-      { name: "LỐC XOÁY CÁNH HOA", data: shapeVortex, word: "MƯA HOA VÔ TẬN ✨" },
-      { name: "HOA ĐÀO 8 CÁNH NỞ HOA", data: shapeLotus, word: "BÌNH YÊN BÊN BẠN 💕" }
+    // 8. Celestial Floral Wreath (Vòng Nguyệt Quế Tinh Vân)
+    addShape((i, f) => {
+      const theta = f * Math.PI * 2;
+      const r = 135 + Math.sin(theta * 10) * 18 + (Math.random() - 0.5) * 15;
+      const x = Math.cos(theta) * r;
+      const y = Math.sin(theta) * r;
+      const z = Math.cos(theta * 6) * 28 + (Math.random() - 0.5) * 10;
+      return [x, y, z];
+    });
+
+    // 9. Moonlit Sakura Lotus (Đóa Sen Ánh Trăng 8 Cánh)
+    addShape((i, f) => {
+      const theta = f * Math.PI * 2;
+      const petalR = (Math.pow(Math.abs(Math.sin(theta * 4)), 0.6) * 165 + 20) * Math.sqrt(Math.random());
+      const z = -Math.cos((petalR / 185) * (Math.PI / 2)) * 52 + (Math.random() - 0.5) * 12;
+      return [petalR * Math.cos(theta), petalR * Math.sin(theta), z];
+    });
+
+    // 10. Fairy Stardust Vortex (Vòng Xoáy Bụi Tiên Ước Nguyện)
+    addShape((i, f) => {
+      const theta = Math.sqrt(f) * Math.PI * 14;
+      const r = f * 195 + 10;
+      const x = Math.cos(theta) * r;
+      const y = Math.sin(theta) * r;
+      const z = (f - 0.5) * 150 + Math.sin(r * 0.05) * 20;
+      return [x, y, z];
+    });
+
+    /* =====================================================================
+       HARMONIOUS HIGH-AESTHETIC PALETTES
+       ===================================================================== */
+    const LUXURY_PALETTES = [
+      // Rose Quartz & Pearl
+      { primary: [1.0, 0.74, 0.80], secondary: [1.0, 0.92, 0.95], accent: [0.93, 0.82, 1.0] },
+      // French Peony & Soft Champagne
+      { primary: [1.0, 0.65, 0.74], secondary: [1.0, 0.88, 0.82], accent: [1.0, 0.96, 0.92] },
+      // Fairy Mauve & Lavender Mist
+      { primary: [0.92, 0.76, 1.0], secondary: [0.82, 0.92, 1.0], accent: [1.0, 0.82, 0.90] },
+      // Starlight Gold & Pink Diamond
+      { primary: [1.0, 0.78, 0.85], secondary: [1.0, 0.92, 0.78], accent: [0.88, 0.96, 0.98] }
     ];
 
     /* =====================================================================
-       CONTINUOUS MORPHING ENGINE (CHUYỂN CẢNH LIÊN TỤC KHÔNG DỪNG - MƯỢT VÀ CHẬM)
-       ===================================================================== */
-    const CYCLE_DURATION = 6.0; // 6 seconds per smooth transition
-    let currentIdxA = 0;
-    const phaseBadge = document.getElementById('phase-badge');
-
-    function createGentleWord(text) {
-      const el = document.createElement('div');
-      el.className = 'word-burst';
-      el.innerText = text;
-      el.style.color = '#ffb7c5';
-      el.style.left = (window.innerWidth / 2) + 'px';
-      el.style.top = (window.innerHeight * 0.42) + 'px';
-      document.body.appendChild(el);
-
-      gsap.fromTo(el,
-        { scale: 0.85, opacity: 0, y: 12 },
-        {
-          scale: 1.05,
-          opacity: 0.9,
-          y: -12,
-          duration: 3.2,
-          ease: "power2.out",
-          onComplete: () => {
-            gsap.to(el, { opacity: 0, duration: 1.0, onComplete: () => el.remove() });
-          }
-        }
-      );
-    }
-
-    /* =====================================================================
-       2D CANVAS: 35 FALLING SAKURA PETALS (PRE-RENDERED SPRITES = ZERO LAG)
+       2D CANVAS: DELICATE FAIRY DUST (TINY GLOWING SPARKS ONLY)
        ===================================================================== */
     const overlayCanvas = document.getElementById('overlay-canvas');
     const ctx2D = overlayCanvas.getContext('2d');
@@ -538,235 +501,157 @@
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    // Pre-rendered offscreen sprite for petal
-    const spritePetal = document.createElement('canvas');
-    spritePetal.width = 48;
-    spritePetal.height = 48;
-    const sCtx = spritePetal.getContext('2d');
-    sCtx.translate(24, 24);
-    sCtx.beginPath();
-    sCtx.moveTo(0, -18);
-    sCtx.quadraticCurveTo(12, -7, 9, 11);
-    sCtx.quadraticCurveTo(0, 18, -9, 11);
-    sCtx.quadraticCurveTo(-12, -7, 0, -18);
-    sCtx.closePath();
-    const pGrad = sCtx.createRadialGradient(0, 0, 0, 0, 0, 18);
-    pGrad.addColorStop(0, '#fff5f8');
-    pGrad.addColorStop(0.5, '#ffb7c5');
-    pGrad.addColorStop(1, 'rgba(255, 133, 161, 0.75)');
-    sCtx.fillStyle = pGrad;
-    sCtx.shadowColor = '#ff85a1';
-    sCtx.shadowBlur = 8;
-    sCtx.fill();
-
-    // Falling Petals array
-    const PETAL_COUNT_2D = 32;
-    const fallingPetals = [];
-
-    class FastPetal {
-      constructor() {
-        this.reset(true);
-      }
-
-      reset(init = false) {
-        this.x = Math.random() * overlayCanvas.width;
-        this.y = init ? Math.random() * overlayCanvas.height : -30;
-        this.scale = Math.random() * 0.5 + 0.65;
-        this.speedY = Math.random() * 0.9 + 0.6;
-        this.speedX = Math.random() * 0.6 - 0.3;
-        this.angle = Math.random() * Math.PI * 2;
-        this.rotSpeed = (Math.random() - 0.5) * 0.02;
-        this.sway = Math.random() * Math.PI * 2;
-        this.opacity = Math.random() * 0.35 + 0.6;
-      }
-
-      update(windX, windY) {
-        this.sway += 0.015;
-        this.angle += this.rotSpeed;
-        this.x += this.speedX + Math.sin(this.sway) * 0.75 + windX;
-        this.y += this.speedY + windY;
-
-        if (this.y > overlayCanvas.height + 40 || this.x < -40 || this.x > overlayCanvas.width + 40) {
-          this.reset(false);
-        }
-      }
-
-      draw(ctx) {
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(this.angle);
-        ctx.scale(this.scale, this.scale);
-        ctx.globalAlpha = this.opacity;
-        ctx.drawImage(spritePetal, -24, -24);
-        ctx.restore();
-      }
-    }
-
-    for (let i = 0; i < PETAL_COUNT_2D; i++) {
-      fallingPetals.push(new FastPetal());
-    }
-
-    // Cursor blossom sparks
-    const mouseBlossoms = [];
-    function spawnMouseBlossom(x, y) {
-      mouseBlossoms.push({
-        x: x + (Math.random() - 0.5) * 12,
-        y: y + (Math.random() - 0.5) * 12,
-        vx: (Math.random() - 0.5) * 1.4,
-        vy: -Math.random() * 1.5 - 0.4,
-        size: Math.random() * 6 + 7,
-        alpha: 0.95,
-        type: Math.random() > 0.4 ? '🌸' : '💖'
+    const fairySparks = [];
+    function spawnFairySpark(x, y) {
+      fairySparks.push({
+        x: x + (Math.random() - 0.5) * 14,
+        y: y + (Math.random() - 0.5) * 14,
+        vx: (Math.random() - 0.5) * 0.8,
+        vy: -Math.random() * 1.1 - 0.3,
+        size: Math.random() * 2.5 + 1.2,
+        alpha: 0.9,
+        char: Math.random() > 0.65 ? '✧' : null
       });
-      if (mouseBlossoms.length > 40) mouseBlossoms.shift();
+      if (fairySparks.length > 50) fairySparks.shift();
     }
 
-    function render2D() {
+    function renderFairySparks() {
       ctx2D.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
 
-      mouse.vx = mouse.screenX - mouse.lastScreenX;
-      mouse.vy = mouse.screenY - mouse.lastScreenY;
-      mouse.lastScreenX = mouse.screenX;
-      mouse.lastScreenY = mouse.screenY;
+      for (let i = fairySparks.length - 1; i >= 0; i--) {
+        const s = fairySparks[i];
+        s.x += s.vx;
+        s.y += s.vy;
+        s.alpha -= 0.015;
 
-      // Draw Falling Petals with wind influence
-      fallingPetals.forEach(petal => {
-        const dx = petal.x - mouse.screenX;
-        const dy = petal.y - mouse.screenY;
-        const distSq = dx * dx + dy * dy;
-        let windX = 0;
-        let windY = 0;
-
-        if (distSq < 16000) {
-          const dist = Math.sqrt(distSq);
-          const force = (1 - dist / 126) * 3;
-          windX = (dx / dist) * force + mouse.vx * 0.25;
-          windY = (dy / dist) * force + mouse.vy * 0.25;
-        }
-
-        petal.update(windX, windY);
-        petal.draw(ctx2D);
-      });
-
-      // Draw Cursor Blossoms
-      for (let i = mouseBlossoms.length - 1; i >= 0; i--) {
-        const p = mouseBlossoms[i];
-        p.x += p.vx;
-        p.y += p.vy;
-        p.alpha -= 0.018;
-
-        if (p.alpha <= 0) {
-          mouseBlossoms.splice(i, 1);
+        if (s.alpha <= 0) {
+          fairySparks.splice(i, 1);
           continue;
         }
 
         ctx2D.save();
-        ctx2D.globalAlpha = p.alpha;
-        ctx2D.font = `${p.size * 2.5}px serif`;
-        ctx2D.fillText(p.type, p.x - p.size, p.y + p.size);
+        ctx2D.globalAlpha = s.alpha;
+        if (s.char) {
+          ctx2D.fillStyle = '#ffccd5';
+          ctx2D.font = '12px serif';
+          ctx2D.fillText(s.char, s.x, s.y);
+        } else {
+          ctx2D.beginPath();
+          ctx2D.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+          ctx2D.fillStyle = '#fff0f5';
+          ctx2D.shadowColor = '#ffb3c6';
+          ctx2D.shadowBlur = 8;
+          ctx2D.fill();
+        }
         ctx2D.restore();
       }
     }
 
     /* =====================================================================
-       MAIN ANIMATION LOOP: CONTINUOUS MORPHING + SMOOTH PERFORMANCE
+       ANIMATION LOOP: 10 CONTINUOUS SLOW-MORPHING SHAPES
        ===================================================================== */
-    let startTime = performance.now();
+    const TRANSITION_DURATION = 5.8; // 5.8 seconds per continuous, smooth transformation
+    const startTime = performance.now();
 
     function animate(now) {
       requestAnimationFrame(animate);
 
-      // Smooth Mouse Interpolation
-      mouse.screenX += (mouse.targetScreenX - mouse.screenX) * 0.09;
-      mouse.screenY += (mouse.targetScreenY - mouse.screenY) * 0.09;
-      mouse.x += (mouse.targetX - mouse.x) * 0.06;
-      mouse.y += (mouse.targetY - mouse.y) * 0.06;
+      // Smooth Cursor Movement
+      mouse.screenX += (mouse.targetScreenX - mouse.screenX) * 0.085;
+      mouse.screenY += (mouse.targetScreenY - mouse.screenY) * 0.085;
+      mouse.x += (mouse.targetX - mouse.x) * 0.055;
+      mouse.y += (mouse.targetY - mouse.y) * 0.055;
 
       cursorFollower.style.transform = `translate3d(${mouse.screenX}px, ${mouse.screenY}px, 0)`;
-      cursorIcon.style.transform = `translate3d(${mouse.targetScreenX}px, ${mouse.targetScreenY}px, 0)`;
+      cursorDot.style.transform = `translate3d(${mouse.targetScreenX}px, ${mouse.targetScreenY}px, 0)`;
 
-      // Continuous Fluid Morph Cycle Calculation
+      // Continuous Morph Calculation across 10 shapes
       const elapsed = (now - startTime) * 0.001;
-      const cyclePos = (elapsed / CYCLE_DURATION) % SHAPES.length;
+      const cyclePos = (elapsed / TRANSITION_DURATION) % shapes.length;
       const idxA = Math.floor(cyclePos);
-      const idxB = (idxA + 1) % SHAPES.length;
+      const idxB = (idxA + 1) % shapes.length;
       let blend = cyclePos - idxA;
-      // Smooth Hermite Curve (Continuous smooth transition without stops)
+      // Hermite Smoothstep for seamless, slow, fluid morphing
       blend = blend * blend * (3 - 2 * blend);
 
-      if (idxA !== currentIdxA) {
-        currentIdxA = idxA;
-        phaseBadge.innerText = SHAPES[idxA].name;
-        createGentleWord(SHAPES[idxA].word);
-      }
+      const shapeA = shapes[idxA];
+      const shapeB = shapes[idxB];
 
-      const shapeA = SHAPES[idxA].data;
-      const shapeB = SHAPES[idxB].data;
+      // Palette interpolation
+      const palIdxA = Math.floor(cyclePos * 0.5) % LUXURY_PALETTES.length;
+      const pal = LUXURY_PALETTES[palIdxA];
 
-      // Update Particle Positions continuously & gently
-      const posAttr = geometry.attributes.position;
-      const pos = posAttr.array;
+      const pos = geometry.attributes.position.array;
+      const col = geometry.attributes.color.array;
 
-      const mouseWorldX = mouse.x * 150;
-      const mouseWorldY = mouse.y * 110;
+      const mouseWorldX = mouse.x * 140;
+      const mouseWorldY = mouse.y * 105;
 
       for (let i = 0; i < PARTICLE_COUNT; i++) {
         const i3 = i * 3;
 
-        // Continuous interpolation between shape A and shape B
+        // Smooth shape morphing
         let tx = shapeA[i3] * (1 - blend) + shapeB[i3] * blend;
         let ty = shapeA[i3 + 1] * (1 - blend) + shapeB[i3 + 1] * blend;
         let tz = shapeA[i3 + 2] * (1 - blend) + shapeB[i3 + 2] * blend;
 
-        // Gentle mouse attraction
+        // Soft mouse attraction
         const dx = mouseWorldX - pos[i3];
         const dy = mouseWorldY - pos[i3 + 1];
         const distSq = dx * dx + dy * dy;
 
-        if (distSq < 14000) {
-          const force = (1 - distSq / 14000) * 22;
-          tx += (dx / 120) * force;
-          ty += (dy / 120) * force;
+        if (distSq < 13000) {
+          const force = (1 - distSq / 13000) * 18;
+          tx += (dx / 115) * force;
+          ty += (dy / 115) * force;
         }
 
-        // Silky smooth movement
-        pos[i3] += (tx - pos[i3]) * 0.07;
-        pos[i3 + 1] += (ty - pos[i3 + 1]) * 0.07;
-        pos[i3 + 2] += (tz - pos[i3 + 2]) * 0.07;
-      }
-      posAttr.needsUpdate = true;
+        // Viscous, elegant slow glide
+        pos[i3] += (tx - pos[i3]) * 0.065;
+        pos[i3 + 1] += (ty - pos[i3 + 1]) * 0.065;
+        pos[i3 + 2] += (tz - pos[i3 + 2]) * 0.065;
 
-      // 3D Parallax & Gentle Breathing
-      const breathing = 1.0 + Math.sin(now * 0.0016) * 0.05;
-      particleSystem.rotation.y += 0.0025;
-      particleSystem.rotation.y += (mouse.x * 0.3 - particleSystem.rotation.y) * 0.035;
-      particleSystem.rotation.x += (-mouse.y * 0.22 - particleSystem.rotation.x) * 0.035;
+        // Soft color breathing
+        const f = i % 3;
+        const c = (f === 0) ? pal.primary : (f === 1 ? pal.secondary : pal.accent);
+        col[i3] += (c[0] - col[i3]) * 0.025;
+        col[i3 + 1] += (c[1] - col[i3 + 1]) * 0.025;
+        col[i3 + 2] += (c[2] - col[i3 + 2]) * 0.025;
+      }
+
+      geometry.attributes.position.needsUpdate = true;
+      geometry.attributes.color.needsUpdate = true;
+
+      // Gentle 3D Parallax Tilt
+      const breathing = 1.0 + Math.sin(now * 0.0015) * 0.045;
+      particleSystem.rotation.y += 0.002;
+      particleSystem.rotation.y += (mouse.x * 0.28 - particleSystem.rotation.y) * 0.035;
+      particleSystem.rotation.x += (-mouse.y * 0.20 - particleSystem.rotation.x) * 0.035;
       particleSystem.scale.set(breathing, breathing, breathing);
 
       renderer.render(scene, camera);
-      render2D();
+      renderFairySparks();
     }
 
     animate(performance.now());
 
     /* =====================================================================
-       START INTERACTION
+       INTERACTION
        ===================================================================== */
     const startScreen = document.getElementById('start-screen');
 
-    function startApp() {
+    function startExperience() {
       audio.init();
       startScreen.classList.add('hidden');
-      createGentleWord("VƯỜN HOA TÌNH YÊU 🌸");
     }
 
-    startScreen.addEventListener('click', startApp);
-    startScreen.addEventListener('touchstart', startApp);
+    startScreen.addEventListener('click', startExperience);
+    startScreen.addEventListener('touchstart', startExperience);
 
     window.addEventListener('pointerdown', (e) => {
       if (!startScreen.classList.contains('hidden')) return;
-      for (let i = 0; i < 12; i++) {
-        spawnMouseBlossom(e.clientX, e.clientY);
+      for (let i = 0; i < 8; i++) {
+        spawnFairySpark(e.clientX, e.clientY);
       }
     });
   </script>
