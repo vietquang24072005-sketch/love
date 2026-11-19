@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>PASTEL NEON LOVE ✨ Dịu Dàng & Mê Hoặc</title>
+  <title>VƯỜN HOA & TRÁI TIM PASTEL ✨ Dịu Dàng & Mê Hoặc</title>
   
-  <meta property="og:title" content="Bản Giao Hưởng Ánh Sáng Dành Riêng Cho Bạn 🌸💖">
-  <meta property="og:description" content="Chạm và di chuyển chuột để cảm nhận dòng chảy ánh sáng tình yêu mềm mại, lung linh.">
+  <meta property="og:title" content="Vườn Hoa & Trái Tim Dành Riêng Cho Bạn 🌸💖">
+  <meta property="og:description" content="Chạm và di chuyển chuột để hòa mình vào cơn mưa cánh hoa và trái tim bồng bềnh êm ái.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80">
   <meta property="og:type" content="website">
 
   <style>
     :root {
-      --pastel-pink: #ffaec0;
-      --pastel-soft-rose: #ff85a2;
-      --pastel-lavender: #d8b4fe;
-      --pastel-mint: #a5f3fc;
-      --pastel-cream: #fff0f5;
-      --bg-dark: #070209;
+      --pastel-cherry: #ffb7c5;
+      --pastel-rose: #ff85a1;
+      --pastel-blush: #fbcfe8;
+      --pastel-lilac: #e9d5ff;
+      --pastel-pearl: #fff0f6;
+      --bg-dark: #08020a;
     }
 
     * {
@@ -34,7 +34,7 @@
       overflow: hidden;
       background-color: var(--bg-dark);
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
-      cursor: none; /* Custom glowing cursor */
+      cursor: none; /* Custom glowing flower cursor */
     }
 
     /* Ambient Nebular Glow */
@@ -44,10 +44,9 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 50% 50%, rgba(255, 133, 162, 0.12) 0%, rgba(216, 180, 254, 0.06) 40%, rgba(7, 2, 9, 0.98) 80%);
+      background: radial-gradient(circle at 50% 45%, rgba(255, 133, 161, 0.16) 0%, rgba(233, 213, 255, 0.08) 45%, rgba(8, 2, 10, 0.98) 85%);
       z-index: 0;
       pointer-events: none;
-      transition: background 2s ease;
     }
 
     #webgl-canvas {
@@ -69,42 +68,39 @@
       pointer-events: none;
     }
 
-    /* Custom Floating Glowing Cursor */
+    /* Floating Flower Cursor Follower */
     #cursor-follower {
       position: fixed;
       top: 0;
       left: 0;
-      width: 32px;
-      height: 32px;
-      margin-left: -16px;
-      margin-top: -16px;
+      width: 38px;
+      height: 38px;
+      margin-left: -19px;
+      margin-top: -19px;
       border-radius: 50%;
-      border: 1.5px solid rgba(255, 174, 192, 0.85);
-      background: radial-gradient(circle, rgba(255, 174, 192, 0.25) 0%, rgba(216, 180, 254, 0.05) 70%, transparent 100%);
-      box-shadow: 0 0 20px rgba(255, 174, 192, 0.6), 0 0 35px rgba(216, 180, 254, 0.35);
+      border: 1.5px solid rgba(255, 183, 197, 0.85);
+      background: radial-gradient(circle, rgba(255, 183, 197, 0.3) 0%, rgba(233, 213, 255, 0.08) 65%, transparent 100%);
+      box-shadow: 0 0 25px rgba(255, 133, 161, 0.65), 0 0 45px rgba(233, 213, 255, 0.35);
       pointer-events: none;
       z-index: 99;
       transform: translate3d(-100px, -100px, 0);
-      transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+      transition: width 0.35s ease, height 0.35s ease;
     }
 
-    #cursor-dot {
+    #cursor-icon {
       position: fixed;
       top: 0;
       left: 0;
-      width: 6px;
-      height: 6px;
-      margin-left: -3px;
-      margin-top: -3px;
-      border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0 0 12px #ffaec0, 0 0 20px #ff85a2;
+      font-size: 14px;
+      margin-left: -7px;
+      margin-top: -8px;
       pointer-events: none;
       z-index: 100;
       transform: translate3d(-100px, -100px, 0);
+      filter: drop-shadow(0 0 10px #ff85a1);
     }
 
-    /* Intro Start Screen */
+    /* Start Screen */
     #start-screen {
       position: absolute;
       top: 0;
@@ -116,9 +112,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: radial-gradient(circle at center, rgba(24, 7, 30, 0.88) 0%, rgba(7, 2, 9, 0.98) 75%);
-      backdrop-filter: blur(24px);
-      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.2s;
+      background: radial-gradient(circle at center, rgba(28, 8, 32, 0.9) 0%, rgba(8, 2, 10, 0.98) 78%);
+      backdrop-filter: blur(28px);
+      transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.4s;
       cursor: pointer;
     }
     #start-screen.hidden {
@@ -127,38 +123,38 @@
       pointer-events: none;
     }
 
-    .heart-glow-box {
+    .flower-box {
       position: relative;
-      width: 130px;
-      height: 130px;
+      width: 140px;
+      height: 140px;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
-    .gentle-ring {
+    .petal-ring {
       position: absolute;
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      border: 1.5px solid rgba(255, 174, 192, 0.5);
-      box-shadow: 0 0 25px rgba(255, 174, 192, 0.35);
-      animation: gentleRipple 3.5s infinite ease-out;
+      border: 1.5px solid rgba(255, 183, 197, 0.55);
+      box-shadow: 0 0 30px rgba(255, 183, 197, 0.35);
+      animation: floralRipple 3.6s infinite ease-out;
     }
-    .gentle-ring:nth-child(2) {
+    .petal-ring:nth-child(2) {
       animation-delay: 1.2s;
-      border-color: rgba(216, 180, 254, 0.45);
+      border-color: rgba(244, 114, 182, 0.45);
     }
-    .gentle-ring:nth-child(3) {
+    .petal-ring:nth-child(3) {
       animation-delay: 2.4s;
-      border-color: rgba(165, 243, 252, 0.4);
+      border-color: rgba(233, 213, 255, 0.4);
     }
 
-    @keyframes gentleRipple {
+    @keyframes floralRipple {
       0% {
-        transform: scale(0.7);
-        opacity: 0.85;
+        transform: scale(0.65);
+        opacity: 0.9;
       }
       100% {
         transform: scale(2.6);
@@ -166,31 +162,33 @@
       }
     }
 
-    .pulse-btn {
-      font-size: 60px;
-      animation: smoothBreathe 3s infinite ease-in-out;
-      filter: drop-shadow(0 0 35px rgba(255, 174, 192, 0.9));
+    .bloom-center-icon {
+      font-size: 64px;
+      animation: gentleBloom 3.2s infinite ease-in-out;
+      filter: drop-shadow(0 0 35px rgba(255, 133, 161, 0.95));
     }
 
-    @keyframes smoothBreathe {
-      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 25px rgba(255, 174, 192, 0.7)); }
-      50% { transform: scale(1.18); filter: drop-shadow(0 0 45px rgba(255, 133, 162, 1)); }
+    @keyframes gentleBloom {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.18) rotate(12deg); }
     }
 
     .start-prompt {
       color: #fff;
       font-size: 1.25rem;
       font-weight: 500;
-      letter-spacing: 6px;
+      letter-spacing: 7px;
       text-transform: uppercase;
-      text-shadow: 0 0 15px rgba(255, 174, 192, 0.8), 0 0 35px rgba(216, 180, 254, 0.6);
+      text-shadow: 0 0 18px rgba(255, 183, 197, 0.9), 0 0 38px rgba(233, 213, 255, 0.7);
       padding: 0 20px;
+      text-align: center;
     }
     .start-subprompt {
-      color: rgba(255, 240, 245, 0.65);
-      font-size: 0.85rem;
+      color: rgba(255, 240, 246, 0.7);
+      font-size: 0.86rem;
       letter-spacing: 2.5px;
       margin-top: 14px;
+      text-align: center;
       font-weight: 300;
     }
 
@@ -209,25 +207,25 @@
     }
 
     .phase-badge {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 500;
-      color: var(--pastel-pink);
+      color: var(--pastel-cherry);
       letter-spacing: 3px;
-      background: rgba(255, 174, 192, 0.06);
-      border: 1px solid rgba(255, 174, 192, 0.25);
-      padding: 8px 20px;
+      background: rgba(255, 183, 197, 0.08);
+      border: 1px solid rgba(255, 183, 197, 0.28);
+      padding: 9px 22px;
       border-radius: 40px;
       backdrop-filter: blur(16px);
-      box-shadow: 0 4px 20px rgba(255, 174, 192, 0.1);
-      transition: all 1s ease;
+      box-shadow: 0 4px 20px rgba(255, 183, 197, 0.12);
+      transition: all 1.2s ease;
     }
 
-    .guide-hint {
-      font-size: 0.78rem;
-      color: rgba(255, 240, 245, 0.6);
+    .hint-label {
+      font-size: 0.8rem;
+      color: rgba(255, 240, 246, 0.65);
       letter-spacing: 2px;
-      text-shadow: 0 0 10px rgba(216, 180, 254, 0.5);
-      animation: floatHint 3s infinite ease-in-out;
+      text-shadow: 0 0 12px rgba(233, 213, 255, 0.6);
+      animation: floatHint 3.5s infinite ease-in-out;
     }
 
     @keyframes floatHint {
@@ -235,59 +233,60 @@
       50% { opacity: 0.95; transform: translateY(-3px); }
     }
 
-    /* Soft typography shimmer */
+    /* Gentle Floating Words */
     .word-burst {
       position: absolute;
       pointer-events: none;
       font-weight: 600;
-      font-size: clamp(1.8rem, 5vw, 3.2rem);
+      font-size: clamp(1.8rem, 5.2vw, 3.4rem);
       letter-spacing: 8px;
       text-transform: uppercase;
       text-shadow: 0 0 30px currentColor, 0 0 60px currentColor;
       transform: translate(-50%, -50%);
       z-index: 4;
       white-space: nowrap;
-      filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+      filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
     }
   </style>
 
-  <!-- Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
 
-  <div class="ambient-glow" id="ambient-glow"></div>
+  <div class="ambient-glow"></div>
 
-  <!-- Custom Cursor Elements -->
+  <!-- Custom Flower Cursor -->
   <div id="cursor-follower"></div>
-  <div id="cursor-dot"></div>
+  <div id="cursor-icon">🌸</div>
 
-  <!-- Canvases -->
+  <!-- WebGL 3D Canvas -->
   <canvas id="webgl-canvas"></canvas>
+
+  <!-- 2D Overlay Canvas for Falling Petals & Mouse Wind -->
   <canvas id="overlay-canvas"></canvas>
 
   <!-- HUD -->
   <div id="hud">
-    <div class="phase-badge" id="phase-badge">ÁNH NHÌN DỊU ÊM</div>
-    <div class="guide-hint">✨ Di chuyển chuột để dẫn lối ánh sáng</div>
+    <div class="phase-badge" id="phase-badge">ĐÓA HOA HỒNG PHA LÊ</div>
+    <div class="hint-label">🌸 Rê chuột để tạo luồng gió cánh hoa</div>
   </div>
 
   <!-- Start Screen -->
   <div id="start-screen">
-    <div class="heart-glow-box">
-      <div class="gentle-ring"></div>
-      <div class="gentle-ring"></div>
-      <div class="gentle-ring"></div>
-      <div class="pulse-btn">🌸</div>
+    <div class="flower-box">
+      <div class="petal-ring"></div>
+      <div class="petal-ring"></div>
+      <div class="petal-ring"></div>
+      <div class="bloom-center-icon">🌸</div>
     </div>
-    <div class="start-prompt">CHẠM ĐỂ BẮT ĐẦU</div>
-    <div class="start-subprompt">Khám phá dòng chảy ánh sáng tình yêu mềm mại</div>
+    <div class="start-prompt">CHẠM ĐỂ VÀO VƯỜN HOA</div>
+    <div class="start-subprompt">Dòng chảy ngát hương của muôn ngàn cánh hoa và trái tim</div>
   </div>
 
   <script>
     /* =====================================================================
-       SMOOTH MOUSE & TOUCH TRACKING WITH INERTIA
+       MOUSE & TOUCH INTERACTION: AERODYNAMIC WIND & PARTICLE EMISSION
        ===================================================================== */
     const mouse = {
       x: 0,
@@ -300,48 +299,45 @@
       targetScreenY: window.innerHeight / 2,
       vx: 0,
       vy: 0,
-      speed: 0
+      lastScreenX: window.innerWidth / 2,
+      lastScreenY: window.innerHeight / 2
     };
 
     const cursorFollower = document.getElementById('cursor-follower');
-    const cursorDot = document.getElementById('cursor-dot');
+    const cursorIcon = document.getElementById('cursor-icon');
 
-    function updateMousePosition(clientX, clientY) {
+    function updateMouse(clientX, clientY) {
       mouse.targetScreenX = clientX;
       mouse.targetScreenY = clientY;
       mouse.targetX = (clientX / window.innerWidth) * 2 - 1;
       mouse.targetY = -(clientY / window.innerHeight) * 2 + 1;
 
-      // Spawn smooth stardust trail on movement
-      if (Math.random() > 0.3) {
-        addTrailParticle(clientX, clientY);
+      // Spawn floating petal from cursor
+      if (Math.random() > 0.25) {
+        spawnMousePetal(clientX, clientY);
       }
     }
 
-    window.addEventListener('mousemove', (e) => {
-      updateMousePosition(e.clientX, e.clientY);
-    });
-
+    window.addEventListener('mousemove', (e) => updateMouse(e.clientX, e.clientY));
     window.addEventListener('touchmove', (e) => {
-      if (e.touches.length > 0) {
-        updateMousePosition(e.touches[0].clientX, e.touches[0].clientY);
-      }
+      if (e.touches.length > 0) updateMouse(e.touches[0].clientX, e.touches[0].clientY);
     }, { passive: true });
 
     /* =====================================================================
-       ETHEREAL AMBIENT AUDIO (Soft, warm, lofi-romance chords)
+       WARM HARP & MUSIC BOX ROMANCE AUDIO
        ===================================================================== */
-    class AmbientAudioEngine {
+    class RomanticAudio {
       constructor() {
         this.ctx = null;
         this.isPlaying = false;
+        // Warm romantic chords (Fmaj9 -> G6 -> Em7 -> Am9)
         this.chords = [
-          [261.63, 329.63, 392.00, 493.88], // Cmaj7 (Warm, peaceful)
-          [220.00, 261.63, 329.63, 392.00], // Am7 (Sweet longing)
-          [174.61, 220.00, 261.63, 329.63], // Fmaj7 (Romantic)
-          [196.00, 246.94, 293.66, 392.00]  // G6 (Gentle resolution)
+          [174.61, 261.63, 329.63, 392.00, 523.25], // Fmaj9
+          [196.00, 246.94, 293.66, 392.00, 587.33], // G6
+          [164.81, 246.94, 329.63, 392.00, 659.25], // Em7
+          [220.00, 261.63, 329.63, 493.88, 659.25]  // Am9
         ];
-        this.currentChord = 0;
+        this.chordIdx = 0;
       }
 
       init() {
@@ -349,10 +345,10 @@
         const AudioContext = window.AudioContext || window.webkitAudioContext;
         this.ctx = new AudioContext();
         this.isPlaying = true;
-        this.scheduleNextChord();
+        this.loopChords();
       }
 
-      playPadNote(freq, startTime, duration = 3.8) {
+      playPluck(freq, startTime, duration = 3.5) {
         if (!this.ctx) return;
         const osc = this.ctx.createOscillator();
         const gain = this.ctx.createGain();
@@ -362,11 +358,10 @@
         osc.frequency.setValueAtTime(freq, startTime);
 
         filter.type = 'lowpass';
-        filter.frequency.setValueAtTime(900, startTime);
+        filter.frequency.setValueAtTime(1200, startTime);
 
-        // Soft, smooth envelope: slow attack, long serene release
         gain.gain.setValueAtTime(0.0001, startTime);
-        gain.gain.exponentialRampToValueAtTime(0.06, startTime + 1.2);
+        gain.gain.exponentialRampToValueAtTime(0.05, startTime + 0.08);
         gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
 
         osc.connect(filter);
@@ -377,30 +372,26 @@
         osc.stop(startTime + duration);
       }
 
-      scheduleNextChord() {
+      loopChords() {
         if (!this.isPlaying) return;
         const now = this.ctx.currentTime;
-        const chord = this.chords[this.currentChord];
+        const chord = this.chords[this.chordIdx];
 
-        chord.forEach((freq, idx) => {
-          this.playPadNote(freq * 1.0, now + idx * 0.15, 4.2);
-          if (idx === 3) {
-            // Octave shimmer
-            this.playPadNote(freq * 2.0, now + 0.8, 3.2);
-          }
+        // Harp-like arpeggio plucks
+        chord.forEach((note, i) => {
+          this.playPluck(note, now + i * 0.28, 4.0);
         });
 
-        this.currentChord = (this.currentChord + 1) % this.chords.length;
-        setTimeout(() => this.scheduleNextChord(), 3600);
+        this.chordIdx = (this.chordIdx + 1) % this.chords.length;
+        setTimeout(() => this.loopChords(), 3800);
       }
     }
-
-    const audio = new AmbientAudioEngine();
+    const audio = new RomanticAudio();
 
     /* =====================================================================
-       THREE.JS: 20,000 SILKY PARTICLES WITH FLUID MOUSE ATTRACTION
+       THREE.JS: 22,000 LUMINOUS PARTICLES FORMING FLOWERS & HEARTS ONLY
        ===================================================================== */
-    const PARTICLE_COUNT = 20000;
+    const PARTICLE_COUNT = 22000;
     const canvas3D = document.getElementById('webgl-canvas');
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas3D,
@@ -412,20 +403,19 @@
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x070209, 0.0014);
+    scene.fog = new THREE.FogExp2(0x08020a, 0.0013);
 
-    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2500);
-    camera.position.z = 290;
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2600);
+    camera.position.z = 285;
 
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(PARTICLE_COUNT * 3);
-    const baseTargetPositions = new Float32Array(PARTICLE_COUNT * 3);
+    const targetPositions = new Float32Array(PARTICLE_COUNT * 3);
     const colors = new Float32Array(PARTICLE_COUNT * 3);
-    const originalColors = new Float32Array(PARTICLE_COUNT * 3);
     const targetColors = new Float32Array(PARTICLE_COUNT * 3);
     const sizes = new Float32Array(PARTICLE_COUNT);
 
-    // Initial gentle sphere distribution
+    // Initial sphere
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       const i3 = i * 3;
       const u = Math.random();
@@ -438,40 +428,36 @@
       positions[i3 + 1] = r * Math.sin(phi) * Math.sin(theta);
       positions[i3 + 2] = r * Math.cos(phi);
 
-      baseTargetPositions[i3] = positions[i3];
-      baseTargetPositions[i3 + 1] = positions[i3 + 1];
-      baseTargetPositions[i3 + 2] = positions[i3 + 2];
+      targetPositions[i3] = positions[i3];
+      targetPositions[i3 + 1] = positions[i3 + 1];
+      targetPositions[i3 + 2] = positions[i3 + 2];
 
       colors[i3] = 1.0;
-      colors[i3 + 1] = 0.68;
-      colors[i3 + 2] = 0.75;
-
-      originalColors[i3] = colors[i3];
-      originalColors[i3 + 1] = colors[i3 + 1];
-      originalColors[i3 + 2] = colors[i3 + 2];
+      colors[i3 + 1] = 0.72;
+      colors[i3 + 2] = 0.78;
 
       targetColors[i3] = colors[i3];
       targetColors[i3 + 1] = colors[i3 + 1];
       targetColors[i3 + 2] = colors[i3 + 2];
 
-      sizes[i] = Math.random() * 2.4 + 1.2;
+      sizes[i] = Math.random() * 2.6 + 1.2;
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
     geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
 
-    // High quality soft radial stardust texture
-    function createStardustTexture() {
+    // Petal / Heart Particle Shader Texture
+    function createFloralTexture() {
       const c = document.createElement('canvas');
       c.width = 128;
       c.height = 128;
       const ctx = c.getContext('2d');
       const grad = ctx.createRadialGradient(64, 64, 0, 64, 64, 64);
       grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
-      grad.addColorStop(0.2, 'rgba(255, 185, 205, 0.9)');
-      grad.addColorStop(0.5, 'rgba(216, 180, 254, 0.35)');
-      grad.addColorStop(0.8, 'rgba(255, 133, 162, 0.1)');
+      grad.addColorStop(0.22, 'rgba(255, 183, 197, 0.95)');
+      grad.addColorStop(0.52, 'rgba(244, 114, 182, 0.4)');
+      grad.addColorStop(0.82, 'rgba(233, 213, 255, 0.12)');
       grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, 128, 128);
@@ -479,8 +465,8 @@
     }
 
     const material = new THREE.PointsMaterial({
-      size: 5.6,
-      map: createStardustTexture(),
+      size: 5.8,
+      map: createFloralTexture(),
       vertexColors: true,
       transparent: true,
       blending: THREE.AdditiveBlending,
@@ -491,103 +477,107 @@
     scene.add(particleSystem);
 
     /* =====================================================================
-       MATHEMATICAL GEOMETRY: REFINED & ELEGANT SHAPES
+       MATHEMATICAL SHAPES: EXCLUSIVELY FLOWERS, PETALS & HEARTS
        ===================================================================== */
-    // 1. Crystal Volumetric 3D Heart (Dense core + Stardust halo)
+    // 1. Crystal Blooming Rose (Multi-layered 3D Rose Petals)
+    function generateRoseShape() {
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        const i3 = i * 3;
+        const layer = Math.floor(Math.random() * 5); // 5 concentric petal layers
+        const theta = Math.random() * Math.PI * 2;
+        const petalRadius = (layer * 26 + 18) * (0.8 + Math.random() * 0.4);
+        
+        // Mathematical rose petal curvature
+        const k = 4; // 4-5 petals per tier
+        const wave = Math.abs(Math.cos(k * theta * 0.5)) * 24;
+        const r = petalRadius + wave;
+
+        // Cup curvature (higher outer petals, sunken center)
+        const z = -Math.cos(r * 0.02) * (layer * 16 + 12) + (Math.random() - 0.5) * 10;
+
+        targetPositions[i3] = r * Math.cos(theta);
+        targetPositions[i3 + 1] = r * Math.sin(theta);
+        targetPositions[i3 + 2] = z;
+      }
+    }
+
+    // 2. Volumetric 3D Floral Heart (Dense Heart of Petals)
     function generateHeartShape() {
       for (let i = 0; i < PARTICLE_COUNT; i++) {
         const i3 = i * 3;
         const t = Math.PI * 2 * Math.random();
         const u = Math.PI * (Math.random() - 0.5);
-        const r = Math.pow(Math.random(), 0.55); // Smooth organic volume
+        const r = Math.pow(Math.random(), 0.52);
 
         const x = 16 * Math.pow(Math.sin(t), 3);
         const y = 13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t);
-        const z = u * 15;
+        const z = u * 16;
 
         const scale = 7.8 * r;
-        baseTargetPositions[i3] = x * scale;
-        baseTargetPositions[i3 + 1] = y * scale;
-        baseTargetPositions[i3 + 2] = z * scale * (1.1 - Math.abs(x) / 30);
+        targetPositions[i3] = x * scale;
+        targetPositions[i3 + 1] = y * scale;
+        targetPositions[i3 + 2] = z * scale * (1.1 - Math.abs(x) / 32);
       }
     }
 
-    // 2. Cosmic Hypnotic Eye (Tracks cursor organically)
-    function generateEyeShape() {
+    // 3. Vortex of Swirling Petals (Whirling galaxy of sakura & hearts)
+    function generatePetalVortexShape() {
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        const i3 = i * 3;
+        const arm = i % 4; // 4 spiral floral arms
+        const dist = Math.random() * 220 + 20;
+        const angle = (arm / 4) * Math.PI * 2 + dist * 0.028;
+        const height = (Math.random() - 0.5) * 85 * (1 - dist / 260);
+
+        // Curving wave
+        targetPositions[i3] = Math.cos(angle) * dist;
+        targetPositions[i3 + 1] = Math.sin(angle) * dist;
+        targetPositions[i3 + 2] = height + Math.sin(dist * 0.05) * 25;
+      }
+    }
+
+    // 4. Double Heart surrounded by a Crown of Blooming Flowers
+    function generateHeartAndFloraCrown() {
       for (let i = 0; i < PARTICLE_COUNT; i++) {
         const i3 = i * 3;
         const ratio = i / PARTICLE_COUNT;
 
-        if (ratio < 0.28) {
-          // Heart Pupil
+        if (ratio < 0.6) {
+          // Central Glowing Heart
           const t = Math.PI * 2 * Math.random();
-          const r = Math.sqrt(Math.random()) * 26;
-          baseTargetPositions[i3] = (16 * Math.pow(Math.sin(t), 3)) * (r / 20);
-          baseTargetPositions[i3 + 1] = (13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t)) * (r / 20);
-          baseTargetPositions[i3 + 2] = (Math.random() - 0.5) * 12;
-        } else if (ratio < 0.72) {
-          // Delicate Iris Fibers
-          const angle = Math.random() * Math.PI * 2;
-          const radius = 28 + Math.random() * 62;
-          baseTargetPositions[i3] = Math.cos(angle) * radius;
-          baseTargetPositions[i3 + 1] = Math.sin(angle) * radius;
-          baseTargetPositions[i3 + 2] = (Math.random() - 0.5) * 20;
+          const r = Math.pow(Math.random(), 0.6) * 5.8;
+          const x = 16 * Math.pow(Math.sin(t), 3) * r;
+          const y = (13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t)) * r;
+          const z = (Math.random() - 0.5) * 45;
+          targetPositions[i3] = x;
+          targetPositions[i3 + 1] = y;
+          targetPositions[i3 + 2] = z;
         } else {
-          // Soft Eyelids and Aura
-          const width = 195;
-          const height = 82;
-          const x = (Math.random() - 0.5) * width * 2;
-          const sign = Math.random() > 0.5 ? 1 : -1;
-          const y = sign * height * Math.cos((x / (width * 2)) * Math.PI) + (Math.random() - 0.5) * 18;
-          baseTargetPositions[i3] = x;
-          baseTargetPositions[i3 + 1] = y;
-          baseTargetPositions[i3 + 2] = (Math.random() - 0.5) * 45;
+          // Outer Halo Wreath of Flower Blossoms
+          const angle = Math.random() * Math.PI * 2;
+          const ringR = 150 + Math.sin(angle * 8) * 22 + (Math.random() - 0.5) * 25;
+          targetPositions[i3] = Math.cos(angle) * ringR;
+          targetPositions[i3 + 1] = Math.sin(angle) * ringR;
+          targetPositions[i3 + 2] = Math.cos(angle * 6) * 35;
         }
       }
     }
 
-    // 3. Gentle Celestial River (Smooth ribbon of romantic stars)
-    function generateRiverShape() {
-      for (let i = 0; i < PARTICLE_COUNT; i++) {
-        const i3 = i * 3;
-        const t = (i / PARTICLE_COUNT - 0.5) * 1200;
-        const wave = Math.sin(t * 0.008) * 90;
-        const spread = (Math.random() - 0.5) * 110;
-
-        baseTargetPositions[i3] = t * 0.85;
-        baseTargetPositions[i3 + 1] = wave + spread;
-        baseTargetPositions[i3 + 2] = Math.cos(t * 0.007) * 90 + (Math.random() - 0.5) * 90;
-      }
-    }
-
-    // 4. Sacred Rose Blossom (8-fold floral mandala)
-    function generateMandalaShape() {
-      const petals = 8;
-      for (let i = 0; i < PARTICLE_COUNT; i++) {
-        const i3 = i * 3;
-        const armIndex = i % petals;
-        const baseAngle = (armIndex / petals) * Math.PI * 2;
-        const dist = Math.random() * 165;
-        const spiralAngle = baseAngle + Math.sin(dist * 0.035) * 0.45;
-
-        baseTargetPositions[i3] = Math.cos(spiralAngle) * dist;
-        baseTargetPositions[i3 + 1] = Math.sin(spiralAngle) * dist;
-        baseTargetPositions[i3 + 2] = Math.cos(dist * 0.06) * 38;
-      }
-    }
-
     /* =====================================================================
-       HARMONIOUS PASTEL PALETTES
+       PASTEL COLOR PALETTES (Romantic Cherry, Peony, Rose & Lilac)
        ===================================================================== */
-    const PASTEL_PALETTES = [
-      { primary: [1.0, 0.68, 0.75], secondary: [0.85, 0.71, 1.0], accent: [1.0, 0.94, 0.96] },
-      { primary: [1.0, 0.55, 0.68], secondary: [0.65, 0.95, 0.99], accent: [0.98, 0.82, 0.92] },
-      { primary: [0.92, 0.72, 1.0], secondary: [1.0, 0.82, 0.75], accent: [1.0, 0.95, 0.80] }
+    const FLORAL_PALETTES = [
+      // 0: Cherry Blossom & Rose Quartz
+      { primary: [1.0, 0.72, 0.78], secondary: [1.0, 0.52, 0.63], accent: [1.0, 0.94, 0.96] },
+      // 1: Velvet Peony & Lavender Mist
+      { primary: [1.0, 0.55, 0.68], secondary: [0.91, 0.73, 1.0], accent: [1.0, 0.85, 0.90] },
+      // 2: Champagne Rose & Soft Blush
+      { primary: [0.98, 0.65, 0.75], secondary: [1.0, 0.82, 0.75], accent: [1.0, 0.95, 0.85] }
     ];
 
-    let currentPaletteIndex = 0;
-    function setTargetPalette(index) {
-      const pal = PASTEL_PALETTES[index % PASTEL_PALETTES.length];
+    let currentPalIndex = 0;
+    function updateColors(idx) {
+      const pal = FLORAL_PALETTES[idx % FLORAL_PALETTES.length];
       for (let i = 0; i < PARTICLE_COUNT; i++) {
         const i3 = i * 3;
         const f = i % 3;
@@ -595,23 +585,23 @@
         if (f === 1) c = pal.secondary;
         if (f === 2) c = pal.accent;
 
-        targetColors[i3] = c[0] + (Math.random() - 0.5) * 0.06;
-        targetColors[i3 + 1] = c[1] + (Math.random() - 0.5) * 0.06;
-        targetColors[i3 + 2] = c[2] + (Math.random() - 0.5) * 0.06;
+        targetColors[i3] = c[0] + (Math.random() - 0.5) * 0.05;
+        targetColors[i3 + 1] = c[1] + (Math.random() - 0.5) * 0.05;
+        targetColors[i3 + 2] = c[2] + (Math.random() - 0.5) * 0.05;
       }
     }
 
     /* =====================================================================
-       SLOW, SMOOTH, HYPNOTIC PHASES (6.5s per phase, fluid transition)
+       SLOW, SMOOTH FLORAL SCENES (7.0 seconds per serene phase)
        ===================================================================== */
-    const PHASES = [
-      { name: "ÁNH NHÌN DỊU ÊM", fn: generateEyeShape, camZ: 220, word: "ÁNH MẮT DỊU ÊM 🌸" },
-      { name: "TRÁI TIM NỞ HOA", fn: generateHeartShape, camZ: 255, word: "NHỊP ĐẬP YÊU THƯƠNG 💕" },
-      { name: "DÒNG SÔNG VÌ SAO", fn: generateRiverShape, camZ: 240, word: "BẾN ĐỖ BÌNH YÊN ✨" },
-      { name: "HOA HỒNG VĨNH CỬU", fn: generateMandalaShape, camZ: 285, word: "VẸN NGUYÊN TÌNH YÊU 💖" }
+    const SCENES = [
+      { name: "ĐÓA HOA HỒNG NỞ RỘ", fn: generateRoseShape, camZ: 250, word: "ĐÓA HOA TÌNH YÊU 🌸" },
+      { name: "TRÁI TIM HOA KẾT TỤ", fn: generateHeartShape, camZ: 260, word: "TRÁI TIM NGÁT HƯƠNG 💖" },
+      { name: "LỐC XOÁY CÁNH HOA", fn: generatePetalVortexShape, camZ: 275, word: "MƯA HOA BỒNG BỀNH 💮" },
+      { name: "VƯƠNG MIỆN HOA & TIM", fn: generateHeartAndFloraCrown, camZ: 290, word: "YÊU BẠN MÃI MÃI 💕" }
     ];
 
-    let currentPhaseIndex = 0;
+    let currentSceneIdx = 0;
     const phaseBadge = document.getElementById('phase-badge');
 
     function createGentleWord(text, color) {
@@ -629,7 +619,7 @@
           scale: 1.05,
           opacity: 0.9,
           y: -15,
-          duration: 3.5,
+          duration: 3.6,
           ease: "power2.out",
           onComplete: () => {
             gsap.to(el, { opacity: 0, duration: 1.2, onComplete: () => el.remove() });
@@ -638,31 +628,30 @@
       );
     }
 
-    function transitionToNextPhase() {
-      currentPhaseIndex = (currentPhaseIndex + 1) % PHASES.length;
-      currentPaletteIndex = (currentPaletteIndex + 1) % PASTEL_PALETTES.length;
-      const phase = PHASES[currentPhaseIndex];
+    function nextScene() {
+      currentSceneIdx = (currentSceneIdx + 1) % SCENES.length;
+      currentPalIndex = (currentPalIndex + 1) % FLORAL_PALETTES.length;
+      const sc = SCENES[currentSceneIdx];
 
-      phase.fn();
-      setTargetPalette(currentPaletteIndex);
+      sc.fn();
+      updateColors(currentPalIndex);
 
-      phaseBadge.innerText = phase.name;
-      const pal = PASTEL_PALETTES[currentPaletteIndex];
+      phaseBadge.innerText = sc.name;
+      const pal = FLORAL_PALETTES[currentPalIndex];
       const rgb = `rgb(${Math.round(pal.primary[0]*255)}, ${Math.round(pal.primary[1]*255)}, ${Math.round(pal.primary[2]*255)})`;
       phaseBadge.style.color = rgb;
-      phaseBadge.style.borderColor = `rgba(${Math.round(pal.primary[0]*255)}, ${Math.round(pal.primary[1]*255)}, ${Math.round(pal.primary[2]*255)}, 0.4)`;
-      createGentleWord(phase.word, rgb);
+      phaseBadge.style.borderColor = `rgba(${Math.round(pal.primary[0]*255)}, ${Math.round(pal.primary[1]*255)}, ${Math.round(pal.primary[2]*255)}, 0.45)`;
+      createGentleWord(sc.word, rgb);
 
-      // Smooth camera glide
       gsap.to(camera.position, {
-        z: phase.camZ,
-        duration: 3.2,
+        z: sc.camZ,
+        duration: 3.5,
         ease: "power2.out"
       });
     }
 
     /* =====================================================================
-       2D OVERLAY: EYE GAZE TRACKING + STARDUST MOUSE TRAIL
+       2D CANVAS: FALLING SHADED SAKURA PETALS & HEARTS WITH MOUSE WIND
        ===================================================================== */
     const overlayCanvas = document.getElementById('overlay-canvas');
     const ctx2D = overlayCanvas.getContext('2d');
@@ -677,152 +666,162 @@
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    // Floating Stardust Particles emitted by Mouse
-    const trailParticles = [];
-    function addTrailParticle(x, y) {
-      trailParticles.push({
-        x: x + (Math.random() - 0.5) * 14,
-        y: y + (Math.random() - 0.5) * 14,
-        vx: (Math.random() - 0.5) * 1.5,
-        vy: -Math.random() * 1.8 - 0.5,
-        size: Math.random() * 4.5 + 2.5,
-        alpha: 0.95,
-        color: Math.random() > 0.4 ? '#ffaec0' : '#d8b4fe',
-        char: Math.random() > 0.65 ? (Math.random() > 0.5 ? '🌸' : '✨') : null,
-        rotation: Math.random() * Math.PI * 2
-      });
-      if (trailParticles.length > 90) trailParticles.shift();
+    // 50 Natural Falling Petals
+    const PETAL_COUNT_2D = 55;
+    const fallingPetals = [];
+
+    class FallingPetal {
+      constructor() {
+        this.reset(true);
+      }
+
+      reset(init = false) {
+        this.x = Math.random() * overlayCanvas.width;
+        this.y = init ? Math.random() * overlayCanvas.height : -30;
+        this.size = Math.random() * 14 + 10;
+        this.speedY = Math.random() * 1.1 + 0.65;
+        this.speedX = Math.random() * 0.8 - 0.4;
+        this.angle = Math.random() * Math.PI * 2;
+        this.rotSpeed = (Math.random() - 0.5) * 0.025;
+        this.swaySpeed = Math.random() * 0.02 + 0.01;
+        this.swayOffset = Math.random() * Math.PI * 2;
+        this.type = Math.random() > 0.35 ? 'petal' : 'heart';
+        this.opacity = Math.random() * 0.4 + 0.55;
+        this.color = Math.random() > 0.5 ? '#ffb7c5' : (Math.random() > 0.5 ? '#ff85a1' : '#fbcfe8');
+      }
+
+      update(windX, windY) {
+        // Wind influence from mouse
+        this.x += this.speedX + Math.sin(this.swayOffset) * 0.85 + windX * 0.6;
+        this.y += this.speedY + windY * 0.4;
+        this.swayOffset += this.swaySpeed;
+        this.angle += this.rotSpeed;
+
+        if (this.y > overlayCanvas.height + 40 || this.x < -40 || this.x > overlayCanvas.width + 40) {
+          this.reset(false);
+        }
+      }
+
+      draw(ctx) {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.angle);
+        ctx.globalAlpha = this.opacity;
+
+        if (this.type === 'petal') {
+          // Delicate 3D Sakura Petal with Gradient
+          ctx.beginPath();
+          ctx.moveTo(0, -this.size);
+          ctx.quadraticCurveTo(this.size * 0.7, -this.size * 0.4, this.size * 0.5, this.size * 0.6);
+          ctx.quadraticCurveTo(0, this.size, -this.size * 0.5, this.size * 0.6);
+          ctx.quadraticCurveTo(-this.size * 0.7, -this.size * 0.4, 0, -this.size);
+          ctx.closePath();
+
+          const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, this.size);
+          grad.addColorStop(0, '#fff5f8');
+          grad.addColorStop(0.5, this.color);
+          grad.addColorStop(1, 'rgba(255, 133, 161, 0.7)');
+          ctx.fillStyle = grad;
+          ctx.shadowColor = this.color;
+          ctx.shadowBlur = 10;
+          ctx.fill();
+        } else {
+          // Romantic Floating Heart
+          ctx.beginPath();
+          const s = this.size * 0.65;
+          ctx.moveTo(0, s * 0.3);
+          ctx.bezierCurveTo(-s * 0.7, -s * 0.6, -s * 1.3, s * 0.5, 0, s * 1.3);
+          ctx.bezierCurveTo(s * 1.3, s * 0.5, s * 0.7, -s * 0.6, 0, s * 0.3);
+          ctx.fillStyle = this.color;
+          ctx.shadowColor = this.color;
+          ctx.shadowBlur = 12;
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
     }
 
-    let eyeBlinkProgress = 0;
-    let eyeBlinkTimer = 0;
+    for (let i = 0; i < PETAL_COUNT_2D; i++) {
+      fallingPetals.push(new FallingPetal());
+    }
 
-    function drawGazingEye(cx, cy, targetX, targetY, scale) {
-      ctx2D.save();
-      ctx2D.translate(cx, cy);
-      ctx2D.scale(scale, scale * (1 - eyeBlinkProgress * 0.94));
-
-      // Calculate smooth gaze angle towards cursor
-      const dx = targetX - cx;
-      const dy = targetY - cy;
-      const angle = Math.atan2(dy, dx);
-      const dist = Math.min(Math.hypot(dx, dy) * 0.038, 20); // Gaze displacement
-      const pupilX = Math.cos(angle) * dist;
-      const pupilY = Math.sin(angle) * dist;
-
-      const pal = PASTEL_PALETTES[currentPaletteIndex];
-      const glowPink = `rgba(${Math.round(pal.primary[0]*255)}, ${Math.round(pal.primary[1]*255)}, ${Math.round(pal.primary[2]*255)}, 0.85)`;
-      const glowLilac = `rgba(${Math.round(pal.secondary[0]*255)}, ${Math.round(pal.secondary[1]*255)}, ${Math.round(pal.secondary[2]*255)}, 0.7)`;
-
-      // Soft Almond Contour
-      ctx2D.beginPath();
-      ctx2D.moveTo(-105, 0);
-      ctx2D.quadraticCurveTo(0, -65, 105, 0);
-      ctx2D.quadraticCurveTo(0, 65, -105, 0);
-      ctx2D.closePath();
-
-      ctx2D.strokeStyle = glowPink;
-      ctx2D.lineWidth = 3;
-      ctx2D.shadowColor = glowPink;
-      ctx2D.shadowBlur = 24;
-      ctx2D.stroke();
-
-      // Iris looking towards cursor
-      ctx2D.beginPath();
-      ctx2D.arc(pupilX, pupilY, 36, 0, Math.PI * 2);
-      ctx2D.fillStyle = glowLilac;
-      ctx2D.shadowColor = glowLilac;
-      ctx2D.shadowBlur = 18;
-      ctx2D.fill();
-      ctx2D.stroke();
-
-      // Heart Pupil looking towards cursor
-      ctx2D.save();
-      ctx2D.translate(pupilX, pupilY - 4);
-      ctx2D.beginPath();
-      const hScale = 1.15;
-      ctx2D.moveTo(0, 8 * hScale);
-      ctx2D.bezierCurveTo(-14 * hScale, -8 * hScale, -28 * hScale, 14 * hScale, 0, 32 * hScale);
-      ctx2D.bezierCurveTo(28 * hScale, 14 * hScale, 14 * hScale, -8 * hScale, 0, 8 * hScale);
-      ctx2D.fillStyle = '#fff5f8';
-      ctx2D.shadowColor = '#fff';
-      ctx2D.shadowBlur = 20;
-      ctx2D.fill();
-      ctx2D.restore();
-
-      ctx2D.restore();
+    // Interactive Petals Spawned on Mouse Path
+    const mousePetals = [];
+    function spawnMousePetal(x, y) {
+      mousePetals.push({
+        x: x + (Math.random() - 0.5) * 16,
+        y: y + (Math.random() - 0.5) * 16,
+        vx: (Math.random() - 0.5) * 1.8 + mouse.vx * 0.2,
+        vy: -Math.random() * 1.8 - 0.5,
+        size: Math.random() * 7 + 6,
+        alpha: 0.95,
+        angle: Math.random() * Math.PI * 2,
+        rotSpeed: (Math.random() - 0.5) * 0.04,
+        type: Math.random() > 0.4 ? '🌸' : (Math.random() > 0.5 ? '💖' : '💮')
+      });
+      if (mousePetals.length > 75) mousePetals.shift();
     }
 
     function render2D(now) {
       ctx2D.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
 
-      // 1. Natural slow blink
-      eyeBlinkTimer += 0.018;
-      if (Math.sin(eyeBlinkTimer * 2) > 0.98) {
-        eyeBlinkProgress = Math.min(1, eyeBlinkProgress + 0.18);
-      } else {
-        eyeBlinkProgress = Math.max(0, eyeBlinkProgress - 0.14);
-      }
+      // Compute Mouse Velocity for Wind Calculation
+      mouse.vx = mouse.screenX - mouse.lastScreenX;
+      mouse.vy = mouse.screenY - mouse.lastScreenY;
+      mouse.lastScreenX = mouse.screenX;
+      mouse.lastScreenY = mouse.screenY;
 
-      // 2. Render Gazing Eyes (in Phase 0 or 3)
-      if (currentPhaseIndex === 0 || currentPhaseIndex === 3) {
-        const midX = overlayCanvas.width / 2;
-        const midY = overlayCanvas.height / 2;
-        const spacing = Math.min(overlayCanvas.width * 0.22, 160);
-        const scale = Math.min(overlayCanvas.width / 820, 1.1);
+      // 1. Update and Render Falling Petals
+      fallingPetals.forEach(petal => {
+        // Distance to mouse (wind deflection)
+        const dx = petal.x - mouse.screenX;
+        const dy = petal.y - mouse.screenY;
+        const dist = Math.hypot(dx, dy);
+        let windX = 0;
+        let windY = 0;
 
-        drawGazingEye(midX - spacing, midY, mouse.screenX, mouse.screenY, scale);
-        drawGazingEye(midX + spacing, midY, mouse.screenX, mouse.screenY, scale);
+        if (dist < 140) {
+          const force = (1 - dist / 140) * 4;
+          windX = (dx / dist) * force + mouse.vx * 0.35;
+          windY = (dy / dist) * force + mouse.vy * 0.35;
+        }
 
-        // Gentle light thread between eyes
-        ctx2D.beginPath();
-        ctx2D.moveTo(midX - spacing, midY);
-        ctx2D.lineTo(midX + spacing, midY);
-        ctx2D.strokeStyle = 'rgba(255, 240, 248, 0.35)';
-        ctx2D.lineWidth = 1.5;
-        ctx2D.shadowBlur = 12;
-        ctx2D.shadowColor = '#ffaec0';
-        ctx2D.stroke();
-      }
+        petal.update(windX, windY);
+        petal.draw(ctx2D);
+      });
 
-      // 3. Render Floating Mouse Trail Particles
-      for (let i = trailParticles.length - 1; i >= 0; i--) {
-        const p = trailParticles[i];
+      // 2. Render Mouse Trail Blossoms & Hearts
+      for (let i = mousePetals.length - 1; i >= 0; i--) {
+        const p = mousePetals[i];
         p.x += p.vx;
         p.y += p.vy;
-        p.alpha -= 0.015;
-        p.size *= 0.98;
+        p.angle += p.rotSpeed;
+        p.alpha -= 0.014;
+        p.size *= 0.985;
 
         if (p.alpha <= 0) {
-          trailParticles.splice(i, 1);
+          mousePetals.splice(i, 1);
           continue;
         }
 
         ctx2D.save();
         ctx2D.globalAlpha = p.alpha;
-        if (p.char) {
-          ctx2D.font = `${p.size * 3.8}px serif`;
-          ctx2D.fillText(p.char, p.x, p.y);
-        } else {
-          ctx2D.beginPath();
-          ctx2D.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-          ctx2D.fillStyle = p.color;
-          ctx2D.shadowColor = p.color;
-          ctx2D.shadowBlur = 12;
-          ctx2D.fill();
-        }
+        ctx2D.translate(p.x, p.y);
+        ctx2D.rotate(p.angle);
+        ctx2D.font = `${p.size * 2.8}px serif`;
+        ctx2D.fillText(p.type, -p.size, p.size * 0.8);
         ctx2D.restore();
       }
     }
 
     /* =====================================================================
-       MAIN ANIMATION LOOP: SILKY FLUID MORPHING + MOUSE ATTRACTION
+       MAIN ANIMATION LOOP: SILKY FLUID MORPHING + 3D PARALLAX
        ===================================================================== */
     let lastTime = 0;
-    let phaseTimer = 0;
-    const PHASE_DURATION = 6.8; // Gentle, relaxing 6.8 seconds per phase
+    let sceneTimer = 0;
+    const SCENE_DURATION = 7.0; // Relaxing 7 seconds per flower scene
 
-    // Slow organic breathing rate (~65 BPM)
     let breathingScale = 1.0;
 
     function animate(now) {
@@ -830,71 +829,69 @@
       const delta = (now - lastTime) * 0.001 || 0.016;
       lastTime = now;
 
-      // Mouse Smooth Interpolation (Inertia)
+      // Mouse Smooth Inertia
       mouse.screenX += (mouse.targetScreenX - mouse.screenX) * 0.085;
       mouse.screenY += (mouse.targetScreenY - mouse.screenY) * 0.085;
-      mouse.x += (mouse.targetX - mouse.x) * 0.06;
-      mouse.y += (mouse.targetY - mouse.y) * 0.06;
+      mouse.x += (mouse.targetX - mouse.x) * 0.055;
+      mouse.y += (mouse.targetY - mouse.y) * 0.055;
 
-      // Move Custom Cursor with buttery smoothness
+      // Move Custom Cursor
       cursorFollower.style.transform = `translate3d(${mouse.screenX}px, ${mouse.screenY}px, 0)`;
-      cursorDot.style.transform = `translate3d(${mouse.targetScreenX}px, ${mouse.targetScreenY}px, 0)`;
+      cursorIcon.style.transform = `translate3d(${mouse.targetScreenX}px, ${mouse.targetScreenY}px, 0)`;
 
-      // Phase timing
-      phaseTimer += delta;
-      if (phaseTimer >= PHASE_DURATION) {
-        phaseTimer = 0;
-        transitionToNextPhase();
+      // Scene timer
+      sceneTimer += delta;
+      if (sceneTimer >= SCENE_DURATION) {
+        sceneTimer = 0;
+        nextScene();
       }
 
-      // Gentle breathing wave
-      breathingScale = 1.0 + Math.sin(now * 0.0022) * 0.065;
+      // Gentle floral breathing wave
+      breathingScale = 1.0 + Math.sin(now * 0.0018) * 0.06;
 
-      // Smooth Morphing Particles + Interactive Mouse Attraction
+      // Smooth Morphing Particles + Magnetic Mouse Attraction
       const posAttr = geometry.attributes.position;
       const colAttr = geometry.attributes.color;
       const pos = posAttr.array;
       const col = colAttr.array;
 
-      // Project mouse into 3D world space coordinates
       const mouseWorldX = mouse.x * 160;
       const mouseWorldY = mouse.y * 120;
 
       for (let i = 0; i < PARTICLE_COUNT; i++) {
         const i3 = i * 3;
 
-        // Base target position
-        let tx = baseTargetPositions[i3];
-        let ty = baseTargetPositions[i3 + 1];
-        let tz = baseTargetPositions[i3 + 2];
+        let tx = targetPositions[i3];
+        let ty = targetPositions[i3 + 1];
+        let tz = targetPositions[i3 + 2];
 
-        // MOUSE INFLUENCE: Fluid magnetic attraction & soft eddy swirl
+        // Fluid magnetic eddy near mouse
         const dx = mouseWorldX - pos[i3];
         const dy = mouseWorldY - pos[i3 + 1];
         const distSq = dx * dx + dy * dy;
 
-        if (distSq < 18000) {
+        if (distSq < 19000) {
           const dist = Math.sqrt(distSq);
-          const force = (1.0 - dist / 134) * 28;
-          tx += (dx / dist) * force + Math.sin(now * 0.003 + i) * 8;
-          ty += (dy / dist) * force + Math.cos(now * 0.003 + i) * 8;
-          tz += force * 0.4;
+          const force = (1.0 - dist / 138) * 32;
+          tx += (dx / dist) * force + Math.sin(now * 0.003 + i) * 7;
+          ty += (dy / dist) * force + Math.cos(now * 0.003 + i) * 7;
+          tz += force * 0.45;
         }
 
-        // Silky, viscous interpolation (Slow & Super Smooth)
+        // Viscous, silky smooth interpolation (0.024)
         pos[i3] += (tx - pos[i3]) * 0.024;
         pos[i3 + 1] += (ty - pos[i3 + 1]) * 0.024;
         pos[i3 + 2] += (tz - pos[i3 + 2]) * 0.024;
 
         // Color transition
-        col[i3] += (targetColors[i3] - col[i3]) * 0.02;
-        col[i3 + 1] += (targetColors[i3 + 1] - col[i3 + 1]) * 0.02;
-        col[i3 + 2] += (targetColors[i3 + 2] - col[i3 + 2]) * 0.02;
+        col[i3] += (targetColors[i3] - col[i3]) * 0.022;
+        col[i3 + 1] += (targetColors[i3 + 1] - col[i3 + 1]) * 0.022;
+        col[i3 + 2] += (targetColors[i3 + 2] - col[i3 + 2]) * 0.022;
       }
       posAttr.needsUpdate = true;
       colAttr.needsUpdate = true;
 
-      // 3D Parallax: Scene gently tilts & tracks cursor orientation
+      // 3D Parallax: Smooth rotation following cursor
       particleSystem.rotation.y += 0.003;
       particleSystem.rotation.y += (mouse.x * 0.35 - particleSystem.rotation.y) * 0.04;
       particleSystem.rotation.x += (-mouse.y * 0.25 - particleSystem.rotation.x) * 0.04;
@@ -905,8 +902,8 @@
       render2D(now * 0.001);
     }
 
-    generateEyeShape();
-    setTargetPalette(0);
+    generateRoseShape();
+    updateColors(0);
     animate(0);
 
     /* =====================================================================
@@ -914,23 +911,23 @@
        ===================================================================== */
     const startScreen = document.getElementById('start-screen');
 
-    function startExperience() {
+    function startApp() {
       audio.init();
       startScreen.classList.add('hidden');
-      transitionToNextPhase();
+      nextScene();
     }
 
-    startScreen.addEventListener('click', startExperience);
-    startScreen.addEventListener('touchstart', startExperience);
+    startScreen.addEventListener('click', startApp);
+    startScreen.addEventListener('touchstart', startApp);
 
     window.addEventListener('pointerdown', (e) => {
       if (!startScreen.classList.contains('hidden')) return;
 
-      // Ripple extra stardust on click
-      for (let i = 0; i < 14; i++) {
-        addTrailParticle(e.clientX, e.clientY);
+      // Burst 16 petals and hearts on click
+      for (let i = 0; i < 16; i++) {
+        spawnMousePetal(e.clientX, e.clientY);
       }
-      gsap.to(cursorFollower, { scale: 1.8, duration: 0.2, yoyo: true, repeat: 1 });
+      gsap.to(cursorFollower, { scale: 1.8, duration: 0.22, yoyo: true, repeat: 1 });
     });
   </script>
 </body>
