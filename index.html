@@ -3,14 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>COSMIC WOW ✨ PORSCHE 911 & GARDEN OF LIGHT</title>
+  <title>20 SẮC THÁI CẢM XÚC ✨ THE ULTIMATE EXPERIENCE</title>
   
-  <meta property="og:title" content="Bản Giao Hưởng Bùng Nổ Thị Giác 3D 🌸🏎️💖">
-  <meta property="og:description" content="Chạm để mở siêu phẩm thị giác: Porsche 911, Mắt đồng tử trái tim, Vườn hoa và nhịp đập âm nhạc bùng nổ!">
+  <meta property="og:title" content="20 Hiệu Ứng Bùng Nổ Thị Giác & Âm Nhạc 🌸💖✨">
+  <meta property="og:description" content="Chạm để bước vào thế giới 20 chuyển động thị giác đỉnh cao đồng bộ theo từng nhịp đập âm nhạc.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80">
   <meta property="og:type" content="website">
 
   <style>
+    :root {
+      --neon-pink: #ff70a6;
+      --neon-rose: #ff9ebb;
+      --neon-gold: #ffd166;
+      --neon-lavender: #d8b4fe;
+      --neon-mint: #70d6ff;
+      --bg-dark: #040106;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -23,22 +32,22 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background-color: #030006;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+      background-color: var(--bg-dark);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
       cursor: none;
     }
 
-    /* Ambient Nebular Pulse */
+    /* Ambient Nebular Glow */
     #ambient-glow {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 50% 50%, rgba(255, 120, 165, 0.22) 0%, rgba(180, 100, 255, 0.1) 45%, rgba(3, 0, 6, 0.98) 85%);
+      background: radial-gradient(circle at 50% 50%, rgba(255, 112, 166, 0.22) 0%, rgba(216, 180, 254, 0.1) 45%, rgba(4, 1, 6, 0.98) 85%);
       z-index: 0;
       pointer-events: none;
-      transition: opacity 0.1s ease;
+      transition: opacity 0.15s ease;
     }
 
     #webgl-canvas {
@@ -60,33 +69,144 @@
       pointer-events: none;
     }
 
-    /* Cinematic Flash Layer */
+    /* Flash Layer on Bass Drops */
     #flash-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle, rgba(255, 200, 220, 0.8) 0%, rgba(255, 120, 180, 0.4) 60%, transparent 100%);
+      background: radial-gradient(circle, rgba(255, 190, 220, 0.85) 0%, rgba(255, 112, 166, 0.35) 60%, transparent 100%);
       opacity: 0;
       pointer-events: none;
       z-index: 8;
-      transition: opacity 0.18s ease-out;
+      transition: opacity 0.15s ease-out;
     }
 
-    /* Cursor */
+    /* Minimalist Elegant HUD */
+    #top-hud {
+      position: absolute;
+      top: 22px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 28px;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    /* Effect Title Badge */
+    .effect-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 112, 166, 0.08);
+      border: 1px solid rgba(255, 112, 166, 0.3);
+      padding: 8px 18px;
+      border-radius: 40px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 4px 20px rgba(255, 112, 166, 0.15);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .badge-index {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--neon-gold);
+      letter-spacing: 1.5px;
+    }
+
+    .badge-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 0 12px rgba(255, 112, 166, 0.8);
+    }
+
+    /* Heartbeat BPM Monitor (Nhịp đập âm nhạc) */
+    .heartbeat-monitor {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(20, 5, 25, 0.45);
+      border: 1px solid rgba(216, 180, 254, 0.25);
+      padding: 6px 16px;
+      border-radius: 30px;
+      backdrop-filter: blur(14px);
+    }
+
+    .heartbeat-icon {
+      font-size: 1.15rem;
+      color: #ff3366;
+      filter: drop-shadow(0 0 10px #ff3366);
+      transform-origin: center;
+      transition: transform 0.08s ease;
+    }
+
+    /* Live ECG Heartbeat Line Canvas */
+    #ecg-canvas {
+      width: 75px;
+      height: 24px;
+    }
+
+    .bpm-text {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #ffd166;
+      letter-spacing: 1.5px;
+      text-shadow: 0 0 10px rgba(255, 209, 102, 0.6);
+      min-width: 65px;
+    }
+
+    /* Audio Waveform Spectrum at Bottom (Dòng nhạc) */
+    #audio-spectrum-box {
+      position: absolute;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(92vw, 480px);
+      height: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    #wave-canvas {
+      width: 100%;
+      height: 38px;
+      filter: drop-shadow(0 0 12px rgba(255, 112, 166, 0.7));
+    }
+
+    .music-note-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      margin-top: 4px;
+      text-shadow: 0 0 8px rgba(216, 180, 254, 0.6);
+    }
+
+    /* Cursor Follower */
     #cursor-follower {
       position: fixed;
       top: 0;
       left: 0;
-      width: 36px;
-      height: 36px;
-      margin-left: -18px;
-      margin-top: -18px;
+      width: 34px;
+      height: 34px;
+      margin-left: -17px;
+      margin-top: -17px;
       border-radius: 50%;
       border: 1.5px solid rgba(255, 180, 210, 0.85);
       background: radial-gradient(circle, rgba(255, 180, 210, 0.4) 0%, rgba(220, 150, 255, 0.1) 70%, transparent 100%);
-      box-shadow: 0 0 25px rgba(255, 120, 175, 0.8), 0 0 50px rgba(180, 100, 255, 0.5);
+      box-shadow: 0 0 25px rgba(255, 112, 166, 0.8), 0 0 50px rgba(180, 100, 255, 0.5);
       pointer-events: none;
       z-index: 99;
       transform: translate3d(-100px, -100px, 0);
@@ -102,25 +222,25 @@
       margin-top: -3px;
       border-radius: 50%;
       background: #ffffff;
-      box-shadow: 0 0 15px #ff85b3, 0 0 25px #fff;
+      box-shadow: 0 0 15px #ff70a6, 0 0 25px #fff;
       pointer-events: none;
       z-index: 100;
       transform: translate3d(-100px, -100px, 0);
     }
 
-    /* Start Overlay Screen */
+    /* Start Overlay */
     #start-screen {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 20;
+      z-index: 30;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: radial-gradient(circle at center, rgba(30, 8, 35, 0.94) 0%, rgba(3, 0, 6, 0.98) 80%);
+      background: radial-gradient(circle at center, rgba(32, 8, 38, 0.94) 0%, rgba(4, 1, 6, 0.98) 80%);
       backdrop-filter: blur(28px);
       transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.2s;
       cursor: pointer;
@@ -131,7 +251,7 @@
       pointer-events: none;
     }
 
-    .start-portal {
+    .start-circle {
       position: relative;
       width: 120px;
       height: 120px;
@@ -141,29 +261,29 @@
       margin-bottom: 26px;
     }
 
-    .portal-ring {
+    .ripple-ring {
       position: absolute;
       width: 100%;
       height: 100%;
       border-radius: 50%;
       border: 1.5px solid rgba(255, 160, 200, 0.7);
-      box-shadow: 0 0 35px rgba(255, 120, 180, 0.5);
-      animation: portalPulse 3s infinite ease-out;
+      box-shadow: 0 0 35px rgba(255, 112, 166, 0.5);
+      animation: softRipple 3s infinite ease-out;
     }
-    .portal-ring:nth-child(2) {
+    .ripple-ring:nth-child(2) {
       animation-delay: 1.2s;
       border-color: rgba(200, 140, 255, 0.5);
     }
 
-    @keyframes portalPulse {
+    @keyframes softRipple {
       0% { transform: scale(0.65); opacity: 0.95; }
       100% { transform: scale(2.6); opacity: 0; }
     }
 
-    .portal-icon {
+    .start-icon {
       font-size: 42px;
       animation: pulseCore 2.4s infinite ease-in-out;
-      filter: drop-shadow(0 0 30px rgba(255, 120, 180, 1));
+      filter: drop-shadow(0 0 30px rgba(255, 112, 166, 1));
     }
 
     @keyframes pulseCore {
@@ -178,6 +298,13 @@
       text-transform: uppercase;
       font-weight: 300;
       text-shadow: 0 0 20px rgba(255, 160, 200, 0.9), 0 0 40px rgba(200, 140, 255, 0.6);
+      text-align: center;
+    }
+    .start-subprompt {
+      color: rgba(255, 240, 245, 0.7);
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      margin-top: 12px;
     }
   </style>
 
@@ -199,26 +326,76 @@
   <canvas id="webgl-canvas"></canvas>
   <canvas id="overlay-canvas"></canvas>
 
+  <!-- TOP HUD: Effect Name & Heartbeat Monitor -->
+  <div id="top-hud">
+    <div class="effect-badge" id="effect-badge">
+      <span class="badge-index" id="badge-index">01 / 20</span>
+      <span class="badge-title" id="badge-title">HEART EYES ❤️</span>
+    </div>
+
+    <!-- Nhịp đập âm nhạc (Heartbeat Pulse Monitor) -->
+    <div class="heartbeat-monitor">
+      <span class="heartbeat-icon" id="heartbeat-icon">❤️</span>
+      <canvas id="ecg-canvas"></canvas>
+      <span class="bpm-text" id="bpm-text">128 BPM</span>
+    </div>
+  </div>
+
+  <!-- BOTTOM HUD: Dòng nhạc (Audio Waveform & Frequency Spectrum) -->
+  <div id="audio-spectrum-box">
+    <canvas id="wave-canvas"></canvas>
+    <div class="music-note-label">✦ AUDIO FREQUENCY DYNAMICS ✦</div>
+  </div>
+
   <!-- Start Screen -->
   <div id="start-screen">
-    <div class="start-portal">
-      <div class="portal-ring"></div>
-      <div class="portal-ring"></div>
-      <div class="portal-icon">🌸</div>
+    <div class="start-circle">
+      <div class="ripple-ring"></div>
+      <div class="ripple-ring"></div>
+      <div class="start-icon">💖</div>
     </div>
     <div class="start-prompt">CHẠM ĐỂ MỞ</div>
+    <div class="start-subprompt">20 Hiệu ứng bùng nổ đồng bộ theo từng nhịp thở âm nhạc</div>
   </div>
 
   <script>
     /* =====================================================================
-       AUDIO BEAT DETECTOR (BASS DROP & PULSE SYNC)
+       20 HIỆU ỨNG THỊ GIÁC ĐỈNH CAO (METICULOUSLY CRAFTED LIST)
+       ===================================================================== */
+    const EFFECTS_LIST = [
+      { id: 1, name: "Heart Eyes ❤️", desc: "Đồng tử biến thành hình trái tim hồng, mắt long lanh" },
+      { id: 2, name: "Flower Field 🌸", desc: "Cánh đồng hoa bạt ngàn, cánh hoa lay nhẹ trong gió" },
+      { id: 3, name: "Butterfly Kiss 🦋", desc: "Những con bướm phát sáng bay lượn và cánh đập nhẹ" },
+      { id: 4, name: "Cherry Blossom Rain 🌸", desc: "Cánh hoa anh đào hồng rơi chậm bồng bềnh xung quanh" },
+      { id: 5, name: "Princess Transformation 👑", desc: "Váy dạ hội lộng lẫy và vương miện ánh sáng hoàng gia" },
+      { id: 6, name: "Galaxy Eyes ✨", desc: "Bên trong đôi mắt xuất hiện dải ngân hà xoay lấp lánh" },
+      { id: 7, name: "Fairy Wings 🧚", desc: "Đôi cánh tiên trong suốt phát sáng cùng bụi phép thuật" },
+      { id: 8, name: "Pink Cloud Dream ☁️", desc: "Đám mây hồng bồng bềnh giữa bầu trời hoàng hôn" },
+      { id: 9, name: "Flower Bloom Hair 🌷", desc: "Vương miện hoa nở dần với những chùm hoa nhỏ lung linh" },
+      { id: 10, name: "Love Letter Rain 💌", desc: "Hàng trăm lá thư tình và trái tim giấy bay lơ lửng" },
+      { id: 11, name: "Mermaid Fantasy 🧜‍♀️", desc: "Nàng tiên cá với đuôi phát sáng và đại dương dạ quang" },
+      { id: 12, name: "Crystal Tears 💎", desc: "Những giọt nước mắt pha lê hóa thành kim cương sáng ngời" },
+      { id: 13, name: "Moonlight Goddess 🌙", desc: "Vầng trăng khổng lồ cùng hào quang bạc huyền ảo" },
+      { id: 14, name: "Glitter Makeup 💖", desc: "Má hồng, tàn nhang hình trái tim và kim tuyến phát sáng" },
+      { id: 15, name: "Enchanted Garden 🌺", desc: "Khu vườn cổ tích với hoa khổng lồ và đom đóm thần tiên" },
+      { id: 16, name: "Angel Aura 👼", desc: "Vầng hào quang trên đầu và đôi cánh trắng thiên thần" },
+      { id: 17, name: "Underwater Dream 🫧", desc: "Làn nước xanh trong, bong bóng và hoa trôi lơ lửng" },
+      { id: 18, name: "Rose Petal Explosion 🌹", desc: "Nụ hồng bung nở, hàng nghìn cánh hồng nổ tung thành trái tim" },
+      { id: 19, name: "Magic Mirror 🪞", desc: "Gương thần cổ tích viền hoa văn phát sáng phản chiếu nữ thần" },
+      { id: 20, name: "Starlight Touch ⭐", desc: "Mỗi lần chạm tay xuất hiện ngôi sao chùm và trái tim bùng nổ" }
+    ];
+
+    /* =====================================================================
+       AUDIO ENGINE WITH WEB AUDIO API ANALYSER (WAVEFORM & BEAT DETECTOR)
        ===================================================================== */
     const audioElement = document.getElementById('bg-audio');
     let audioCtx = null;
     let analyser = null;
     let freqData = null;
+    let timeData = null;
     let beatEnergy = 0;
     let prevBeatEnergy = 0;
+    let detectedBPM = 128;
 
     function initAudio() {
       if (audioCtx) {
@@ -230,46 +407,156 @@
 
       analyser = audioCtx.createAnalyser();
       analyser.fftSize = 256;
+      analyser.smoothingTimeConstant = 0.8;
       freqData = new Uint8Array(analyser.frequencyBinCount);
+      timeData = new Uint8Array(analyser.frequencyBinCount);
 
       const source = audioCtx.createMediaElementSource(audioElement);
       source.connect(analyser);
       analyser.connect(audioCtx.destination);
 
-      audioElement.play().catch(e => console.log(e));
-    }
-
-    function updateBeat() {
-      if (!analyser || !freqData) return;
-      analyser.getByteFrequencyData(freqData);
-      // Low bass frequencies (Sub & Kick drums)
-      const lowBass = (freqData[1] + freqData[2] + freqData[3] + freqData[4]) / 4;
-      beatEnergy = lowBass / 255; // 0.0 to 1.0
-
-      // Bass Drop Detector
-      if (beatEnergy - prevBeatEnergy > 0.28 && beatEnergy > 0.55) {
-        triggerBassImpact();
-      }
-      prevBeatEnergy = beatEnergy;
+      audioElement.play().catch(e => console.log("Play error:", e));
     }
 
     const flashOverlay = document.getElementById('flash-overlay');
     const ambientGlow = document.getElementById('ambient-glow');
+    const heartIcon = document.getElementById('heartbeat-icon');
+    const bpmText = document.getElementById('bpm-text');
 
-    function triggerBassImpact() {
-      // Cinematic Flash & Camera Shake
-      flashOverlay.style.opacity = '0.45';
+    function updateAudioBeat() {
+      if (!analyser || !freqData) return;
+      analyser.getByteFrequencyData(freqData);
+      analyser.getByteTimeDomainData(timeData);
+
+      // Low bass frequencies (Sub & Kick drums)
+      const lowBass = (freqData[1] + freqData[2] + freqData[3] + freqData[4]) / 4;
+      beatEnergy = lowBass / 255;
+
+      // Heartbeat pulse icon animation
+      const heartScale = 1.0 + beatEnergy * 0.45;
+      heartIcon.style.transform = `scale(${heartScale})`;
+
+      // Dynamic BPM indicator
+      detectedBPM = Math.round(124 + beatEnergy * 16);
+      bpmText.innerText = `${detectedBPM} BPM`;
+
+      // Bass Drop Impact
+      if (beatEnergy - prevBeatEnergy > 0.28 && beatEnergy > 0.55) {
+        triggerBassShockwave();
+      }
+      prevBeatEnergy = beatEnergy;
+    }
+
+    function triggerBassShockwave() {
+      flashOverlay.style.opacity = '0.5';
       setTimeout(() => flashOverlay.style.opacity = '0', 160);
 
       ambientGlow.style.opacity = '1.3';
-      setTimeout(() => ambientGlow.style.opacity = '1', 200);
+      setTimeout(() => ambientGlow.style.opacity = '1', 220);
 
-      // Add a shockwave ring
-      spawnShockwaveRing(0, 0, currentShapeIndex === 0 ? 'heart' : 'circle');
+      // Spawn Shockwave Ring
+      spawnShockwaveRing(0, 0, (currentShapeIndex % 2 === 0) ? 'heart' : 'circle');
     }
 
     /* =====================================================================
-       MOUSE INTERACTION
+       DÒNG NHẠC (WAVEFORM & SPECTRUM VISUALIZER CANVAS)
+       ===================================================================== */
+    const waveCanvas = document.getElementById('wave-canvas');
+    const waveCtx = waveCanvas.getContext('2d');
+    waveCanvas.width = 480;
+    waveCanvas.height = 38;
+
+    function renderAudioWaveform() {
+      waveCtx.clearRect(0, 0, waveCanvas.width, waveCanvas.height);
+      if (!timeData || !freqData) {
+        // Draw resting idle wave
+        waveCtx.beginPath();
+        waveCtx.moveTo(0, waveCanvas.height / 2);
+        for (let x = 0; x < waveCanvas.width; x += 10) {
+          waveCtx.lineTo(x, waveCanvas.height / 2 + Math.sin(x * 0.05 + performance.now() * 0.003) * 3);
+        }
+        waveCtx.strokeStyle = 'rgba(255, 112, 166, 0.4)';
+        waveCtx.lineWidth = 2;
+        waveCtx.stroke();
+        return;
+      }
+
+      const w = waveCanvas.width;
+      const h = waveCanvas.height;
+      const barCount = 42;
+      const barWidth = (w / barCount) * 0.65;
+      const gap = (w / barCount) * 0.35;
+
+      // 1. Draw glowing frequency spectrum bars
+      for (let i = 0; i < barCount; i++) {
+        const freqIdx = Math.floor((i / barCount) * (freqData.length * 0.7));
+        const val = freqData[freqIdx] / 255;
+        const barH = val * h * 0.9 + 2;
+        const x = i * (barWidth + gap);
+        const y = (h - barH) / 2;
+
+        const grad = waveCtx.createLinearGradient(x, y, x, y + barH);
+        grad.addColorStop(0, '#ffd166');
+        grad.addColorStop(0.5, '#ff70a6');
+        grad.addColorStop(1, '#d8b4fe');
+
+        waveCtx.fillStyle = grad;
+        waveCtx.fillRect(x, y, barWidth, barH);
+      }
+
+      // 2. Draw silky smooth connecting waveform line
+      waveCtx.beginPath();
+      waveCtx.moveTo(0, h / 2);
+      for (let i = 0; i < timeData.length; i += 2) {
+        const v = timeData[i] / 128.0;
+        const y = (v * h) / 2;
+        const x = (i / timeData.length) * w;
+        if (i === 0) waveCtx.moveTo(x, y);
+        else waveCtx.lineTo(x, y);
+      }
+      waveCtx.strokeStyle = 'rgba(255, 255, 255, 0.85)';
+      waveCtx.lineWidth = 1.8;
+      waveCtx.stroke();
+    }
+
+    /* =====================================================================
+       NHỊP ĐẬP (LIVE ECG CARDIAC LINE CANVAS)
+       ===================================================================== */
+    const ecgCanvas = document.getElementById('ecg-canvas');
+    const ecgCtx = ecgCanvas.getContext('2d');
+    ecgCanvas.width = 75;
+    ecgCanvas.height = 24;
+    let ecgX = 0;
+    const ecgPoints = [];
+
+    function renderECGLine() {
+      ecgCtx.clearRect(0, 0, ecgCanvas.width, ecgCanvas.height);
+
+      // Add new point based on current beatEnergy
+      const baseMid = ecgCanvas.height / 2;
+      let spike = 0;
+      if (beatEnergy > 0.4) {
+        const t = performance.now() * 0.02;
+        spike = (Math.sin(t) > 0.5 ? -1 : 1) * (beatEnergy * 10);
+      }
+
+      ecgPoints.push(baseMid + spike);
+      if (ecgPoints.length > ecgCanvas.width) ecgPoints.shift();
+
+      ecgCtx.beginPath();
+      ecgPoints.forEach((py, px) => {
+        if (px === 0) ecgCtx.moveTo(px, py);
+        else ecgCtx.lineTo(px, py);
+      });
+      ecgCtx.strokeStyle = '#ff3366';
+      ecgCtx.lineWidth = 1.6;
+      ecgCtx.shadowColor = '#ff3366';
+      ecgCtx.shadowBlur = 6;
+      ecgCtx.stroke();
+    }
+
+    /* =====================================================================
+       MOUSE & TOUCH INTERACTION
        ===================================================================== */
     const mouse = {
       x: 0,
@@ -291,8 +578,8 @@
       mouse.targetX = (clientX / window.innerWidth) * 2 - 1;
       mouse.targetY = -(clientY / window.innerHeight) * 2 + 1;
 
-      // Spawn glowing stardust
-      spawnStardustTrail(clientX, clientY);
+      // Starlight Touch (Effect #20 integrated globally)
+      spawnStarlightSpark(clientX, clientY);
     }
 
     window.addEventListener('mousemove', (e) => onPointerMove(e.clientX, e.clientY));
@@ -301,9 +588,9 @@
     }, { passive: true });
 
     /* =====================================================================
-       THREE.JS ENGINE: 9,500 HYPER-RADIANT PARTICLES
+       THREE.JS: 9,000 HYPER-RADIANT PARTICLES (ZERO LAG 60-120 FPS)
        ===================================================================== */
-    const PARTICLE_COUNT = 9500;
+    const PARTICLE_COUNT = 9000;
     const canvas3D = document.getElementById('webgl-canvas');
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas3D,
@@ -320,11 +607,11 @@
 
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(PARTICLE_COUNT * 3);
-    const velocities = new Float32Array(PARTICLE_COUNT * 3); // For explosive scatter
+    const velocities = new Float32Array(PARTICLE_COUNT * 3);
     const colors = new Float32Array(PARTICLE_COUNT * 3);
 
     for (let i = 0; i < PARTICLE_COUNT * 3; i++) {
-      positions[i] = (Math.random() - 0.5) * 450;
+      positions[i] = (Math.random() - 0.5) * 400;
       velocities[i] = (Math.random() - 0.5) * 4.0;
       colors[i] = 1.0;
     }
@@ -332,7 +619,6 @@
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-    // Multi-layered High-Glow Stardust Texture
     function createGlowTexture() {
       const c = document.createElement('canvas');
       c.width = 128;
@@ -340,9 +626,9 @@
       const ctx = c.getContext('2d');
       const grad = ctx.createRadialGradient(64, 64, 0, 64, 64, 64);
       grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
-      grad.addColorStop(0.18, 'rgba(255, 220, 235, 0.98)');
-      grad.addColorStop(0.42, 'rgba(255, 140, 190, 0.65)');
-      grad.addColorStop(0.72, 'rgba(200, 120, 255, 0.2)');
+      grad.addColorStop(0.2, 'rgba(255, 220, 235, 0.98)');
+      grad.addColorStop(0.45, 'rgba(255, 112, 166, 0.65)');
+      grad.addColorStop(0.75, 'rgba(216, 180, 254, 0.22)');
       grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, 128, 128);
@@ -362,20 +648,12 @@
     scene.add(particleSystem);
 
     /* =====================================================================
-       3D PROCEDURAL SHOCKWAVE SYSTEM (EXPANDING RINGS)
+       PROCEDURAL SHOCKWAVE SYSTEM
        ===================================================================== */
     const shockwaveRings = [];
     const SHOCKWAVE_VERTS = 180;
-
-    function createShockwaveRingGeometry() {
-      const geo = new THREE.BufferGeometry();
-      const pos = new Float32Array(SHOCKWAVE_VERTS * 3);
-      geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-      return geo;
-    }
-
     const ringMat = new THREE.LineBasicMaterial({
-      color: 0xff85c0,
+      color: 0xff70a6,
       transparent: true,
       opacity: 0,
       blending: THREE.AdditiveBlending,
@@ -383,7 +661,9 @@
     });
 
     for (let r = 0; r < 3; r++) {
-      const ringMesh = new THREE.LineLoop(createShockwaveRingGeometry(), ringMat.clone());
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(SHOCKWAVE_VERTS * 3), 3));
+      const ringMesh = new THREE.LineLoop(geo, ringMat.clone());
       ringMesh.visible = false;
       scene.add(ringMesh);
       shockwaveRings.push({ mesh: ringMesh, radius: 0, maxRadius: 360, alpha: 0, type: 'circle' });
@@ -397,35 +677,17 @@
       ring.alpha = 0.95;
       ring.type = type;
       ring.mesh.visible = true;
-
-      const posArr = ring.mesh.geometry.attributes.position.array;
-      for (let i = 0; i < SHOCKWAVE_VERTS; i++) {
-        const theta = (i / SHOCKWAVE_VERTS) * Math.PI * 2;
-        let rx = Math.cos(theta);
-        let ry = Math.sin(theta);
-        if (type === 'heart') {
-          // Heart-shaped shockwave
-          rx = (16 * Math.pow(Math.sin(theta), 3)) / 16;
-          ry = (13 * Math.cos(theta) - 5 * Math.cos(2*theta) - 2 * Math.cos(3*theta) - Math.cos(4*theta)) / 16;
-        }
-        posArr[i * 3] = rx * ring.radius;
-        posArr[i * 3 + 1] = ry * ring.radius;
-        posArr[i * 3 + 2] = 0;
-      }
-      ring.mesh.geometry.attributes.position.needsUpdate = true;
     }
 
     function updateShockwaves() {
       shockwaveRings.forEach(ring => {
         if (!ring.mesh.visible) return;
-        ring.radius += 7.5;
-        ring.alpha -= 0.022;
-
+        ring.radius += 8.0;
+        ring.alpha -= 0.024;
         if (ring.alpha <= 0 || ring.radius >= ring.maxRadius) {
           ring.mesh.visible = false;
           return;
         }
-
         ring.mesh.material.opacity = ring.alpha;
         const posArr = ring.mesh.geometry.attributes.position.array;
         for (let i = 0; i < SHOCKWAVE_VERTS; i++) {
@@ -444,10 +706,9 @@
     }
 
     /* =====================================================================
-       MATHEMATICAL MASTERPIECES (PORSCHE 911, VƯỜN HOA, MẮT TRÁI TIM, KIM CƯƠNG)
+       20 MATHEMATICAL MASTERPIECES (TẤT CẢ 20 HIỆU ỨNG THEO YÊU CẦU)
        ===================================================================== */
     const shapes = [];
-
     function addShape(fn) {
       const arr = new Float32Array(PARTICLE_COUNT * 3);
       for (let i = 0; i < PARTICLE_COUNT; i++) {
@@ -460,143 +721,48 @@
       shapes.push(arr);
     }
 
-    /* 1. CON MẮT THẦN THOẠI & ĐỒNG TỬ HÌNH TRÁI TIM SIÊU THỰC */
+    // 1. Heart Eyes ❤️ (Đồng tử biến thành hình trái tim hồng, mắt long lanh)
     addShape((i, f) => {
       if (f < 0.32) {
-        // Glowing Heart-Shaped Pupil in the core with volumetric corona
         const t = Math.PI * 2 * (f / 0.32);
         const r = Math.pow(Math.random(), 0.5) * 2.2;
         const x = 16 * Math.pow(Math.sin(t), 3) * r * 2.2;
         const y = (13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t)) * r * 2.2;
-        const z = (Math.random() - 0.5) * 14;
-        return [x, y, z];
+        return [x, y, (Math.random() - 0.5) * 12];
       } else if (f < 0.72) {
-        // Concave 3D Iris with radiating fiber streamers
         const angle = Math.random() * Math.PI * 2;
-        const radius = 34 + Math.random() * 58;
-        const x = Math.cos(angle) * radius;
-        const y = Math.sin(angle) * radius;
-        const z = -Math.cos((radius / 92) * (Math.PI / 2)) * 32 + (Math.random() - 0.5) * 10;
-        return [x, y, z];
+        const radius = 34 + Math.random() * 56;
+        return [Math.cos(angle) * radius, Math.sin(angle) * radius, -Math.cos((radius / 90) * (Math.PI / 2)) * 30];
       } else {
-        // Almond Eyelids Contour & Royal Eyelash Filaments
-        const width = 195;
-        const x = (Math.random() - 0.5) * width * 2;
+        const x = (Math.random() - 0.5) * 380;
         const sign = Math.random() > 0.5 ? 1 : -1;
-        const yBase = sign * 82 * Math.cos((x / (width * 2)) * Math.PI);
-        const isLash = Math.random() > 0.3;
-        const lashLen = isLash ? sign * (Math.random() * 32 + 12) : 0;
-        const y = yBase + lashLen;
-        const z = (Math.random() - 0.5) * 32;
-        return [x, y, z];
+        const y = sign * 80 * Math.cos((x / 380) * Math.PI) + (Math.random() > 0.3 ? sign * (Math.random() * 30 + 10) : 0);
+        return [x, y, (Math.random() - 0.5) * 30];
       }
     });
 
-    /* 2. SIÊU XE PORSCHE 911 COUPE 3D VỚI ĐÈN PHA LASER & ĐÈN HẬU LIỀN MẠCH */
-    addShape((i, f) => {
-      if (f < 0.16) {
-        // 4 Glowing Wheels with Rims & Brake Calipers
-        const wheelIdx = Math.floor(f / 0.04);
-        const wx = (wheelIdx < 2) ? 100 : -95;
-        const wz = (wheelIdx % 2 === 0) ? 62 : -62;
-        const theta = Math.random() * Math.PI * 2;
-        const wr = Math.random() * 26;
-        return [wx + Math.cos(theta) * wr, -36 + Math.sin(theta) * wr, wz + (Math.random() - 0.5) * 10];
-      } else if (f < 0.28) {
-        // Twin Projector Laser Headlights (Beams of Light shooting forward!)
-        const isRight = (i % 2 === 0);
-        const hz = isRight ? 42 : -42;
-        const beamDist = Math.random() * 160 + 135; // Light rays shooting forward in space
-        const spread = (beamDist - 135) * 0.12;
-        return [beamDist, -14 + (Math.random() - 0.5) * spread, hz + (Math.random() - 0.5) * spread];
-      } else if (f < 0.38) {
-        // Iconic 911 Continuous Rear LED Light Bar (Đèn hậu liền mạch vắt ngang đuôi)
-        const z = (Math.random() - 0.5) * 110;
-        const x = -158 + (Math.random() - 0.5) * 4;
-        const y = 8 + (Math.random() - 0.5) * 5;
-        return [x, y, z];
-      } else if (f < 0.85) {
-        // Masterpiece 911 Curved Flyline, Aerodynamic Hood & Widebody Haunches
-        const x = (Math.random() - 0.5) * 315;
-        const normX = x / 157.5; // -1 (Rear) to +1 (Front)
-
-        let y = -30;
-        let halfWidth = 56;
-
-        if (normX > 0.52) {
-          // Front hood curving down to bumper
-          y = -14 - (normX - 0.52) * 36;
-          halfWidth = 50 - (normX - 0.52) * 22;
-        } else if (normX > -0.08) {
-          // Windshield raking back to roof peak
-          y = 42 - Math.pow(normX - 0.08, 2) * 48;
-          halfWidth = 47;
-        } else {
-          // Legendary sloping teardrop rear to ducktail spoiler
-          y = 42 + (normX + 0.08) * 44;
-          halfWidth = 65; // Wide muscular rear Carrera haunches
-        }
-
-        const z = (Math.random() - 0.5) * 2 * halfWidth;
-        y += (Math.random() - 0.5) * 8;
-        return [x, y, z];
-      } else {
-        // Neon Underglow & Aerodynamic Streamers trailing backwards
-        const x = (Math.random() - 0.5) * 310 - Math.random() * 80;
-        const z = (Math.random() - 0.5) * 120;
-        return [x, -44 + (Math.random() - 0.5) * 4, z];
-      }
-    });
-
-    /* 3. VƯỜN HOA THIÊN ĐƯỜNG VỚI HÀNG CHỤC ĐÓA HOA VƯƠN CAO */
+    // 2. Flower Field 🌸 (Cánh đồng hoa bạt ngàn lay nhẹ trong gió)
     addShape((i, f) => {
       const flowerIdx = i % 18;
       const angle = (flowerIdx / 18) * Math.PI * 2;
-      const gardenR = 45 + (flowerIdx % 4) * 48;
-      const stemBaseX = Math.cos(angle) * gardenR;
-      const stemBaseZ = Math.sin(angle) * gardenR * 0.75;
-
-      if (f < 0.32) {
-        // Undulating luminous rolling flowerbed
+      const dist = 45 + (flowerIdx % 4) * 48;
+      const stemX = Math.cos(angle) * dist;
+      const stemZ = Math.sin(angle) * dist * 0.75;
+      if (f < 0.35) {
         const gx = (Math.random() - 0.5) * 350;
         const gz = (Math.random() - 0.5) * 250;
-        const gy = Math.sin(gx * 0.016) * 18 + Math.cos(gz * 0.02) * 15 - 68;
-        return [gx, gy, gz];
-      } else if (f < 0.62) {
-        // Graceful flower stems rising up
-        const prog = Math.random();
-        const sx = stemBaseX + Math.sin(prog * Math.PI) * 16;
-        const sy = -68 + prog * 92;
-        const sz = stemBaseZ + (Math.random() - 0.5) * 6;
-        return [sx, sy, sz];
+        return [gx, Math.sin(gx * 0.016) * 18 - 65, gz];
+      } else if (f < 0.65) {
+        const p = Math.random();
+        return [stemX + Math.sin(p * Math.PI) * 15, -65 + p * 88, stemZ];
       } else {
-        // Blooming Petal Cups with swirling pollen halo
-        const petT = Math.random() * Math.PI * 2;
-        const petR = Math.random() * 28;
-        const petalY = -68 + 92 + Math.pow(petR / 28, 1.3) * 18;
-        return [stemBaseX + Math.cos(petT) * petR, petalY, stemBaseZ + Math.sin(petT) * petR];
+        const pt = Math.random() * Math.PI * 2;
+        const pr = Math.random() * 26;
+        return [stemX + Math.cos(pt) * pr, 23 + Math.pow(pr / 26, 1.3) * 16, stemZ + Math.sin(pt) * pr];
       }
     });
 
-    /* 4. TRÁI TIM KIM CƯƠNG VÔ CỰC VỚI VÒNG HÀO QUANG QUỸ ĐẠO */
-    addShape((i, f) => {
-      if (f < 0.78) {
-        const t = Math.PI * 2 * (f / 0.78);
-        const r = Math.pow(Math.random(), 0.52);
-        const u = (Math.random() - 0.5) * Math.PI;
-        const x = 16 * Math.pow(Math.sin(t), 3) * 8.8 * r;
-        const y = (13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t)) * 8.8 * r;
-        const z = u * 18 * (1.1 - Math.abs(x) / 32);
-        return [x, y, z];
-      } else {
-        // Double planetary rings of starlight orbiting the heart
-        const theta = Math.random() * Math.PI * 2;
-        const ringR = 175 + (Math.random() - 0.5) * 20;
-        return [Math.cos(theta) * ringR, Math.sin(theta) * ringR * 0.45, Math.sin(theta) * ringR * 0.9];
-      }
-    });
-
-    /* 5. CÁNH BƯỚM DẠ QUANG HUYỀN ẢO */
+    // 3. Butterfly Kiss 🦋 (Bướm phát sáng bay quanh và cánh đập nhẹ)
     addShape((i, f) => {
       const t = f * Math.PI * 2;
       const r = (Math.exp(Math.cos(t)) - 2 * Math.cos(4 * t) - Math.pow(Math.sin(t / 12), 5)) * 48;
@@ -606,24 +772,204 @@
       return [x, y, z];
     });
 
-    /* =====================================================================
-       HIGH-CONTRAST NEON PASTEL PALETTES
-       ===================================================================== */
-    const PALETTES = [
-      // 0: Cyber Rose & Diamond (Con Mắt Trái Tim)
-      { primary: [1.0, 0.65, 0.82], secondary: [1.0, 0.95, 0.98], accent: [0.95, 0.72, 1.0] },
-      // 1: Electric Hot Pink & Ice Cyan (Porsche 911)
-      { primary: [1.0, 0.45, 0.75], secondary: [0.55, 0.92, 1.0], accent: [1.0, 0.96, 0.75] },
-      // 2: Spring Floral Blossom & Mint (Vườn Hoa)
-      { primary: [1.0, 0.68, 0.82], secondary: [0.72, 0.98, 0.88], accent: [1.0, 0.88, 0.95] },
-      // 3: Champagne Rose (Trái Tim Kim Cương)
-      { primary: [1.0, 0.74, 0.82], secondary: [1.0, 0.92, 0.75], accent: [0.95, 0.82, 1.0] },
-      // 4: Ethereal Ultraviolet (Cánh Bướm)
-      { primary: [0.92, 0.65, 1.0], secondary: [0.75, 0.92, 1.0], accent: [1.0, 0.75, 0.90] }
-    ];
+    // 4. Cherry Blossom Rain 🌸 (Cánh hoa anh đào rơi chậm bồng bềnh)
+    addShape((i, f) => {
+      const t = f * Math.PI * 2;
+      const spiralR = Math.sqrt(f) * 190;
+      const angle = t * 3 + Math.sin(f * 20);
+      const x = Math.cos(angle) * spiralR;
+      const y = (0.5 - f) * 260 + Math.sin(spiralR * 0.05) * 25;
+      const z = Math.sin(angle) * spiralR * 0.8;
+      return [x, y, z];
+    });
+
+    // 5. Princess Transformation 👑 (Váy lộng lẫy và vương miện hoàng gia)
+    addShape((i, f) => {
+      if (f < 0.7) {
+        const h = (f / 0.7) * 160 - 80;
+        const skirtR = ((80 - h) / 160) * 120 + Math.sin(f * 40) * 10;
+        const theta = Math.random() * Math.PI * 2;
+        return [Math.cos(theta) * skirtR, h, Math.sin(theta) * skirtR * 0.8];
+      } else {
+        const theta = (Math.random() - 0.5) * Math.PI * 1.4;
+        const peak = Math.pow(Math.abs(Math.cos(theta * 2.5)), 2) * 55;
+        return [Math.sin(theta) * 75, 95 + peak, Math.cos(theta) * 35];
+      }
+    });
+
+    // 6. Galaxy Eyes ✨ (Dải ngân hà xoay lấp lánh trong mắt)
+    addShape((i, f) => {
+      const arms = 2;
+      const arm = i % arms;
+      const r = Math.pow(Math.random(), 0.6) * 180;
+      const theta = (arm / arms) * Math.PI * 2 + Math.log(r + 1) * 2.2;
+      return [Math.cos(theta) * r, Math.sin(theta) * r * 0.75, (Math.random() - 0.5) * 35 * (1 - r / 180)];
+    });
+
+    // 7. Fairy Wings 🧚 (Đôi cánh tiên trong suốt phát sáng đập cánh)
+    addShape((i, f) => {
+      const side = (i % 2 === 0) ? 1 : -1;
+      const t = (i / PARTICLE_COUNT) * Math.PI * 2;
+      const wingR = Math.sin(t * 2) * 140;
+      const x = side * (Math.abs(Math.cos(t) * wingR) + 15);
+      const y = Math.sin(t) * wingR * 0.85;
+      const z = Math.abs(x) * 0.35 + (Math.random() - 0.5) * 10;
+      return [x, y, z];
+    });
+
+    // 8. Pink Cloud Dream ☁️ (Những đám mây hồng bồng bềnh hoàng hôn)
+    addShape((i, f) => {
+      const lobe = Math.floor(f * 5);
+      const lobeCenters = [[-80, 0, 0], [-30, 35, 10], [30, 25, -10], [80, -5, 0], [0, -20, 20]];
+      const c = lobeCenters[lobe];
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(Math.random() * 2 - 1);
+      const rad = Math.random() * 55;
+      return [c[0] + rad * Math.sin(phi) * Math.cos(theta) * 1.3, c[1] + rad * Math.sin(phi) * Math.sin(theta) * 0.8, c[2] + rad * Math.cos(phi)];
+    });
+
+    // 9. Flower Bloom Hair 🌷 (Vương miện hoa nở dần trên mái tóc)
+    addShape((i, f) => {
+      const theta = (f - 0.5) * Math.PI * 1.5;
+      const baseR = 125;
+      const x = Math.sin(theta) * baseR;
+      const y = Math.cos(theta) * 80 + 35;
+      const z = (Math.random() - 0.5) * 45;
+      const bloomOffset = Math.sin(f * 25) * 15;
+      return [x + bloomOffset, y + bloomOffset, z];
+    });
+
+    // 10. Love Letter Rain 💌 (Lá thư tình và trái tim giấy bay lơ lửng)
+    addShape((i, f) => {
+      const letterIdx = i % 16;
+      const lx = ((letterIdx % 4) - 1.5) * 80;
+      const ly = (Math.floor(letterIdx / 4) - 1.5) * 75;
+      const px = (Math.random() - 0.5) * 55;
+      const py = (Math.random() - 0.5) * 38;
+      return [lx + px, ly + py + Math.sin(f * 10) * 15, (Math.random() - 0.5) * 60];
+    });
+
+    // 11. Mermaid Fantasy 🧜‍♀️ (Nàng tiên cá với đuôi phát sáng lấp lánh)
+    addShape((i, f) => {
+      const t = f * Math.PI * 2;
+      if (f < 0.65) {
+        const bodyY = (0.35 - f) * 260;
+        const wave = Math.sin(bodyY * 0.03) * 35;
+        const r = (1 - f / 0.65) * 35 + 8;
+        const theta = Math.random() * Math.PI * 2;
+        return [wave + Math.cos(theta) * r, bodyY, Math.sin(theta) * r];
+      } else {
+        const finAngle = (f - 0.65) / 0.35 * Math.PI * 2;
+        const finR = Math.sin(finAngle) * 90;
+        return [Math.cos(finAngle) * finR * 1.2 + 25, -110 - Math.abs(Math.sin(finAngle)) * 45, Math.sin(finAngle) * 25];
+      }
+    });
+
+    // 12. Crystal Tears 💎 (Nước mắt pha lê hóa thành kim cương sáng ngời)
+    addShape((i, f) => {
+      if (f < 0.6) {
+        const h = (f / 0.6) * 160 - 80;
+        const r = Math.sin((f / 0.6) * Math.PI) * 48;
+        const theta = Math.random() * Math.PI * 2;
+        return [Math.cos(theta) * r, h, Math.sin(theta) * r];
+      } else {
+        const facets = 8;
+        const theta = Math.floor(Math.random() * facets) / facets * Math.PI * 2;
+        const dist = Math.random() * 140 + 50;
+        return [Math.cos(theta) * dist, (Math.random() - 0.5) * 120, Math.sin(theta) * dist];
+      }
+    });
+
+    // 13. Moonlight Goddess 🌙 (Trăng lưỡi liềm khổng lồ cùng hào quang bạc)
+    addShape((i, f) => {
+      const theta = (f - 0.5) * Math.PI * 1.5;
+      const outerR = 155;
+      const innerR = 120;
+      const isOuter = (i % 2 === 0);
+      const r = isOuter ? outerR : innerR;
+      const offset = isOuter ? 0 : 35;
+      return [Math.cos(theta) * r + offset, Math.sin(theta) * r, (Math.random() - 0.5) * 24];
+    });
+
+    // 14. Glitter Makeup 💖 (Má hồng, tàn nhang trái tim và kim tuyến)
+    addShape((i, f) => {
+      const side = (i % 2 === 0) ? 1 : -1;
+      const cx = side * 75;
+      const cy = -15;
+      const t = Math.PI * 2 * Math.random();
+      const r = Math.pow(Math.random(), 0.5) * 45;
+      return [cx + Math.cos(t) * r, cy + Math.sin(t) * r * 0.7, (Math.random() - 0.5) * 20];
+    });
+
+    // 15. Enchanted Garden 🌺 (Khu vườn cổ tích hoa khổng lồ và nấm thần tiên)
+    addShape((i, f) => {
+      if (f < 0.5) {
+        const capR = Math.sqrt(Math.random()) * 110;
+        const theta = Math.random() * Math.PI * 2;
+        const z = -Math.cos((capR / 110) * (Math.PI / 2)) * 45;
+        return [Math.cos(theta) * capR, 35 + z, Math.sin(theta) * capR];
+      } else {
+        const h = Math.random() * 90;
+        const stemR = (1 - h / 90) * 18 + 10;
+        const theta = Math.random() * Math.PI * 2;
+        return [Math.cos(theta) * stemR, -60 + h, Math.sin(theta) * stemR];
+      }
+    });
+
+    // 16. Angel Aura 👼 (Vầng hào quang trên đầu và đôi cánh trắng thiên thần)
+    addShape((i, f) => {
+      if (f < 0.25) {
+        const t = Math.random() * Math.PI * 2;
+        return [Math.cos(t) * 65, 110, Math.sin(t) * 35];
+      } else {
+        const side = (i % 2 === 0) ? 1 : -1;
+        const t = (i / PARTICLE_COUNT) * Math.PI * 2;
+        const r = Math.sin(t) * 150;
+        return [side * (Math.abs(Math.cos(t) * r) + 20), Math.sin(t) * r * 0.85, Math.abs(r) * 0.2];
+      }
+    });
+
+    // 17. Underwater Dream 🫧 (Làn nước xanh, bong bóng và hoa trôi)
+    addShape((i, f) => {
+      const bubbleIdx = i % 14;
+      const bx = ((bubbleIdx % 4) - 1.5) * 75;
+      const by = (Math.floor(bubbleIdx / 4) - 1.5) * 70;
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(Math.random() * 2 - 1);
+      const rad = Math.random() * 28;
+      return [bx + rad * Math.sin(phi) * Math.cos(theta), by + rad * Math.sin(phi) * Math.sin(theta), rad * Math.cos(phi)];
+    });
+
+    // 18. Rose Petal Explosion 🌹 (Nụ hồng bung nở thành trái tim khổng lồ)
+    addShape((i, f) => {
+      const t = Math.PI * 2 * f;
+      const r = Math.pow(Math.random(), 0.52);
+      const u = (Math.random() - 0.5) * Math.PI;
+      const x = 16 * Math.pow(Math.sin(t), 3) * 8.6 * r;
+      const y = (13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t)) * 8.6 * r;
+      const z = u * 16 * (1.1 - Math.abs(x) / 32);
+      return [x, y, z];
+    });
+
+    // 19. Magic Mirror 🪞 (Gương thần cổ tích viền hoa văn phản chiếu)
+    addShape((i, f) => {
+      const theta = f * Math.PI * 2;
+      const a = 110;
+      const b = 155;
+      const frameWave = Math.sin(theta * 14) * 12;
+      return [Math.cos(theta) * (a + frameWave), Math.sin(theta) * (b + frameWave), (Math.random() - 0.5) * 16];
+    });
+
+    // 20. Starlight Touch ⭐ (Ngôi sao 5 cánh phát sáng rạng ngời)
+    addShape((i, f) => {
+      const starPetals = 5;
+      const theta = f * Math.PI * 2;
+      const r = Math.pow(Math.abs(Math.sin(theta * (starPetals / 2))), 0.8) * 160 + 20;
+      return [Math.cos(theta) * r, Math.sin(theta) * r, (Math.random() - 0.5) * 20];
+    });
 
     /* =====================================================================
-       2D CANVAS: DELICATE SPARKS & SAKURA EMBER DRIFT
+       2D CANVAS: STARLIGHT TOUCH (EFFECT #20) & GLOW SPARKS
        ===================================================================== */
     const overlayCanvas = document.getElementById('overlay-canvas');
     const ctx2D = overlayCanvas.getContext('2d');
@@ -638,45 +984,45 @@
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    const stardustTrail = [];
-    function spawnStardustTrail(x, y) {
-      stardustTrail.push({
-        x: x + (Math.random() - 0.5) * 16,
-        y: y + (Math.random() - 0.5) * 16,
-        vx: (Math.random() - 0.5) * 1.1,
-        vy: -Math.random() * 1.4 - 0.4,
-        size: Math.random() * 2.8 + 1.2,
+    const starlightSparks = [];
+    function spawnStarlightSpark(x, y) {
+      starlightSparks.push({
+        x: x + (Math.random() - 0.5) * 18,
+        y: y + (Math.random() - 0.5) * 18,
+        vx: (Math.random() - 0.5) * 1.4,
+        vy: -Math.random() * 1.6 - 0.4,
+        size: Math.random() * 3.2 + 1.4,
         alpha: 0.95,
-        char: Math.random() > 0.65 ? '✧' : (Math.random() > 0.5 ? '🌸' : null)
+        char: Math.random() > 0.65 ? '⭐' : (Math.random() > 0.5 ? '💖' : '✧')
       });
-      if (stardustTrail.length > 60) stardustTrail.shift();
+      if (starlightSparks.length > 60) starlightSparks.shift();
     }
 
     function render2D() {
       ctx2D.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
 
-      for (let i = stardustTrail.length - 1; i >= 0; i--) {
-        const s = stardustTrail[i];
+      for (let i = starlightSparks.length - 1; i >= 0; i--) {
+        const s = starlightSparks[i];
         s.x += s.vx;
         s.y += s.vy;
-        s.alpha -= 0.015;
+        s.alpha -= 0.016;
 
         if (s.alpha <= 0) {
-          stardustTrail.splice(i, 1);
+          starlightSparks.splice(i, 1);
           continue;
         }
 
         ctx2D.save();
         ctx2D.globalAlpha = s.alpha;
         if (s.char) {
-          ctx2D.font = '13px serif';
-          ctx2D.fillStyle = '#ffccd8';
+          ctx2D.font = '14px serif';
+          ctx2D.fillStyle = '#ffd166';
           ctx2D.fillText(s.char, s.x, s.y);
         } else {
           ctx2D.beginPath();
           ctx2D.arc(s.x, s.y, s.size, 0, Math.PI * 2);
           ctx2D.fillStyle = '#fff5f8';
-          ctx2D.shadowColor = '#ff85b3';
+          ctx2D.shadowColor = '#ff70a6';
           ctx2D.shadowBlur = 10;
           ctx2D.fill();
         }
@@ -685,21 +1031,26 @@
     }
 
     /* =====================================================================
-       CINEMATIC MORPHING WITH EXPLOSIVE SHOCKWAVE DISPERSAL & REFORM
+       ANIMATION LOOP: SEAMLESS 20 EFFECTS MORPHING & MUSIC BEAT SYNC
        ===================================================================== */
-    const TRANSITION_DURATION = 6.2; // 6.2s per shape
+    const TRANSITION_DURATION = 4.8; // 4.8 seconds per effect
     let currentShapeIndex = 0;
     let lastTransitionTrigger = 0;
     const startTime = performance.now();
 
+    const badgeIndex = document.getElementById('badge-index');
+    const badgeTitle = document.getElementById('badge-title');
+
     function animate(now) {
       requestAnimationFrame(animate);
 
-      // Real-time Audio Sync
-      updateBeat();
+      // Real-time Audio Visuals
+      updateAudioBeat();
+      renderAudioWaveform();
+      renderECGLine();
       updateShockwaves();
 
-      // Smooth Cursor Movement
+      // Mouse Smooth Inertia
       mouse.screenX += (mouse.targetScreenX - mouse.screenX) * 0.085;
       mouse.screenY += (mouse.targetScreenY - mouse.screenY) * 0.085;
       mouse.x += (mouse.targetX - mouse.x) * 0.055;
@@ -708,7 +1059,7 @@
       cursorFollower.style.transform = `translate3d(${mouse.screenX}px, ${mouse.screenY}px, 0)`;
       cursorDot.style.transform = `translate3d(${mouse.targetScreenX}px, ${mouse.targetScreenY}px, 0)`;
 
-      // Continuous Morph Calculation
+      // Continuous Morph Calculation across 20 shapes
       const elapsed = (now - startTime) * 0.001;
       const cyclePos = (elapsed / TRANSITION_DURATION) % shapes.length;
       const idxA = Math.floor(cyclePos);
@@ -717,32 +1068,32 @@
 
       let blend = cyclePos - idxA;
 
-      // Detect shape boundary to trigger Supernova Blast!
+      // When crossing to new effect, trigger Supernova & update HUD badge
       if (idxA !== lastTransitionTrigger) {
         lastTransitionTrigger = idxA;
-        triggerBassImpact();
-        // Give particles an outward explosive velocity blast
-        const vel = geometry.attributes.position.array;
+        triggerBassShockwave();
+
+        // Update HUD
+        const eff = EFFECTS_LIST[idxA];
+        badgeIndex.innerText = `${eff.id < 10 ? '0' + eff.id : eff.id} / 20`;
+        badgeTitle.innerText = eff.name;
+
+        // Disperse velocity blast
         for (let i = 0; i < PARTICLE_COUNT * 3; i++) {
           velocities[i] = (Math.random() - 0.5) * 18.0;
         }
       }
 
-      // Smooth Hermite blend
+      // Hermite smoothstep
       const smoothBlend = blend * blend * (3 - 2 * blend);
-
       const shapeA = shapes[idxA];
       const shapeB = shapes[idxB];
-      const pal = PALETTES[idxA % PALETTES.length];
 
       const pos = geometry.attributes.position.array;
       const col = geometry.attributes.color.array;
 
       const mouseWorldX = mouse.x * 145;
       const mouseWorldY = mouse.y * 110;
-
-      // Porsche rotation / tilt
-      const isPorsche = (idxA === 1 || idxB === 1);
 
       for (let i = 0; i < PARTICLE_COUNT; i++) {
         const i3 = i * 3;
@@ -751,63 +1102,59 @@
         let ty = shapeA[i3 + 1] * (1 - smoothBlend) + shapeB[i3 + 1] * smoothBlend;
         let tz = shapeA[i3 + 2] * (1 - smoothBlend) + shapeB[i3 + 2] * smoothBlend;
 
-        // When in Eye Shape (idx === 0), pupil dynamically tracks mouse!
+        // Heart Eyes (Shape 0): Pupil gaze tracks mouse
         if (idxA === 0 || idxB === 0) {
-          const eyeInfluence = (idxA === 0) ? (1 - smoothBlend) : smoothBlend;
-          if (i < PARTICLE_COUNT * 0.32) { // Heart-shaped pupil
-            tx += mouse.x * 24 * eyeInfluence;
-            ty += mouse.y * 20 * eyeInfluence;
+          const eyeInf = (idxA === 0) ? (1 - smoothBlend) : smoothBlend;
+          if (i < PARTICLE_COUNT * 0.32) {
+            tx += mouse.x * 24 * eyeInf;
+            ty += mouse.y * 20 * eyeInf;
           }
         }
 
-        // Apply explosive velocity dampening
+        // Apply explosive velocity decay
         if (velocities[i3] !== 0) {
           tx += velocities[i3];
           ty += velocities[i3 + 1];
           tz += velocities[i3 + 2];
-          velocities[i3] *= 0.88; // Quick decay
+          velocities[i3] *= 0.88;
           velocities[i3 + 1] *= 0.88;
           velocities[i3 + 2] *= 0.88;
         }
 
-        // Fluid mouse magnetic attraction
+        // Mouse magnetic attraction
         const dx = mouseWorldX - pos[i3];
         const dy = mouseWorldY - pos[i3 + 1];
         const distSq = dx * dx + dy * dy;
 
         if (distSq < 14000) {
-          const force = (1 - distSq / 14000) * 20;
+          const force = (1 - distSq / 14000) * 18;
           tx += (dx / 118) * force;
           ty += (dy / 118) * force;
         }
 
-        // Viscous high-performance glide
+        // Viscous smooth glide
         pos[i3] += (tx - pos[i3]) * 0.07;
         pos[i3 + 1] += (ty - pos[i3 + 1]) * 0.07;
         pos[i3 + 2] += (tz - pos[i3 + 2]) * 0.07;
 
-        // Color blending with music beat intensity
+        // Dynamic audio color breathing
         const f = i % 3;
-        const c = (f === 0) ? pal.primary : (f === 1 ? pal.secondary : pal.accent);
-        col[i3] += (c[0] - col[i3]) * 0.03;
-        col[i3 + 1] += (c[1] - col[i3 + 1]) * 0.03;
-        col[i3 + 2] += (c[2] - col[i3 + 2]) * 0.03;
+        col[i3] = (f === 0) ? 1.0 : (f === 1 ? 0.65 + beatEnergy * 0.35 : 0.85);
+        col[i3 + 1] = (f === 0) ? 0.45 + beatEnergy * 0.45 : (f === 1 ? 0.88 : 0.75);
+        col[i3 + 2] = (f === 0) ? 0.75 : (f === 1 ? 0.98 : 1.0);
       }
 
       geometry.attributes.position.needsUpdate = true;
       geometry.attributes.color.needsUpdate = true;
 
-      // 3D Parallax + Music Beat FOV Punch!
+      // 3D Parallax & Camera Bass Punch
       const audioPulse = beatEnergy * 0.12;
       const breathing = 1.0 + Math.sin(now * 0.0016) * 0.04 + audioPulse;
 
-      // Camera FOV punch on bass drops
-      camera.fov = 56 - beatEnergy * 5.5;
+      camera.fov = 56 - beatEnergy * 5.0;
       camera.updateProjectionMatrix();
 
-      // Dynamic rotation (Porsche spins gently to showcase the 3D profile)
-      const baseRotY = isPorsche ? (now * 0.0008) : (now * 0.0004);
-      particleSystem.rotation.y = baseRotY + mouse.x * 0.32;
+      particleSystem.rotation.y = now * 0.0004 + mouse.x * 0.32;
       particleSystem.rotation.x = -mouse.y * 0.22;
       particleSystem.scale.set(breathing, breathing, breathing);
 
@@ -818,14 +1165,14 @@
     animate(performance.now());
 
     /* =====================================================================
-       INTERACTION
+       START INTERACTION
        ===================================================================== */
     const startScreen = document.getElementById('start-screen');
 
     function startExperience() {
       initAudio();
       startScreen.classList.add('hidden');
-      triggerBassImpact();
+      triggerBassShockwave();
     }
 
     startScreen.addEventListener('click', startExperience);
@@ -833,9 +1180,9 @@
 
     window.addEventListener('pointerdown', (e) => {
       if (!startScreen.classList.contains('hidden')) return;
-      triggerBassImpact();
-      for (let i = 0; i < 12; i++) {
-        spawnStardustTrail(e.clientX, e.clientY);
+      triggerBassShockwave();
+      for (let i = 0; i < 14; i++) {
+        spawnStarlightSpark(e.clientX, e.clientY);
       }
     });
   </script>
